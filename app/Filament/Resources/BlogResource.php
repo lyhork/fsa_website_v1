@@ -7,7 +7,9 @@ use App\Filament\Resources\BlogResource\RelationManagers;
 use App\Models\Blog;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Group;
 use Filament\Forms\Components\RichEditor;
+use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
@@ -18,7 +20,7 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Resources\Concerns\Translatable;
-
+use Illuminate\Support\Facades\Storage;
 
 class BlogResource extends Resource
 {
@@ -38,23 +40,41 @@ class BlogResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('title')
-
-                        ->required()
-                        ->placeholder("Title"),
-                TextInput::make('author')->placeholder("Author"),
-                RichEditor::make('content')->columnSpan(2),
-                FileUpload::make('image'),
-                FileUpload::make('images')
-                    ->directory('images')
-                    ->multiple()
-                    ->reorderable()
-                    ->openable()
-                    ->storeFileNamesIn('original_filename'),
-                Select::make('status')->options([
-                    1 => 'Active',
-                    0 => 'Inactive'
-                ])
+                Group::make()
+                    ->schema([
+                        Section::make([
+                            Forms\Components\TextInput::make('title')
+                                ->required()
+                                ->maxLength(255)
+                                ->placeholder("Title"),
+                            TextInput::make('author')->placeholder("Author"),
+                            RichEditor::make('content')
+                                ->columnSpanFull(),
+                            Forms\Components\Toggle::make('status'),
+                            Forms\Components\DateTimePicker::make('published_at')
+                        ])->columns(2)
+                    ]),
+                Group::make()
+                    ->schema([
+                        Section::make([
+                            FileUpload::make('image')
+                                ->minSize(50) // 50 kb
+                                ->maxSize(2048) // 2 MB
+                                ->acceptedFileTypes(['image/*'])
+                                ->required()
+                                ->image(),
+                            FileUpload::make('images')
+                                ->minSize(50) // 50 kb
+                                ->maxSize(2048) // 2 MB
+                                ->acceptedFileTypes(['image/*'])
+                                ->required()
+                                ->image()
+                                ->multiple()
+                                ->reorderable()
+                                ->openable()
+                                ->storeFileNamesIn('original_filename'),
+                        ])
+                    ])
             ]);
     }
 
@@ -62,9 +82,26 @@ class BlogResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('title')->searchable(),
-                TextColumn::make('author'),
-                TextColumn::make('content'),
+                Tables\Columns\ImageColumn::make('image'),
+                Tables\Columns\TextColumn::make('title')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('content')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('author')
+                ->searchable(),
+                Tables\Columns\IconColumn::make('status')
+                    ->boolean(),
+                Tables\Columns\TextColumn::make('published_at')
+                    ->dateTime()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('created_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('updated_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //
@@ -74,7 +111,20 @@ class BlogResource extends Resource
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
+                    Tables\Actions\DeleteBulkAction::make()
+                        ->after(function (Blog $record) {
+                            // Delete single image
+                            if ($record->image) {
+                                Storage::disk('public')->delete($record->image);
+                            }
+
+                            // Delete multiple images (if applicable)
+                            if ($record->images) {
+                                foreach ($record->images as $image) {
+                                    Storage::disk('public')->delete($image);
+                                }
+                            }
+                        }),
                 ]),
             ]);
     }

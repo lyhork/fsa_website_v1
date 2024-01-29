@@ -5,6 +5,7 @@ namespace App\Filament\Resources\BlogResource\Pages;
 use App\Filament\Resources\BlogResource;
 use App\Models\Blog;
 use Filament\Actions;
+use Filament\Notifications\Notification;
 use Filament\Resources\Pages\EditRecord;
 use Illuminate\Support\Facades\Storage;
 
@@ -38,6 +39,14 @@ class EditBlog extends EditRecord
     protected function getRedirectUrl(): string
     {
         return $this->getResource()::getUrl('index');
+    }
+
+    protected function getSavedNotification(): ?Notification
+    {
+        return Notification::make()
+            ->success()
+            ->title('Blog updated')
+            ->body('Blog has been updated successfully.');
     }
 
 }

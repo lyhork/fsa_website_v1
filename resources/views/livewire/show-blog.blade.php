@@ -50,7 +50,7 @@
                                             @endif
                                         </div>
                                         <div class="pt-4">
-                                            <p class="mb-3">{{ \Carbon\Carbon::parse($blog->created_at)->format('d M, Y')}}</p>
+                                            <p class="mb-3">{{ \Carbon\Carbon::parse($blog->published_at)->format('d M, Y H:i:sa')}}</p>
                                             <h2 class="h4"><a wire:navigate class="text-black" href="{{ route('blogDetail',$blog->id)}}">{{ $blog->title }}</a></h2>
                                             <a wire:navigate href="{{ route('blogDetail',$blog->id)}}" class="text-primary fw-bold" aria-label="Read the full article by clicking here">Read More</a>
                                         </div>
@@ -102,7 +102,7 @@
                                     </a>
                                     <div class="flex-grow-1">
                                         <h5 class="h6 mb-0"><a wire:navigate class="text-black" href="{{ route('blogDetail',$blog->id)}}">{{ $latestBlog->title}}</a></h5>
-                                        <small>{{ \Carbon\Carbon::parse($latestBlog->created_at)->format('d M, Y')}}</small>
+                                        <small>{{ \Carbon\Carbon::parse($latestBlog->published_at)->format('d M, Y H:i:sa')}}</small>
                                     </div>
                                 </li>
                             </ul>

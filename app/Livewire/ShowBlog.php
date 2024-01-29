@@ -3,7 +3,9 @@
 namespace App\Livewire;
 
 use App\Models\Blog;
+use Carbon\Carbon;
 use Livewire\Component;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class ShowBlog extends Component
 {
@@ -17,16 +19,18 @@ class ShowBlog extends Component
             }
             $blogs = Blog::orderBy('created_at', 'DESC')
                 ->where('status',1)
+                ->where('published_at', '<=', Carbon::now())
                 ->paginate($piginate);
         } else {
             $blogs = Blog::orderBy('created_at', 'DESC')
             ->where('status',1)
+            ->where('published_at', '<=', Carbon::now())
             ->paginate($piginate);
         }
-
-        $latestBlogs = Blog::orderBy('created_at', 'DESC')
+        $latestBlogs = Blog::where('published_at', '<=', Carbon::now())
             ->get()
             ->where('status',1)
+            ->where('published_at','!=','NULL')
             ->take(3);
 
         return view('livewire.show-blog', [
@@ -34,4 +38,5 @@ class ShowBlog extends Component
             'latestBlogs' => $latestBlogs
         ]);
     }
+
 }

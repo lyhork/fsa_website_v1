@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->string('images')->nullable();
             $table->json('content')->nullable();
-            $table->integer('status')->default(1);
+            $table->boolean('status')->default(1);
+            $table->dateTime('published_at')->nullable();
             $table->timestamps();
         });
     }
