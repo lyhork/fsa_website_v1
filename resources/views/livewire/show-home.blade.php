@@ -1,6 +1,6 @@
 <main>
     <section class="banner bg-tertiary position-relative overflow-hidden">
-        <div class="container">
+        <div class="container" data-aos="fade-up" data-aos-duration="1000">
           <div class="row align-items-center justify-content-center">
             <div class="col-lg-6 mb-5 mb-lg-0">
               <div class="block text-center text-lg-start pe-0 pe-xl-5">
@@ -66,7 +66,7 @@
       </section>
 
       <section class="section">
-        <div class="container">
+        <div class="container" data-aos="fade-up" data-aos-duration="1000">
           <div class="row">
             <div class="col-lg-4 col-md-6">
               <div class="section-title pt-4">

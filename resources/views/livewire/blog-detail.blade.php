@@ -27,7 +27,7 @@
                 <div class="post-slider rounded overflow-hidden">
                     @if( $blogDetail->images != '')
                         @foreach ($blogDetail->images as $image)
-                            <img loading="lazy" decoding="async" src="{{ asset('storage/'.$image)}}" alt="Post Thumbnail">
+                            <img class="mb-5" loading="lazy" decoding="async" src="{{ asset('storage/'.$image)}}" alt="Post Thumbnail">
                         @endforeach
                     @endif
                 </div>

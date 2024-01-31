@@ -24,6 +24,7 @@
 
 	<!-- # Main Style Sheet -->
 	<link rel="stylesheet" href="{{ asset ('frontend/css/style.css')}}">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 
 <body>
@@ -124,6 +125,10 @@
 
 <!-- Main Script -->
 <script src="{{ asset ('frontend/js/script.js') }}"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 @livewireStyles
 </body>
 </html>
