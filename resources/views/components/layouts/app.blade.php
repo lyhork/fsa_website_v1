@@ -92,7 +92,7 @@
 							<div class="col-xl-5 col-lg-5 col-md-3 col-12">
 								<!-- Start Logo -->
 								<div class="logo">
-									<a href="{{ route('home')}}"><img src="{{ asset ('images/Logo FSA.png')}}" class="logo-2" alt="#"></a>
+									<a wire:navigate href="{{ route('home')}}"><img src="{{ asset ('images/Logo FSA.png')}}" class="logo-2" alt="#"></a>
                                     <div class="logo-title mef2 mx-auto">
                                         <p class="mb-2">អាជ្ញាធរហិរញ្ញវត្ថុមិនមែនធនាគារ</p>
                                         <p>Non-Bank Financial Services Authority</p>
@@ -110,10 +110,7 @@
 								<div class="main-menu">
 									<nav class="navigation">
 										<ul class="nav menu ml-auto">
-											<li class="active mef2"><a wire:navigate href="{{ route('home')}}">{{__('frontend.home')}}<i class="icofont-rounded-down"></i></a>
-												<ul class="dropdown">
-													<li><a href="index.html">Home Page 1</a></li>
-												</ul>
+											<li class="active mef2"><a wire:navigate href="{{ route('home')}}">{{__('frontend.home')}}</a>
 											</li>
 											<li><a href="#">Doctos </a></li>
 											<li><a href="#">Services </a></li>
@@ -122,10 +119,7 @@
 													<li><a href="404.html">404 Error</a></li>
 												</ul>
 											</li>
-											<li><a href="#">Blogs <i class="icofont-rounded-down"></i></a>
-												<ul class="dropdown">
-													<li><a href="blog-single.html">Blog Details</a></li>
-												</ul>
+											<li><a wire:navigate href="{{ route('blogPage')}}">Blogs</a>
 											</li>
 											<li><a href="contact.html">Contact Us</a></li>
 										</ul>
@@ -224,7 +218,7 @@
 					<div class="row">
 						<div class="col-lg-12 col-md-12 col-12">
 							<div class="copyright-content">
-								<p>© Copyright 2018  |  All Rights Reserved by <a href="https://www.wpthemesgrid.com" target="_blank">wpthemesgrid.com</a> </p>
+								<p>© Copyright 2024  |  All Rights Reserved by <a href="https://www.wpthemesgrid.com" target="_blank">wpthemesgrid.com</a> </p>
 							</div>
 						</div>
 					</div>
