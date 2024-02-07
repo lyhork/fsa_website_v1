@@ -10,7 +10,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 		<!-- Title -->
-        <title>{{ $title ?? 'Laravel Filament' }}</title>
+        <title>{{__('frontend.title')}}</title>
 
 		<!-- Favicon -->
         <link rel="icon" href="{{ asset ('images/Logo FSA.png')}}">
@@ -60,11 +60,11 @@
 							</ul>
 							<!-- End Contact -->
 						</div> --}}
-						<div class="col-lg-12 col-md-12 col-12 ms-1">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-12 ms-1">
 							<!-- Top Contact -->
 							<ul class="top-contact">
                                 @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                                <li><a wire:navigate hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                <li><a hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
                                     @if($localeCode =='km')
                                     <img src="{{asset('kh.png')}}" style="width: 25px">
                                     @endif
@@ -89,10 +89,10 @@
 				<div class="container">
 					<div class="inner">
 						<div class="row">
-							<div class="col-xl-5 col-lg-5 col-md-3 col-12">
+							<div class="col-xl-5 col-lg-4 col-md-4 col-12">
 								<!-- Start Logo -->
 								<div class="logo">
-									<a wire:navigate href="{{ route('home')}}"><img src="{{ asset ('images/Logo FSA.png')}}" class="logo-2" alt="#"></a>
+									<a href="{{ route('home')}}"><img src="{{ asset ('images/Logo FSA.png')}}" class="logo-2" alt="#"></a>
                                     <div class="logo-title mef2 mx-auto">
                                         <p class="mb-2">អាជ្ញាធរហិរញ្ញវត្ថុមិនមែនធនាគារ</p>
                                         <p>Non-Bank Financial Services Authority</p>
@@ -105,23 +105,30 @@
                                 </div>
 								<!-- End Mobile Nav -->
 							</div>
-							<div class="col-xl-7 col-lg-7 col-md-9 col-12">
+							<div class="col-xl-7 col-lg-8 col-md-8 col-12">
 								<!-- Main Menu -->
 								<div class="main-menu">
 									<nav class="navigation">
 										<ul class="nav menu ml-auto">
-											<li class="active mef2"><a wire:navigate href="{{ route('home')}}">{{__('frontend.home')}}</a>
+											<li class="{{ Request::path() == 'en' ? 'active' : '' }} || {{ Request::path() == 'km' ? 'active' : '' }} mef2"><a href="{{ route('home')}}">{{__('frontend.home')}}</a>
 											</li>
-											<li><a href="#">Doctos </a></li>
-											<li><a href="#">Services </a></li>
-											<li><a href="#">Pages <i class="icofont-rounded-down"></i></a>
-												<ul class="dropdown">
-													<li><a href="404.html">404 Error</a></li>
+											<li class="mef2"><a href="#">{{__('frontend.about-us')}}<i class="icofont-rounded-down"></i></a>
+                                                <ul class="dropdown">
+													<li class="mef2"><a href="#">{{__('frontend.about-fsa')}}</a></li>
+													<li class="mef2"><a href="#">{{__('frontend.institutional-structure')}}</a></li>
+													<li class="mef2"><a href="#">{{__('frontend.manager-profile')}}</a></li>
 												</ul>
+                                            </li>
+											<li class="mef2"><a href="#">{{__('frontend.docs')}} <i class="icofont-rounded-down"></i></a>
+                                                <ul class="dropdown">
+													<li class="mef2"><a href="#">{{__('frontend.law-and-regulation')}}</a></li>
+                                                    <li class="mef2"><a href="#">{{__('frontend.prakas')}}</a></li>
+													<li class="mef2"><a href="#">{{__('frontend.others')}}</a></li>
+												</ul>
+                                            </li>
+											<li class="{{ Request::path() == 'en/news' ? 'active' : '' }} || {{ Request::path() == 'km/news' ? 'active' : '' }} mef2"><a wire:navigate href="{{ route('newsPage')}}">{{__('frontend.news')}}</a>
 											</li>
-											<li><a wire:navigate href="{{ route('blogPage')}}">Blogs</a>
-											</li>
-											<li><a href="contact.html">Contact Us</a></li>
+											<li class="mef2"><a href="#">{{__('frontend.contact-us')}}</a></li>
 										</ul>
 									</nav>
 								</div>

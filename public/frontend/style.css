@@ -571,7 +571,7 @@ body{
 	border-color:#e6e6e6;
 }
 /* Header Sticky */
-.header.sticky .header-inner{
+/* .header.sticky .header-inner{
 	position:fixed;
 	z-index:999;
 	top:0;
@@ -582,7 +582,7 @@ body{
 	transition:all 0.4s ease;
 	animation: fadeInDown 0.5s both 0.1s;
 	box-shadow:0px 0px 13px #00000054;
-}
+} */
 /*=========================
 	End Header CSS
 ===========================*/
@@ -633,11 +633,11 @@ body{
 	margin:0;
 }
 .slider .single-slider .btn.primary{
-	background:#2C2D3F;
+	background:#BF9640;
 	color:#fff;
 }
 .slider .single-slider .btn.primary:before{
-	background:#4db55f;
+	background:#977731;
 }
 .slider .owl-carousel .owl-nav {
 	margin: 0;
@@ -663,7 +663,7 @@ body{
 	border-radius: 50%;
 }
 .slider .owl-carousel .owl-nav div:hover{
-	background:#2C2D3F;
+	background:#2a9e3e;
 	color:#fff;
 }
 .slider .owl-carousel .owl-controls .owl-nav .owl-prev{
@@ -2007,6 +2007,7 @@ body{
 	-moz-transition: all 0.4s ease;
 	transition: all 0.4s ease;
 	box-shadow: 0px 0px 10px #00000014;
+    margin: 0 0 50px 0;
 }
 .blog .single-news img{
 	width:100%;
@@ -4213,4 +4214,65 @@ body{
 
 .main-menu{
     float: right;
+}
+
+.carousel-control-prev, .carousel-control-next{
+    width: 50px;
+    height: 50px;
+    background-color: #4db55f;
+    border-radius: 50%;
+    top: calc(50% - 25px);
+    opacity: .8;
+    -webkit-transition: all 0.4s ease;
+	-moz-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+}
+
+.carousel-control-prev {
+    left: 1%;
+}
+
+.carousel-control-next {
+    right: 1%;
+}
+
+.fsa-slider .carousel-item{
+    height: 600px;
+	background-size: cover;
+	background-position: center;
+	background-repeat:no-repeat;
+}
+
+.text {
+    margin-top: 25px;
+}
+
+.responsive {
+    width: 100%;
+    height: auto;
+}
+
+
+/* .slider .owl-carousel .owl-nav div {
+	height: 50px;
+	width: 50px;
+	line-height: 50px;
+	text-align: center;
+	background: #4db55f;
+	color: #fff;
+	font-size: 26px;
+	position: absolute;
+	margin: 0;
+	-webkit-transition: all 0.4s ease;
+	-moz-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+	padding: 0;
+	border-radius: 50%;
+} */
+
+.blog .section-title .second i{
+	margin-left:10px;
+}
+.blog .section-title a{
+	color: #fff;
 }

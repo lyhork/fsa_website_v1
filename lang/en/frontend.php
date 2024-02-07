@@ -14,5 +14,15 @@ return [
     */
 
     'home' => 'Home',
-
+    'title' => 'FSA',
+    'about-us' => 'About Us',
+    'about-fsa' => 'About-FSA',
+    'institutional-structure' => 'Institutional-structure',
+    'docs' => 'Documents',
+    'law-and-regulation' => 'Law-and-Regulation',
+    'prakas' => 'Prakas',
+    'others' => 'Others',
+    'news' => 'News',
+    'contact-us' => 'Contact-us',
+    'see-more' => 'See more',
 ];

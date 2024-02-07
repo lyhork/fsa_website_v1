@@ -4,7 +4,7 @@ Author Name: Naimur Rahman
 Website: http://wpthemesgrid.com/
 Description: Mediplus - Doctor HTML Template.
 Version:	1.1
-========================================*/   
+========================================*/
 /* Tablet Screen */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
 /* Header Sticky */
@@ -123,6 +123,16 @@ Version:	1.1
 .header.style2 .right-bar {
 	padding-top: 15px;
 }
+
+.logo .logo-title{
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.logo a{
+    width: 80px;
+    margin: 16px 0px 0px -71px;
+}
 .slider .single-slider {
 	height: 380px;
 }
@@ -168,7 +178,7 @@ Version:	1.1
 	height: 40px;
 	width: 40px;
 	line-height: 40px;
-	border-radius: 4px;
+	border-radius: 20px;
 }
 .Feautes.index2 {
 	padding-top: 70px;
@@ -378,7 +388,7 @@ Version:	1.1
 /* Mobile Screen */
 @media only screen and (max-width: 767px) {
 .header.sticky{
-	
+
 }
 .header.sticky .header-bottom{
 	position:absolute;
@@ -435,7 +445,7 @@ Version:	1.1
 	background: transparent;
 }
 .slicknav_nav li{
-	
+
 }
 .slicknav_nav li a {
 	color: #2C2D3F;
@@ -471,7 +481,7 @@ Version:	1.1
 	font-weight:400;
 }
 .slicknav_menu .slicknav_icon-bar {
-	background-color: #1A76D1;
+	background-color: #4db55f;
 	box-shadow: none;
 	text-shadow: none;
 }
@@ -493,7 +503,7 @@ Version:	1.1
 	box-shadow: 0 1px 0 rgba(0,0,0,.25);
 }
 .header .main-menu{
-	display:none 
+	display:none
 }
 .header .widget-main {
 	float: right;
@@ -569,7 +579,9 @@ Version:	1.1
 }
 .header .top-contact {
 	float: none;
-	text-align: center;
+	text-align: right;
+    padding: 20px;
+    margin: 0px 0px 10px 0px;
 }
 .slider .single-slider {
 	height: 380px;
@@ -616,7 +628,7 @@ Version:	1.1
 	height: 40px;
 	width: 40px;
 	line-height: 40px;
-	border-radius: 4px;
+	border-radius: 20px;
 }
 .Feautes.index2 {
 	padding-top: 50px;
@@ -1057,8 +1069,19 @@ Version:	1.1
 }
 .header .top-contact {
 	float: none;
-	text-align: center;
+	text-align: right;
+    padding: 20px;
+    margin: 0px 0px 10px 0px;
 }
+
+.logo .logo-title{
+    font-size: 13px;
+}
+
+.logo a{
+	width: 90px;
+}
+
 .slider .single-slider {
 	height: 380px;
 }
@@ -1300,9 +1323,17 @@ Version:	1.1
 	padding: 65px 0px;
 }
 
+}
 
 
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+.logo .logo-title{
+    font-size: 12px;
+    font-weight: 500;
+}
 
-
-
+.logo a{
+    width: 89px;
+    margin: 20px 0px 0px 0px;
+}
 }
