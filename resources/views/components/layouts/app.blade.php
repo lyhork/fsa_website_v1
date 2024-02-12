@@ -41,7 +41,7 @@
         <link rel="stylesheet" href="{{ asset ('frontend/css/normalize.css')}}">
         <link rel="stylesheet" href="{{ asset ('frontend/style.css')}}">
         <link rel="stylesheet" href="{{ asset ('frontend/css/responsive.css')}}">
-
+        @livewireStyles
     </head>
     <body>
 		<!-- Header Area -->
@@ -64,7 +64,7 @@
 							<!-- Top Contact -->
 							<ul class="top-contact">
                                 @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                                <li><a hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                <li><a wire:navigate hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
                                     @if($localeCode =='km')
                                     <img src="{{asset('kh.png')}}" style="width: 25px">
                                     @endif
@@ -92,7 +92,7 @@
 							<div class="col-xl-5 col-lg-4 col-md-4 col-12">
 								<!-- Start Logo -->
 								<div class="logo">
-									<a href="{{ route('home')}}"><img src="{{ asset ('images/Logo FSA.png')}}" class="logo-2" alt="#"></a>
+									<a href="{{ route('home')}}" wire:navigate><img src="{{ asset ('images/Logo FSA.png')}}" class="logo-2" alt="#"></a>
                                     <div class="logo-title mef2 mx-auto">
                                         <p class="mb-2">អាជ្ញាធរហិរញ្ញវត្ថុមិនមែនធនាគារ</p>
                                         <p>Non-Bank Financial Services Authority</p>
@@ -101,7 +101,6 @@
 								<!-- End Logo -->
 								<!-- Mobile Nav -->
 								<div class="mobile-nav">
-									{{-- <a href="{{ route('home')}}"><img src="{{ asset ('images/Logo FSA.png')}}" alt="#"></a> --}}
                                 </div>
 								<!-- End Mobile Nav -->
 							</div>
@@ -110,7 +109,7 @@
 								<div class="main-menu">
 									<nav class="navigation">
 										<ul class="nav menu ml-auto">
-											<li class="{{ Request::path() == 'en' ? 'active' : '' }} || {{ Request::path() == 'km' ? 'active' : '' }} mef2"><a href="{{ route('home')}}">{{__('frontend.home')}}</a>
+											<li class="{{ Route::is('home') ? 'active' : ''}} mef2"><a href="{{ route('home')}}" wire:navigate>{{__('frontend.home')}}</a>
 											</li>
 											<li class="mef2"><a href="#">{{__('frontend.about-us')}}<i class="icofont-rounded-down"></i></a>
                                                 <ul class="dropdown">
@@ -126,7 +125,7 @@
 													<li class="mef2"><a href="#">{{__('frontend.others')}}</a></li>
 												</ul>
                                             </li>
-											<li class="{{ Request::path() == 'en/news' ? 'active' : '' }} || {{ Request::path() == 'km/news' ? 'active' : '' }} mef2"><a wire:navigate href="{{ route('newsPage')}}">{{__('frontend.news')}}</a>
+											<li class="{{ Route::is('newsPage') ? 'active' : ''}} mef2"><a wire:navigate href="{{ route('newsPage')}}">{{__('frontend.news')}}</a>
 											</li>
 											<li class="mef2"><a href="#">{{__('frontend.contact-us')}}</a></li>
 										</ul>
@@ -279,6 +278,31 @@
         <script>
             AOS.init();
         </script>
-        @livewireStyles
+        <script data-navigate-once>
+            document.addEventListener('livewire:navigated', () => {
+                $('.menu').slicknav({
+                prependTo:".mobile-nav",
+                duration: 300,
+                closeOnClick:true,
+        });
+            })
+        </script>
+        <script data-navigate-once>
+            document.addEventListener('livewire:navigated', () => {
+            $(".hero-slider").owlCarousel({
+            loop:true,
+            autoplay:true,
+            smartSpeed: 500,
+            autoplayTimeout:3500,
+            singleItem: true,
+            autoplayHoverPause:true,
+            items:1,
+            nav:true,
+            navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+            dots:false,
+            });
+        })
+        </script>
+        @livewireScripts
     </body>
 </html>

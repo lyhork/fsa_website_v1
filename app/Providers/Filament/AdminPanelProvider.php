@@ -30,7 +30,7 @@ class AdminPanelProvider extends PanelProvider
             ->default('lyhorklim@gmail.com')
             ->login()
             ->colors([
-                'primary' => Color::Amber,
+                'primary' => Color::Green,
             ])
             ->favicon('images/Logo FSA.png')
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
