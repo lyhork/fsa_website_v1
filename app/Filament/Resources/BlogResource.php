@@ -45,7 +45,6 @@ class BlogResource extends Resource
                         Section::make([
                             Forms\Components\TextInput::make('title')
                                 ->required()
-                                ->maxLength(255)
                                 ->placeholder("Title"),
                             TextInput::make('author')->placeholder("Author"),
                             RichEditor::make('content')
@@ -60,12 +59,20 @@ class BlogResource extends Resource
                             FileUpload::make('image')
                                 ->minSize(50) // 50 kb
                                 ->maxSize(2048) // 2 MB
+                                ->imageResizeMode('cover')
+                                ->imageCropAspectRatio('16:9')
+                                ->imageResizeTargetWidth('1920')
+                                ->imageResizeTargetHeight('1080')
                                 ->acceptedFileTypes(['image/*'])
                                 ->required()
                                 ->image(),
                             FileUpload::make('images')
                                 ->minSize(50) // 50 kb
                                 ->maxSize(2048) // 2 MB
+                                ->imageResizeMode('cover')
+                                ->imageCropAspectRatio('16:9')
+                                ->imageResizeTargetWidth('1920')
+                                ->imageResizeTargetHeight('1080')
                                 ->acceptedFileTypes(['image/*'])
                                 ->required()
                                 ->image()

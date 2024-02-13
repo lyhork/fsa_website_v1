@@ -2026,7 +2026,7 @@ body{
 	background: #fff;
 	z-index: 99;
 	position: relative;
-	padding: 30px;
+	padding: 20px;
 	left: 0;
 	z-index: 0;
 }
@@ -2071,14 +2071,12 @@ body{
 }
 .blog .single-news .news-body .date {
 	display: inline-block;
-	font-size: 14px;
-	margin-bottom: 5px;
-	background: #4db55f;
-	color: #fff;
-	padding: 4px 15px;
-	border-radius: 3px;
-	font-size: 14px;
-	margin-bottom: 10px;
+    background: #4db55f;
+    color: #fff;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-size: 10px;
+    margin: 0px 0px 20px 0px;
 }
 .blog.grid .single-news{
 	margin-top:30px;

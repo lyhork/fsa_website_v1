@@ -14,8 +14,9 @@ class ShowHome extends Component
     {
         // $slideshows = Slideshow::all();
 
-        $latestBlogs = Blog::where('published_at', '<=', Carbon::now())
+        $latestBlogs = Blog::orderBy('created_at', 'DESC')
             ->get()
+            ->where('published_at', '<=', Carbon::now())
             ->where('status',1)
             ->where('published_at','!=','NULL')
             ->take(6);

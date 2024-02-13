@@ -10,10 +10,10 @@
                                 <div class="text">
                                     <h1>We Provide <span>Medical</span> Services That You Can <span>Trust!</span></h1>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nisl pellentesque, faucibus libero eu, gravida quam. </p>
-                                    <div class="button">
+                                    {{-- <div class="button">
                                         <a href="#" class="btn">Get Appointment</a>
                                         <a href="#" class="btn primary">Learn More</a>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>
@@ -28,10 +28,10 @@
                                 <div class="text">
                                     <h1>We Provide <span>Medical</span> Services That You Can <span>Trust!</span></h1>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nisl pellentesque, faucibus libero eu, gravida quam. </p>
-                                    <div class="button">
+                                    {{-- <div class="button">
                                         <a href="#" class="btn">Get Appointment</a>
                                         <a href="#" class="btn primary">About Us</a>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>
@@ -46,10 +46,10 @@
                                 <div class="text">
                                     <h1>We Provide <span>Medical</span> Services That You Can <span>Trust!</span></h1>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nisl pellentesque, faucibus libero eu, gravida quam. </p>
-                                    <div class="button">
+                                    {{-- <div class="button">
                                         <a href="#" class="btn">Get Appointment</a>
                                         <a href="#" class="btn primary">Conatct Now</a>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>
@@ -627,16 +627,18 @@
                     <div class="col-lg-4 col-md-6 col-12">
 						<!-- Single Blog -->
 						<div class="single-news">
-							<div class="news-head">
-								<img src="{{asset('storage/'.$latestBlog->image) }}" alt="#">
-							</div>
-							<div class="news-body">
-								<div class="news-content">
-									<div class="date">{{\Carbon\Carbon::parse($latestBlog->published_at)->locale(app()->getLocale())->translatedFormat('g:i A Sj F Y');}}</div>
-									<h2><a href="#">{{$latestBlog->title}}</a></h2>
-									<p class="text">{!!$latestBlog->content!!}</p>
-								</div>
-							</div>
+                            <a wire:navigate href="{{route('newsDetail', $latestBlog->id)}}">
+                                <div class="news-head">
+                                    <img src="{{asset('storage/'.$latestBlog->image) }}" alt="#">
+                                </div>
+                                <div class="news-body">
+                                    <div class="news-content">
+                                        <div class="date mef2">{{\Carbon\Carbon::parse($latestBlog->published_at)->locale(app()->getLocale())->translatedFormat('j F Y, g:i A');}}</div>
+                                        <h2 class="mef2">{{$latestBlog->shortTitle()}}</h2>
+                                        <p class="text mef1">{!!$latestBlog->shortBody()!!}</p>
+                                    </div>
+                                </div>
+                            </a>
 						</div>
 						<!-- End Single Blog -->
 					</div>
@@ -647,7 +649,7 @@
 						<div class="section-title">
 							<div class="text">
                                 <div class="button">
-                                    <a href="#" class="btn second">{{__('frontend.see-more')}}<i class="fa fa-long-arrow-right"></i></a>
+                                    <a wire:navigate href="{{route('newsPage')}}" class="btn second">{{__('frontend.see-more')}}<i class="fa fa-long-arrow-right"></i></a>
                                 </div>
                             </div>
 						</div>

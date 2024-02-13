@@ -18,6 +18,7 @@ return [
     'about-us' => 'About Us',
     'about-fsa' => 'About-FSA',
     'institutional-structure' => 'Institutional-structure',
+    'manager-profile' => 'Manager-profile',
     'docs' => 'Documents',
     'law-and-regulation' => 'Law-and-Regulation',
     'prakas' => 'Prakas',
@@ -25,4 +26,5 @@ return [
     'news' => 'News',
     'contact-us' => 'Contact-us',
     'see-more' => 'See more',
+    'footer' => 'Non-Bank Financial Services Authority. All rights reserved',
 ];

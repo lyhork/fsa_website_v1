@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Translatable\HasTranslations;
+use Illuminate\Support\Str;
 
 class Blog extends Model
 {
@@ -21,5 +22,16 @@ class Blog extends Model
         'images' => 'array'
     ];
 
+    public function shortBody() {
+        return Str::limit(strip_tags($this->content), 150);
+    }
+
+    public function shortTitle() {
+        return Str::limit(strip_tags($this->title), 80);
+    }
+
+    public function breadTitle() {
+        return Str::limit(strip_tags($this->title), 10);
+    }
 
 }
