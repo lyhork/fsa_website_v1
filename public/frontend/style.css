@@ -3465,6 +3465,12 @@ body{
 	font-weight: 600;
 	text-shadow: none;
 }
+.error-page .error-inner p span {
+	font-size: 20px;
+    text-shadow: 3px 5px 2px #3333;
+	color: #4db55f;
+	font-weight: 600;
+}
 .error-page .error-inner p {
 	padding: 20px 15px;
 }

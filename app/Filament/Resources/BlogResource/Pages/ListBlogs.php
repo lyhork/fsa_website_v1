@@ -3,7 +3,6 @@
 namespace App\Filament\Resources\BlogResource\Pages;
 
 use App\Filament\Resources\BlogResource;
-use App\Filament\Resources\BlogResource\Widgets\BlogStatsWidget;
 use App\Filament\Resources\BlogResource\Widgets\PostsPerMonthChart;
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
