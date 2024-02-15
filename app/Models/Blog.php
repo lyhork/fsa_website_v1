@@ -23,7 +23,7 @@ class Blog extends Model
     ];
 
     public function shortBody() {
-        return Str::limit(strip_tags($this->content), 150);
+        return Str::limit(strip_tags($this->content), 100);
     }
 
     public function shortTitle() {
