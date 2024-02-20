@@ -143,10 +143,10 @@ class BlogResource extends Resource
         ];
     }
 
-    public static function getTranslatableLocales(): array
-    {
-        return ['en', 'km'];
-    }
+    // public static function getTranslatableLocales(): array
+    // {
+    //     return ['en', 'km'];
+    // }
 
     public static function getPages(): array
     {
