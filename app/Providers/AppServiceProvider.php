@@ -22,13 +22,13 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Paginator::useBootstrapFive();
-        LanguageSwitch::configureUsing(function (LanguageSwitch $switch) {
-            $switch
-                ->locales(['en','km']) // also accepts a closure
-                ->flags([
-                    'km' => asset('kh.png'),
-                    'en' => asset('uk.png'),
-                ]);
-        });
+        // LanguageSwitch::configureUsing(function (LanguageSwitch $switch) {
+        //     $switch
+        //         ->locales(['en','km']) // also accepts a closure
+        //         ->flags([
+        //             'km' => asset('kh.png'),
+        //             'en' => asset('uk.png'),
+        //         ]);
+        // });
     }
 }
