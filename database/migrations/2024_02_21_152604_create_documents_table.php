@@ -11,15 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('members', function (Blueprint $table) {
+        Schema::create('documents', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('description');
-            $table->string('fb_url')->nullable();
-            $table->string('tw_url')->nullable();
-            $table->string('in_url')->nullable();
-            $table->string('image');
-            $table->integer('status')->default(1);
+            $table->json('title');
+            $table->string('author')->nullable();
+            $table->string('doc_images')->nullable();
+            $table->string('doc_file')->nullable();
+            $table->boolean('status')->default(1);
+            $table->dateTime('published_at')->nullable();
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('members');
+        Schema::dropIfExists('documents');
     }
 };

@@ -118,9 +118,9 @@
 													<li class="mef2"><a href="#">{{__('frontend.manager-profile')}}</a></li>
 												</ul>
                                             </li>
-											<li class="mef2"><a href="#">{{__('frontend.docs')}} <i class="icofont-rounded-down"></i></a>
+											<li class="{{ Route::is('docsPage') ? 'active' : ''}} mef2"><a href="#">{{__('frontend.docs')}} <i class="icofont-rounded-down"></i></a>
                                                 <ul class="dropdown">
-													<li class="mef2"><a href="#">{{__('frontend.law-and-regulation')}}</a></li>
+													<li class="{{ Route::is('docsPage') ? 'active' : ''}} mef2"><a wire:navigate href="{{ route('docsPage')}}">{{__('frontend.law-and-regulation')}}</a></li>
                                                     <li class="mef2"><a href="#">{{__('frontend.prakas')}}</a></li>
 													<li class="mef2"><a href="#">{{__('frontend.others')}}</a></li>
 												</ul>

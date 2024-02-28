@@ -2,39 +2,31 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\BlogResource\Pages;
-use App\Filament\Resources\BlogResource\RelationManagers;
-use App\Models\Blog;
+use App\Filament\Resources\DocumentResource\Pages;
+use App\Filament\Resources\DocumentResource\RelationManagers;
+use App\Models\Document;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Group;
-use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Section;
-use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
-use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
-use Filament\Resources\Concerns\Translatable;
 use Illuminate\Support\Facades\Storage;
+use Filament\Resources\Concerns\Translatable;
 
-class BlogResource extends Resource
+
+class DocumentResource extends Resource
 {
     use Translatable;
 
-    protected static ?string $model = Blog::class;
+    protected static ?string $model = Document::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-    // protected static ?string $navigationLabel = 'Blog';
-
-    public static function getNavigationLabel(): string
-    {
-        return __('Blog');
-    }
 
     public static function form(Form $form): Form
     {
@@ -47,8 +39,6 @@ class BlogResource extends Resource
                                 ->required()
                                 ->placeholder("Title"),
                             TextInput::make('author')->placeholder("Author"),
-                            RichEditor::make('content')
-                                ->columnSpanFull(),
                             Forms\Components\DateTimePicker::make('published_at'),
                             Forms\Components\Toggle::make('status'),
                         ])->columns(2)
@@ -56,30 +46,26 @@ class BlogResource extends Resource
                 Group::make()
                     ->schema([
                         Section::make([
-                            FileUpload::make('image')
+                            FileUpload::make('doc_images')
                                 ->minSize(50) // 50 kb
                                 ->maxSize(2048) // 2 MB
                                 ->imageResizeMode('cover')
-                                ->imageCropAspectRatio('16:9')
-                                ->imageResizeTargetWidth('1920')
-                                ->imageResizeTargetHeight('1080')
+                                ->imageResizeTargetWidth('1080')
+                                ->imageResizeTargetHeight('1920')
                                 ->acceptedFileTypes(['image/*'])
-                                ->directory('posts/')
-                                ->required()
-                                ->image(),
-                            FileUpload::make('images')
-                                ->minSize(50) // 50 kb
-                                ->maxSize(2048) // 2 MB
-                                ->imageResizeMode('cover')
-                                ->imageCropAspectRatio('16:9')
-                                ->imageResizeTargetWidth('1920')
-                                ->imageResizeTargetHeight('1080')
-                                ->acceptedFileTypes(['image/*'])
-                                ->directory('posts/')
+                                ->directory('docs')
                                 ->required()
                                 ->image()
                                 ->multiple()
                                 ->reorderable()
+                                ->openable()
+                                ->storeFileNamesIn('original_filename'),
+                            FileUpload::make('doc_file')
+                                ->minSize(50) // 50 kb
+                                ->maxSize(307200) // 20MB
+                                ->acceptedFileTypes(['application/pdf'])
+                                ->directory('docs')
+                                ->required()
                                 ->openable()
                                 ->storeFileNamesIn('original_filename'),
                         ])
@@ -91,11 +77,7 @@ class BlogResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\ImageColumn::make('image'),
                 Tables\Columns\TextColumn::make('title')
-                    ->limit(50)
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('content')
                     ->limit(50)
                     ->searchable(),
                 Tables\Columns\TextColumn::make('author')
@@ -120,20 +102,21 @@ class BlogResource extends Resource
             ->actions([
                 Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
+
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make()
-                        ->after(function (Blog $record) {
+                        ->after(function (Document $record) {
                             // Delete single image
-                            if ($record->image) {
-                                Storage::disk('public/posts')->delete($record->image);
+                            if ($record->doc_file) {
+                                Storage::disk('public/doc')->delete($record->doc_file);
                             }
 
                             // Delete multiple images (if applicable)
-                            if ($record->images) {
-                                foreach ($record->images as $image) {
-                                    Storage::disk('public/posts')->delete($image);
+                            if ($record->doc_images) {
+                                foreach ($record->doc_images as $doc_image) {
+                                    Storage::disk('public/doc')->delete($doc_image);
                                 }
                             }
                         }),
@@ -156,9 +139,9 @@ class BlogResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListBlogs::route('/'),
-            'create' => Pages\CreateBlog::route('/create'),
-            'edit' => Pages\EditBlog::route('/{record}/edit'),
+            'index' => Pages\ListDocuments::route('/'),
+            'create' => Pages\CreateDocument::route('/create'),
+            'edit' => Pages\EditDocument::route('/{record}/edit'),
         ];
     }
 }

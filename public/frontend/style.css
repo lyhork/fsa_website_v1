@@ -361,6 +361,9 @@ body{
 .header .nav li.active a{
 	color:#4db55f;
 }
+.header .nav li ul li.active a{
+	color:#4db55f;
+}
 .header .nav li:hover a:before{
 	opacity:1;
 	width: 100%;
@@ -1011,7 +1014,7 @@ body{
 .why-choose .choose-right{
 	height:100%;
 	width:100%;
-	background-image:url('img/video-bg.jpg');
+	background-image:url('img/video_bg.jpg');
 	background-size:cover;
 	background-position:center;
 	background-repeat:no-repeat;
@@ -2179,6 +2182,9 @@ body{
 .main-sidebar .categor-list li a:hover{
 	color:#4db55f;
 	padding-left:7px;
+}
+.main-sidebar .categor-list li.active a{
+	color:#4db55f;
 }
 .main-sidebar .categor-list li a i {
 	display: inline-block;
@@ -4279,4 +4285,13 @@ body{
 }
 .blog .section-title a{
 	color: #fff;
+}
+
+.section .table-bottom .btn
+{
+    color: #fff;
+}
+.section .table-bottom .btn:hover
+{
+    color: #fff;
 }

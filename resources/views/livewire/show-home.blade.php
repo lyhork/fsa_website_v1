@@ -349,7 +349,7 @@
 									</div>
 								</div>
 								<!--/ End Video Animation -->
-								<a href="https://www.youtube.com/watch?v=RFVXy6CRVR4" class="video video-popup mfp-iframe"><i class="fa fa-play"></i></a>
+								<a href="https://www.youtube.com/watch?v=BJj5vTc1raE" class="video video-popup mfp-iframe"><i class="fa fa-play"></i></a>
 							</div>
 						</div>
 						<!-- End Choose Rights -->
@@ -675,25 +675,25 @@
 					<div class="col-lg-12 col-md-12 col-12">
 						<div class="owl-carousel clients-slider">
 							<div class="single-clients">
-								<img src="{{asset('frontend/img/fsa.png') }}" alt="#">
+								<a href="#" target="_blank"><img src="{{asset('frontend/img/fsa.png') }}" alt="#"></a>
 							</div>
 							<div class="single-clients">
-								<img src="{{asset('frontend/img/ACAR.png') }}" alt="#">
+								<a href="#" target="_blank"><img src="{{asset('frontend/img/ACAR.png') }}" alt="#"></a>
 							</div>
 							<div class="single-clients">
-								<img src="{{asset('frontend/img/IRC.png') }}" alt="#">
+								<a href="#" target="_blank"><img src="{{asset('frontend/img/IRC.png') }}" alt="#"></a>
 							</div>
 							<div class="single-clients">
-								<img src="{{asset('frontend/img/REBP.png') }}" alt="#">
+								<a href="#" target="_blank"><img src="{{asset('frontend/img/REBP.png') }}" alt="#"></a>
 							</div>
 							<div class="single-clients">
-								<img src="{{asset('frontend/img/SERC.png') }}" alt="#">
+								<a href="#" target="_blank"><img src="{{asset('frontend/img/SERC.png') }}" alt="#"></a>
 							</div>
 							<div class="single-clients">
-								<img src="{{asset('frontend/img/SSR.png') }}" alt="#">
+								<a href="#" target="_blank"><img src="{{asset('frontend/img/SSR.png') }}" alt="#"></a>
 							</div>
 							<div class="single-clients">
-								<img src="{{asset('frontend/img/TR.png') }}" alt="#">
+								<a href="#" target="_blank"><img src="{{asset('frontend/img/TR.png') }}" alt="#"></a>
 							</div>
 						</div>
 					</div>
