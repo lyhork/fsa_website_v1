@@ -30,4 +30,5 @@ class DocDetail extends Component
         $filepath = public_path("storage/{$this->docDetail->doc_file}");
         return \Response()->download($filepath);
     }
+
 }

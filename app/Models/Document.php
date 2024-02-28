@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Translatable\HasTranslations;
 use Illuminate\Support\Str;
-
+use Illuminate\Support\Facades\Storage;
+use File;
 
 class Document extends Model
 {
@@ -28,5 +29,14 @@ class Document extends Model
 
     public function breadTitle() {
         return Str::limit(strip_tags($this->title), 10);
+    }
+
+    public function getFileSize()
+    {
+        $filepath = public_path("storage/{$this->doc_file}");
+        $file = File::size($filepath);
+        $fileSizeInMB = $file/1000000;
+        $fileSize = round($fileSizeInMB, 2);
+        return ($fileSize);
     }
 }
