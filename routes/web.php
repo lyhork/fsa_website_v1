@@ -2,6 +2,7 @@
 
 use App\Livewire\BlogDetail;
 use App\Livewire\DocDetail;
+use App\Livewire\SearchBox;
 use App\Livewire\ShowBlog;
 use App\Livewire\ShowDocument;
 use Illuminate\Support\Facades\Route;
@@ -30,6 +31,7 @@ Route::get('/news',ShowBlog::class)->name('newsPage');
 Route::get('/news/{id}',BlogDetail::class)->name('newsDetail');
 
 Route::get('/docs',ShowDocument::class)->name('docsPage');
+Route::get('/docs/search',SearchBox::class)->name('search');
 Route::get('/docs/{id}',DocDetail::class)->name('docsDetail');
 
 

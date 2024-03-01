@@ -45,7 +45,7 @@
                                 @endif
 							</div>
                             <div class="table-bottom">
-								<a class="btn mef2" wire:click="download">Download Here ({{$docDetail->getFileSize()}}M)</a>
+								<a class="btn mef1" wire:click="download">{{__('frontend.doc_download')}} ({{$docDetail->getFileSize()}}MB)</a>
 							</div>
 						</div>
 					</div>

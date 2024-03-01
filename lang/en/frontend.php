@@ -27,4 +27,5 @@ return [
     'contact-us' => 'Contact-us',
     'see-more' => 'See more',
     'footer' => 'Non-Bank Financial Services Authority. All rights reserved',
+    'doc_download' => "Download",
 ];

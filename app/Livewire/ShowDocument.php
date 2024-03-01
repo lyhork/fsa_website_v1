@@ -5,6 +5,7 @@ namespace App\Livewire;
 use App\Models\Document;
 use Carbon\Carbon;
 use Livewire\Component;
+use Illuminate\Http\Request;
 
 class ShowDocument extends Component
 {
@@ -19,4 +20,8 @@ class ShowDocument extends Component
             'docs' => $docs
         ]);
     }
+
+
+
+
 }
