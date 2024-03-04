@@ -15,7 +15,7 @@ class SearchBox extends Component
         $results = Document::orderBy('created_at', 'DESC')
             ->where('published_at', '<=', Carbon::now())
             ->where('status',1)
-            ->where('title','like',"%$q%")
+            ->where('title','LIKE',"%$q%")
             ->get();
 
         return view('livewire.search-box',[

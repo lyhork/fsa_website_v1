@@ -41,6 +41,7 @@
         <link rel="stylesheet" href="{{ asset ('frontend/css/normalize.css')}}">
         <link rel="stylesheet" href="{{ asset ('frontend/style.css')}}">
         <link rel="stylesheet" href="{{ asset ('frontend/css/responsive.css')}}">
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
         @livewireStyles
     </head>
     <body>
@@ -277,6 +278,11 @@
         <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
         <script>
             AOS.init();
+        </script>
+        <script data-navigate-once>
+            document.addEventListener('livewire:navigated', () => {
+                src="{{ asset ('frontend/js/bootstrap.min.js')}}"
+            })
         </script>
         <script data-navigate-once>
             document.addEventListener('livewire:navigated', () => {

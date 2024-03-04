@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\DocumentResource\Pages;
 use App\Filament\Resources\DocumentResource\RelationManagers;
+use App\Helpers\EncodingHelper;
 use App\Models\Document;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
@@ -18,7 +19,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\Facades\Storage;
 use Filament\Resources\Concerns\Translatable;
-
+use Illuminate\Database\Eloquent\Model;
 
 class DocumentResource extends Resource
 {

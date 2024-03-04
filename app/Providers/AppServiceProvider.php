@@ -2,9 +2,9 @@
 
 namespace App\Providers;
 
-use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 use BezhanSalleh\FilamentLanguageSwitch\LanguageSwitch;
+use Illuminate\Pagination\Paginator;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -30,5 +30,6 @@ class AppServiceProvider extends ServiceProvider
                     'en' => asset('uk.png'),
                 ]);
         });
+
     }
 }

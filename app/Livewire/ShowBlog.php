@@ -5,10 +5,11 @@ namespace App\Livewire;
 use App\Models\Blog;
 use Carbon\Carbon;
 use Livewire\Component;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class ShowBlog extends Component
 {
+
+
     public function render()
     {
         $blogs = Blog::orderBy('created_at', 'DESC')
