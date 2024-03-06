@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Storage;
 
 class EditSlideshow extends EditRecord
 {
+    use EditRecord\Concerns\Translatable;
+
     protected static string $resource = SlideshowResource::class;
 
     protected function getHeaderActions(): array
