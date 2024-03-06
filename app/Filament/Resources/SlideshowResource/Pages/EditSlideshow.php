@@ -16,6 +16,7 @@ class EditSlideshow extends EditRecord
     protected function getHeaderActions(): array
     {
         return [
+            Actions\LocaleSwitcher::make(),
             Actions\DeleteAction::make()
                 ->after(function (Slideshow $record) {
                     // Delete single image

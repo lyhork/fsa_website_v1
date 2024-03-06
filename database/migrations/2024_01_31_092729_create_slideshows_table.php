@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::create('slideshows', function (Blueprint $table) {
             $table->id();
-            $table->string('slideshow')->nullable();
+            $table->string('slideshow_image')->nullable();
+            $table->json('quote')->nullable();
+            $table->json('author');
             $table->boolean('status')->default(1);
             $table->timestamps();
         });

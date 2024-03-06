@@ -9,6 +9,8 @@ use Filament\Resources\Pages\CreateRecord;
 
 class CreateSlideshow extends CreateRecord
 {
+    use CreateRecord\Concerns\Translatable;
+
     protected static string $resource = SlideshowResource::class;
 
     protected function getRedirectUrl(): string
@@ -22,5 +24,12 @@ class CreateSlideshow extends CreateRecord
             ->success()
             ->title('Slideshow created')
             ->body('Slideshow has been created successfully.');
+    }
+    protected function getHeaderActions(): array
+    {
+        return [
+            Actions\LocaleSwitcher::make(),
+
+        ];
     }
 }

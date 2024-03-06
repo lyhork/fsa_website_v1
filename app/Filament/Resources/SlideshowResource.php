@@ -7,6 +7,9 @@ use App\Filament\Resources\SlideshowResource\RelationManagers;
 use App\Models\Slideshow;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Group;
+use Filament\Forms\Components\Section;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -14,9 +17,12 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\Facades\Storage;
+use Filament\Resources\Concerns\Translatable;
 
 class SlideshowResource extends Resource
 {
+    use Translatable;
+
     protected static ?string $model = Slideshow::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
@@ -25,14 +31,36 @@ class SlideshowResource extends Resource
     {
         return $form
             ->schema([
-                FileUpload::make('slideshow')
+                Group::make()
+                    ->schema([
+                        Section::make([
+                            Forms\Components\TextInput::make('author')
+                                ->required()
+                                ->placeholder("Author"),
+                            Forms\Components\TextInput::make('quote')
+                            ->required()
+                            ->placeholder("Quote"),
+                            Forms\Components\Toggle::make('status'),
+                        ])->columns(2)
+                    ]),
+                Group::make()
+                    ->schema([
+                        Section::make([
+                            FileUpload::make('slideshow_image')
                                 ->minSize(50) // 50 kb
                                 ->maxSize(2048) // 2 MB
+                                ->imageResizeMode('cover')
+                                ->imageResizeTargetWidth('1920')
+                                ->imageResizeTargetHeight('1080')
                                 ->acceptedFileTypes(['image/*'])
+                                ->directory('slideshow')
                                 ->required()
                                 ->image()
-                                ->columnSpanFull(),
-                Forms\Components\Toggle::make('status'),
+                                ->openable()
+                                ->storeFileNamesIn('original_filename'),
+
+                        ])
+                    ])
             ]);
     }
 
@@ -40,7 +68,13 @@ class SlideshowResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\ImageColumn::make('slideshow'),
+                Tables\Columns\ImageColumn::make('slideshow_image'),
+                Tables\Columns\TextColumn::make('author')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('quote')
+                    ->limit(50)
+                    ->searchable(),
+
                 Tables\Columns\IconColumn::make('status')
                     ->boolean(),
             ])
@@ -70,6 +104,10 @@ class SlideshowResource extends Resource
         ];
     }
 
+    public static function getTranslatableLocales(): array
+    {
+        return ['en', 'km'];
+    }
 
     public static function getPages(): array
     {

@@ -3,59 +3,27 @@
         <section class="slider">
             <div class="hero-slider">
                 <!-- Start Single Slider -->
-                <div class="single-slider" style="background-image:url('{{asset('frontend/img/slider2.jpg') }}')">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-7">
-                                <div class="text">
-                                    <h1>We Provide <span>Medical</span> Services That You Can <span>Trust!</span></h1>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nisl pellentesque, faucibus libero eu, gravida quam. </p>
-                                    {{-- <div class="button">
-                                        <a href="#" class="btn">Get Appointment</a>
-                                        <a href="#" class="btn primary">Learn More</a>
-                                    </div> --}}
+                @if ($slideshows->isNotEmpty())
+                @foreach ($slideshows as $slideshow)
+                    <div class="single-slider" style="background-image:url('{{asset('storage/'.$slideshow->slideshow_image) }}')">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-5">
+                                    <div class="text">
+                                        <h1 class="mef2"><span>{{$slideshow->author}}</span></h1>
+                                        <p class="mef1">{{$slideshow->quote}}</p>
+                                        {{-- <div class="button">
+                                            <a href="#" class="btn">Get Appointment</a>
+                                            <a href="#" class="btn primary">Learn More</a>
+                                        </div> --}}
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- End Single Slider -->
-                <!-- Start Single Slider -->
-                <div class="single-slider" style="background-image:url('{{asset('frontend/img/slider.jpg') }}')">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-7">
-                                <div class="text">
-                                    <h1>We Provide <span>Medical</span> Services That You Can <span>Trust!</span></h1>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nisl pellentesque, faucibus libero eu, gravida quam. </p>
-                                    {{-- <div class="button">
-                                        <a href="#" class="btn">Get Appointment</a>
-                                        <a href="#" class="btn primary">About Us</a>
-                                    </div> --}}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Start End Slider -->
-                <!-- Start Single Slider -->
-                <div class="single-slider" style="background-image:url('{{asset('frontend/img/slider3.jpg') }}')">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-7">
-                                <div class="text">
-                                    <h1>We Provide <span>Medical</span> Services That You Can <span>Trust!</span></h1>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nisl pellentesque, faucibus libero eu, gravida quam. </p>
-                                    {{-- <div class="button">
-                                        <a href="#" class="btn">Get Appointment</a>
-                                        <a href="#" class="btn primary">Conatct Now</a>
-                                    </div> --}}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Single Slider -->
+                    <!-- End Single Slider -->
+                @endforeach
+                @endif
             </div>
         </section>
         {{-- <section class="slider">
@@ -131,6 +99,7 @@
 
 		<!--/ End Slider Area -->
 
+
 		<!-- Start Schedule Area -->
 		{{-- <section class="schedule">
 			<div class="container">
@@ -194,6 +163,7 @@
 		</section> --}}
 		<!--/End Start schedule Area -->
 
+
 		<!-- Start Feautes -->
 		<section class="Feautes section">
 			<div class="container">
@@ -201,7 +171,7 @@
 					<div class="col-lg-12">
 						<div class="section-title">
 							<h2>We Are Always Ready to Help You & Your Family</h2>
-							<img src="{{asset('frontend/img/section-img.png') }}" alt="#">
+							{{-- <img src="{{asset('frontend/img/section-img.png') }}" alt="#"> --}}
 							<p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
 						</div>
 					</div>
@@ -244,6 +214,8 @@
 			</div>
 		</section>
 		<!--/ End Feautes -->
+
+
 
 		<!-- Start Fun-facts -->
 		<div id="fun-facts" class="fun-facts section overlay">
@@ -305,7 +277,7 @@
 					<div class="col-lg-12">
 						<div class="section-title">
 							<h2>We Offer Different Services To Improve Your Health</h2>
-							<img src="{{asset('frontend/img/section-img.png') }}" alt="#">
+							{{-- <img src="{{asset('frontend/img/section-img.png') }}" alt="#"> --}}
 							<p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
 						</div>
 					</div>
@@ -378,6 +350,7 @@
 		</section>
 		<!--/ End Call to action -->
 
+
 		<!-- Start portfolio -->
 		<section class="portfolio section" >
 			<div class="container">
@@ -385,7 +358,7 @@
 					<div class="col-lg-12">
 						<div class="section-title">
 							<h2>We Maintain Cleanliness Rules Inside Our Hospital</h2>
-							<img src="{{asset('frontend/img/section-img.png') }}" alt="#">
+							{{-- <img src="{{asset('frontend/img/section-img.png') }}" alt="#"> --}}
 							<p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
 						</div>
 					</div>
@@ -441,7 +414,7 @@
 					<div class="col-lg-12">
 						<div class="section-title">
 							<h2>We Offer Different Services To Improve Your Health</h2>
-							<img src="{{asset('frontend/img/section-img.png') }}" alt="#">
+							{{-- <img src="{{asset('frontend/img/section-img.png') }}" alt="#"> --}}
 							<p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
 						</div>
 					</div>
@@ -513,7 +486,7 @@
 					<div class="col-lg-12">
 						<div class="section-title">
 							<h2>We Provide You The Best Treatment In Resonable Price</h2>
-							<img src="{{asset('frontend/img/section-img.png') }}" alt="#">
+							{{-- <img src="{{asset('frontend/img/section-img.png') }}" alt="#"> --}}
 							<p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
 						</div>
 					</div>
@@ -609,15 +582,14 @@
 		<!--/ End Pricing Table -->
 
 
-
 		<!-- Start Blog Area -->
 		<section class="blog section" id="blog">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="section-title">
-							<h2>Keep up with Our Most Recent Medical News.</h2>
-							<img src="{{asset('frontend/img/section-img.png') }}" alt="#">
+							<h2>Keep up with Our Most Recent FSA News.</h2>
+							{{-- <img src="{{asset('frontend/img/section-img.png') }}" alt="#"> --}}
 							<p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
 						</div>
 					</div>
@@ -666,7 +638,7 @@
 					<div class="col-lg-12">
 						<div class="section-title">
 							<h2 class="mef2">អាជ្ញាធរ</h2>
-							<img src="{{asset('frontend/img/section-img.png') }}" alt="#">
+							{{-- <img src="{{asset('frontend/img/section-img.png') }}" alt="#"> --}}
 							<p class="mef1">អាជ្ញាធរក្នុងវិស័យហិរញ្ញវត្ថុមិនមែនធនាគារ</p>
 						</div>
 					</div>
