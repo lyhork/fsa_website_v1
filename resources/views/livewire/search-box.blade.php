@@ -9,7 +9,9 @@
 							<ul class="bread-list mef1">
 								<li><a wire:navigate href="{{route('home')}}">{{__('frontend.home')}}</a></li>
 								<li><i class="icofont-simple-right"></i></li>
-								<li class="active">{{__('frontend.law-and-regulation')}}</li>
+								<li><a wire:navigate href="{{route('docsPage')}}">{{__('frontend.law-and-regulation')}}</a></li>
+                                <li><i class="icofont-simple-right"></i></li>
+								<li class="active">{{__('frontend.search')}} : '{{request()->get("q")}} '</li>
 							</ul>
 						</div>
 					</div>
@@ -58,6 +60,7 @@
 		<section class="news-single section">
 			<div class="container">
 				<div class="row">
+                    <div class="col-lg-8 col-12 mb-3 mef1">{{__('frontend.search')}} : ' {{request()->get("q")}}  '</div>
                     <div class="col-lg-8 col-12">
                         <div class="row">
                             @foreach ($results as $result)
@@ -97,7 +100,7 @@
 							<div class="single-widget category">
 								<h3 class="title mef2">{{__('frontend.docs')}}</h3>
 								<ul class="categor-list">
-									<li class="{{ Route::is('docsPage') ? 'active' : ''}} mef2"><a href="#">{{__('frontend.law-and-regulation')}}</a></li>
+									<li class="{{ Route::is('docsPage') ? 'active' : ''}} mef2"><a wire:navigate href="{{ route('docsPage')}}">{{__('frontend.law-and-regulation')}}</a></li>
 									<li class="mef2"><a href="#">{{__('frontend.prakas')}}</a></li>
 									<li class="mef2"><a href="#">{{__('frontend.others')}}</a></li>
 								</ul>

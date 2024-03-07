@@ -1128,6 +1128,7 @@ Version:	1.1
     }
     .slider .single-slider p{
         font-size:13px;
+        width: 250px;
     }
     .slider .single-slider .text {
         margin-top: 20px;

@@ -36,10 +36,12 @@ class SlideshowResource extends Resource
                         Section::make([
                             Forms\Components\TextInput::make('author')
                                 ->required()
-                                ->placeholder("Author"),
-                            Forms\Components\TextInput::make('quote')
+                                ->placeholder("Author")
+                                ->columnSpanFull(),
+                            Forms\Components\RichEditor::make('quote')
                             ->required()
-                            ->placeholder("Quote"),
+                            ->placeholder("Quote")
+                            ->columnSpanFull(),
                             Forms\Components\Toggle::make('status'),
                         ])->columns(2)
                     ]),

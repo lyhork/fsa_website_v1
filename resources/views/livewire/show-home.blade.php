@@ -11,7 +11,7 @@
                                 <div class="col-lg-5">
                                     <div class="text">
                                         <h1 class="mef2"><span>{{$slideshow->author}}</span></h1>
-                                        <p class="mef1">{{$slideshow->quote}}</p>
+                                        <p class="mef1">{!!$slideshow->quote!!}</p>
                                         {{-- <div class="button">
                                             <a href="#" class="btn">Get Appointment</a>
                                             <a href="#" class="btn primary">Learn More</a>

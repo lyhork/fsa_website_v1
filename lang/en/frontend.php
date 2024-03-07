@@ -28,4 +28,5 @@ return [
     'see-more' => 'See more',
     'footer' => 'Non-Bank Financial Services Authority. All rights reserved',
     'doc_download' => "Download",
+    'search' => 'Search results',
 ];
