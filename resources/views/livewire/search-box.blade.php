@@ -5,13 +5,13 @@
 				<div class="bread-inner">
 					<div class="row">
 						<div class="col-12">
-							<h2 class="mef2">{{__('frontend.law-and-regulation')}}</h2>
+							<h2 class="mef2">{{__('frontend.search')}}</h2>
 							<ul class="bread-list mef1">
 								<li><a wire:navigate href="{{route('home')}}">{{__('frontend.home')}}</a></li>
 								<li><i class="icofont-simple-right"></i></li>
 								<li><a wire:navigate href="{{route('docsPage')}}">{{__('frontend.law-and-regulation')}}</a></li>
-                                <li><i class="icofont-simple-right"></i></li>
-								<li class="active">{{__('frontend.search')}} : '{{request()->get("q")}} '</li>
+                                {{-- <li><i class="icofont-simple-right"></i></li>
+								<li class="active">{{__('frontend.search')}} : '{{request()->get("q")}} '</li> --}}
 							</ul>
 						</div>
 					</div>
@@ -60,8 +60,8 @@
 		<section class="news-single section">
 			<div class="container">
 				<div class="row">
-                    <div class="col-lg-8 col-12 mb-3 mef1">{{__('frontend.search')}} : ' {{request()->get("q")}}  '</div>
-                    <div class="col-lg-8 col-12">
+                    <div data-aos="zoom-in-up" data-aos-duration="1000" class="col-lg-8 col-12 mb-3 mef1">{{__('frontend.search')}} : ' {{ Str::limit(request()->get("q"), 15, ' ...') }}  '</div>
+                    <div data-aos="zoom-in-up" data-aos-duration="1000" class="col-lg-8 col-12">
                         <div class="row">
                             @forelse($results as $result)
                                 <div class="col-12">
@@ -91,7 +91,7 @@
                                             <img src="img/blog1.jpg" alt="#">
                                         </div>
                                         <!-- News Title --> --}}
-                                        <h1 class="news-title mef2">សូមអធ្យាស្រ័យ ទំព័រដែលអ្នកស្វែរកពុំមានទេ</h1>
+                                        <h1 class="news-title mef1">{{__('frontend.null')}}</h1>
                                     </div>
                                 </div>
                             @endforelse
@@ -100,7 +100,7 @@
                             {{ $results->withQueryString()->links('pagination::tailwind') }}
                         </div>
                     </div>
-					<div class="col-lg-4 col-12">
+					<div data-aos="fade-left" data-aos-duration="1000" class="col-lg-4 col-12">
 						<div class="main-sidebar">
 							<!-- Single Widget -->
 							<div class="single-widget search">
@@ -113,10 +113,10 @@
 							<!-- Single Widget -->
 							<div class="single-widget category">
 								<h3 class="title mef2">{{__('frontend.docs')}}</h3>
-								<ul class="categor-list">
-									<li class="{{ Route::is('docsPage') ? 'active' : ''}} mef2"><a wire:navigate href="{{ route('docsPage')}}">{{__('frontend.law-and-regulation')}}</a></li>
-									<li class="mef2"><a href="#">{{__('frontend.prakas')}}</a></li>
-									<li class="mef2"><a href="#">{{__('frontend.others')}}</a></li>
+								<ul class="categor-list mef2">
+									<li><a wire:navigate href="{{ route('docsPage')}}">{{__('frontend.law-and-regulation')}}</a></li>
+									<li><a href="#">{{__('frontend.prakas')}}</a></li>
+									<li><a href="#">{{__('frontend.others')}}</a></li>
 								</ul>
 							</div>
 							<!--/ End Single Widget -->
@@ -126,7 +126,7 @@
 								<!-- Single Post -->
 								<div class="single-post">
 									<div class="image">
-										<img src="img/blog-sidebar1.jpg" alt="#">
+										<img src="{{'frontend/img/blog-sidebar1.jpg'}}" alt="#">
 									</div>
 									<div class="content">
 										<h5><a href="#">We have annnocuced our new product.</a></h5>
@@ -153,9 +153,9 @@
 								<!-- End Single Post -->
 								<!-- Single Post -->
 								<div class="single-post">
-									{{-- <div class="image">
+									<div class="image">
 										<img src="img/blog-sidebar3.jpg" alt="#">
-									</div> --}}
+									</div>
 									<div class="content">
 										<h5><a href="#">We provide highly business soliutions.</a></h5>
 										<ul class="comment">

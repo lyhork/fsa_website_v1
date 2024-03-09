@@ -42,6 +42,7 @@
         <link rel="stylesheet" href="{{ asset ('frontend/style.css')}}">
         <link rel="stylesheet" href="{{ asset ('frontend/css/responsive.css')}}">
         <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
         @livewireStyles
     </head>
     <body>
@@ -275,7 +276,7 @@
 		<script src="{{ asset ('frontend/js/bootstrap.min.js')}}"></script>
 		<!-- Main JS -->
 		<script src="{{ asset ('frontend/js/main.js')}}"></script>
-        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script>
             AOS.init();
         </script>

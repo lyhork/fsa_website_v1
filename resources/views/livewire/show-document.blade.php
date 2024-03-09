@@ -58,7 +58,7 @@
 		<section class="news-single section">
 			<div class="container">
 				<div class="row">
-                    <div class="col-lg-8 col-12">
+                    <div data-aos="zoom-in-up" data-aos-duration="1000" class="col-lg-8 col-12">
                         <div class="row">
                             @forelse($docs as $doc)
                                 <div class="col-12">
@@ -88,7 +88,7 @@
                                             <img src="img/blog1.jpg" alt="#">
                                         </div>
                                         <!-- News Title --> --}}
-                                        <h1 class="news-title mef2">សូមអធ្យាស្រ័យ ទំព័រដែលអ្នកស្វែរកពុំមានទេ</h1>
+                                        <h1 class="news-title mef2">{{__('frontend.null')}}</h1>
                                     </div>
                                 </div>
                             @endforelse
@@ -97,7 +97,7 @@
                             {{ $docs->withQueryString()->links('pagination::tailwind') }}
                         </div>
                     </div>
-					<div class="col-lg-4 col-12">
+					<div data-aos="fade-left" data-aos-duration="1000" class="col-lg-4 col-12">
 						<div class="main-sidebar">
 							<!-- Single Widget -->
 							<div class="single-widget search">
@@ -123,13 +123,13 @@
 								<!-- Single Post -->
 								<div class="single-post">
 									<div class="image">
-										<img src="img/blog-sidebar1.jpg" alt="#">
+										<img src="{{ asset('frontend/img/blog-sidebar1.jpg') }}" alt="#">
 									</div>
 									<div class="content">
 										<h5><a href="#">We have annnocuced our new product.</a></h5>
 										<ul class="comment">
 											<li><i class="fa fa-calendar" aria-hidden="true"></i>Jan 11, 2020</li>
-											<li><i class="fa fa-commenting-o" aria-hidden="true"></i>35</li>
+											<li><i class="fa fa-eye" aria-hidden="true"></i>35</li>
 										</ul>
 									</div>
 								</div>
@@ -137,7 +137,7 @@
 								<!-- Single Post -->
 								<div class="single-post">
 									<div class="image">
-										<img src="img/blog-sidebar2.jpg" alt="#">
+										<img src="{{ asset('frontend/img/blog-sidebar2.jpg') }}" alt="#">
 									</div>
 									<div class="content">
 										<h5><a href="#">Top five way for solving teeth problems.</a></h5>
@@ -150,6 +150,9 @@
 								<!-- End Single Post -->
 								<!-- Single Post -->
 								<div class="single-post">
+                                    <div class="image">
+										<img src="{{ asset('frontend/img/blog-sidebar3.jpg') }}" alt="#">
+									</div>
 									<div class="content">
 										<h5><a href="#">We provide highly business soliutions.</a></h5>
 										<ul class="comment">

@@ -31,7 +31,7 @@
 				</div>
 				<div class="row">
                     @foreach ($blogs as $blog)
-                       <div class="col-lg-4 col-md-6 col-12">
+                       <div data-aos="fade-in" data-aos-offset="300" data-aos-easing="ease-in-sine" class="col-lg-4 col-md-6 col-12">
                             <!-- Single Blog -->
                             <div class="single-news">
                                 <a wire:navigate href="{{route('newsDetail', $blog->id)}}">

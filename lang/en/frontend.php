@@ -14,7 +14,7 @@ return [
     */
 
     'home' => 'Home',
-    'title' => 'FSA',
+    'title' => 'Non-Bank Financial Services Authority',
     'about-us' => 'About Us',
     'about-fsa' => 'About-FSA',
     'institutional-structure' => 'Institutional-structure',
@@ -30,4 +30,5 @@ return [
     'doc_download' => "Download",
     'search' => 'Search results',
     'search-here' => 'Search Here...   and hit enter',
+    'null' => 'No Data',
 ];

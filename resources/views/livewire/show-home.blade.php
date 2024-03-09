@@ -165,7 +165,7 @@
 
 
 		<!-- Start Feautes -->
-		<section class="Feautes section">
+		<section data-aos="fade-up" data-aos-duration="1000" data-aos-offset="0" class="Feautes section">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12">
@@ -273,7 +273,8 @@
 		<!-- Start Why choose -->
 		<section class="why-choose section" >
 			<div class="container">
-				<div class="row">
+				<div data-aos="fade-right"
+                data-aos-offset="0" class="row">
 					<div class="col-lg-12">
 						<div class="section-title">
 							<h2>We Offer Different Services To Improve Your Health</h2>
@@ -282,7 +283,8 @@
 						</div>
 					</div>
 				</div>
-				<div class="row">
+				<div data-aos="fade-right"
+                data-aos-offset="0" class="row">
 					<div class="col-lg-6 col-12">
 						<!-- Start Choose Left -->
 						<div class="choose-left">
@@ -354,7 +356,8 @@
 		<!-- Start portfolio -->
 		<section class="portfolio section" >
 			<div class="container">
-				<div class="row">
+				<div data-aos="fade-right"
+                data-aos-offset="0" class="row">
 					<div class="col-lg-12">
 						<div class="section-title">
 							<h2>We Maintain Cleanliness Rules Inside Our Hospital</h2>
@@ -364,7 +367,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="container-fluid">
+			<div data-aos="fade-right" data-aos-offset="0" class="container-fluid">
 				<div class="row">
 					<div class="col-lg-12 col-12">
 						<div class="owl-carousel portfolio-slider">
@@ -482,7 +485,7 @@
 		<!-- Pricing Table -->
 		<section class="pricing-table section">
 			<div class="container">
-				<div class="row">
+				<div data-aos="fade-right" data-aos-offset="0" class="row">
 					<div class="col-lg-12">
 						<div class="section-title">
 							<h2>We Provide You The Best Treatment In Resonable Price</h2>
@@ -491,7 +494,8 @@
 						</div>
 					</div>
 				</div>
-				<div class="row">
+				<div data-aos="fade-right"
+                data-aos-offset="0" class="row">
 					<!-- Single Table -->
 					<div class="col-lg-4 col-md-12 col-12">
 						<div class="single-table">
@@ -521,7 +525,8 @@
 					</div>
 					<!-- End Single Table-->
 					<!-- Single Table -->
-					<div class="col-lg-4 col-md-12 col-12">
+					<div data-aos="fade-right"
+                    data-aos-offset="0" class="col-lg-4 col-md-12 col-12">
 						<div class="single-table">
 							<!-- Table Head -->
 							<div class="table-head">
@@ -549,7 +554,8 @@
 					</div>
 					<!-- End Single Table-->
 					<!-- Single Table -->
-					<div class="col-lg-4 col-md-12 col-12">
+					<div data-aos="fade-right"
+                    data-aos-offset="0" class="col-lg-4 col-md-12 col-12">
 						<div class="single-table">
 							<!-- Table Head -->
 							<div class="table-head">
@@ -585,7 +591,8 @@
 		<!-- Start Blog Area -->
 		<section class="blog section" id="blog">
 			<div class="container">
-				<div class="row">
+				<div data-aos="fade-right"
+                data-aos-offset="0" class="row">
 					<div class="col-lg-12">
 						<div class="section-title">
 							<h2>Keep up with Our Most Recent FSA News.</h2>
@@ -594,7 +601,9 @@
 						</div>
 					</div>
 				</div>
-				<div class="row">
+				<div data-aos="fade-in"
+                data-aos-offset="0"
+                data-aos-easing="ease-in-sine" class="row">
                     @foreach ($latestBlogs as $latestBlog)
                     <div class="col-lg-4 col-md-6 col-12">
 						<!-- Single Blog -->
@@ -633,7 +642,8 @@
 
 		<!-- Start clients -->
 		<div class="clients overlay">
-			<div class="container">
+			<div data-aos="fade-right"
+            data-aos-offset="100" class="container">
                 <div class="row">
 					<div class="col-lg-12">
 						<div class="section-title">
@@ -643,7 +653,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="row">
+				<div data-aos="fade-left" data-aos-easing="ease-in-sine" data-aos-offset="0" data-aos-duration="1000" class="row">
 					<div class="col-lg-12 col-md-12 col-12">
 						<div class="owl-carousel clients-slider">
 							<div class="single-clients">
