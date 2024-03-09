@@ -10,18 +10,22 @@ use Livewire\WithPagination;
 class ShowForm extends Component
 {
     use WithPagination;
+    protected $paginationTheme = 'bootstrap';
 
     public function placeholder()
     {
         return view('skeleton');
     }
+
     public function render()
     {
-        $docs = Document::orderBy('created_at', 'DESC')
+        sleep(1);
+        $docs = Document::query()
+            ->orderBy('created_at', 'DESC')
             ->where('published_at', '<=', Carbon::now())
             ->where('status',1)
             ->where('published_at','!=','NULL')
-            ->Paginate(3);
+            ->Paginate(1);
         return view('livewire.show-form', [
             'docs' => $docs
         ]);

@@ -1,6 +1,6 @@
 <div class="col-lg-8 col-12">
     <div class="row">
-        @foreach ($docs as $doc)
+        @forelse($docs as $doc)
             <div class="col-12">
                 <div class="single-main">
                     {{-- <!-- News Head -->
@@ -20,9 +20,20 @@
                     </div>
                 </div>
             </div>
-        @endforeach
+        @empty
+            <div class="col-12">
+                <div class="single-main">
+                    {{-- <!-- News Head -->
+                    <div class="news-head">
+                        <img src="img/blog1.jpg" alt="#">
+                    </div>
+                    <!-- News Title --> --}}
+                    <h1 class="news-title mef2">សូមអធ្យាស្រ័យ ទំព័រដែលអ្នកស្វែរកពុំមានទេ</h1>
+                </div>
+            </div>
+        @endforelse
     </div>
     <div class="mt-5">
-        {{ $docs->links('vendor.livewire.tailwind') }}
+        {{ $docs->links('pagination::tailwind') }}
     </div>
 </div>

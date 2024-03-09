@@ -58,14 +58,52 @@
 		<section class="news-single section">
 			<div class="container">
 				<div class="row">
-                    <livewire:show-form lazy/>
+                    <div class="col-lg-8 col-12">
+                        <div class="row">
+                            @forelse($docs as $doc)
+                                <div class="col-12">
+                                    <div class="single-main">
+                                        {{-- <!-- News Head -->
+                                        <div class="news-head">
+                                            <img src="img/blog1.jpg" alt="#">
+                                        </div>
+                                        <!-- News Title --> --}}
+                                        <h1 class="news-title mef2"><a wire:navigate href="{{route('docsDetail', $doc->id)}}">{{$doc->shortTitle()}}</a></h1>
+                                        <!-- Meta -->
+                                        <div class="meta">
+                                            <div class="meta-left">
+                                                <span class="date mef1"><i class="fa fa-clock-o"></i>{{\Carbon\Carbon::parse($doc->published_at)->locale(app()->getLocale())->translatedFormat('j F Y, g:i A');}}</span>
+                                            </div>
+                                            <div class="meta-right">
+                                                <span class="views"><i class="fa fa-eye"></i>33K Views</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @empty
+                                <div class="col-12">
+                                    <div class="single-main">
+                                        {{-- <!-- News Head -->
+                                        <div class="news-head">
+                                            <img src="img/blog1.jpg" alt="#">
+                                        </div>
+                                        <!-- News Title --> --}}
+                                        <h1 class="news-title mef2">សូមអធ្យាស្រ័យ ទំព័រដែលអ្នកស្វែរកពុំមានទេ</h1>
+                                    </div>
+                                </div>
+                            @endforelse
+                        </div>
+                        <div class="mt-5">
+                            {{ $docs->withQueryString()->links('pagination::tailwind') }}
+                        </div>
+                    </div>
 					<div class="col-lg-4 col-12">
 						<div class="main-sidebar">
 							<!-- Single Widget -->
 							<div class="single-widget search">
 								<form method="get" action="{{route('search')}}" class="form">
-									<input name="q" value="{{request()->get("q")}}" type="text" placeholder="Search Here...">
-									<a wire:navigate class="button" href="#"><i class="fa fa-search"></i></a>
+									<input name="q" value="{{request()->get("q")}}" type="text" placeholder="{{__('frontend.search-here')}}">
+									{{-- <a wire:navigate class="button" href="#"><i class="fa fa-search"></i></a> --}}
 								</form>
 							</div>
 							<!--/ End Single Widget -->
@@ -112,9 +150,6 @@
 								<!-- End Single Post -->
 								<!-- Single Post -->
 								<div class="single-post">
-									{{-- <div class="image">
-										<img src="img/blog-sidebar3.jpg" alt="#">
-									</div> --}}
 									<div class="content">
 										<h5><a href="#">We provide highly business soliutions.</a></h5>
 										<ul class="comment">

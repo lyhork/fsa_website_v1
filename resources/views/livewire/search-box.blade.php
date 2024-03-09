@@ -63,7 +63,7 @@
                     <div class="col-lg-8 col-12 mb-3 mef1">{{__('frontend.search')}} : ' {{request()->get("q")}}  '</div>
                     <div class="col-lg-8 col-12">
                         <div class="row">
-                            @foreach ($results as $result)
+                            @forelse($results as $result)
                                 <div class="col-12">
                                     <div class="single-main">
                                         {{-- <!-- News Head -->
@@ -83,7 +83,21 @@
                                         </div>
                                     </div>
                                 </div>
-                            @endforeach
+                            @empty
+                                <div class="col-12">
+                                    <div class="single-main">
+                                        {{-- <!-- News Head -->
+                                        <div class="news-head">
+                                            <img src="img/blog1.jpg" alt="#">
+                                        </div>
+                                        <!-- News Title --> --}}
+                                        <h1 class="news-title mef2">សូមអធ្យាស្រ័យ ទំព័រដែលអ្នកស្វែរកពុំមានទេ</h1>
+                                    </div>
+                                </div>
+                            @endforelse
+                        </div>
+                        <div class="mt-5">
+                            {{ $results->withQueryString()->links('pagination::tailwind') }}
                         </div>
                     </div>
 					<div class="col-lg-4 col-12">
@@ -91,8 +105,8 @@
 							<!-- Single Widget -->
 							<div class="single-widget search">
 								<form method="get" action="{{route('search')}}" class="form">
-									<input name="q" value="{{request()->get("q")}}" type="text" placeholder="Search Here...">
-									<a wire:navigate class="button" href="#"><i class="fa fa-search"></i></a>
+									<input name="q" value="{{request()->get("q")}}" type="text" placeholder="{{__('frontend.search-here')}}">
+									{{-- <a wire:navigate class="button" href="#"><i class="fa fa-search"></i></a> --}}
 								</form>
 							</div>
 							<!--/ End Single Widget -->
