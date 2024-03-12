@@ -2,27 +2,27 @@
 
 namespace App\Livewire;
 
-use App\Models\Document;
+use App\Models\Blog;
 use Carbon\Carbon;
 use Livewire\Component;
 use Illuminate\Http\Request;
 use Livewire\WithPagination;
 
-class SearchBox extends Component
+class SearchBlog extends Component
 {
     use WithPagination;
-    protected $paginationTheme = 'bootstrap';
+    protected $paginationTheme = 'tailwind';
 
     public function render(Request $request)
     {
         $q = $request->get('q');
-        $results = Document::query()
+        $results = Blog::query()
             ->orderBy('created_at', 'DESC')
             ->where('published_at', '<=', Carbon::now())
             ->where('status',1)
             ->where('title','LIKE',"%$q%")
-            ->Paginate(1);
-        return view('livewire.search-doc',[
+            ->Paginate(2);
+        return view('livewire.search-blog' ,[
             'results' => $results
         ]);
     }

@@ -10,8 +10,6 @@
 								<li><a wire:navigate href="{{route('home')}}">{{__('frontend.home')}}</a></li>
 								<li><i class="icofont-simple-right"></i></li>
 								<li><a wire:navigate href="{{route('docsPage')}}">{{__('frontend.law-and-regulation')}}</a></li>
-                                {{-- <li><i class="icofont-simple-right"></i></li>
-								<li class="active">{{__('frontend.search')}} : '{{request()->get("q")}} '</li> --}}
 							</ul>
 						</div>
 					</div>
@@ -104,7 +102,7 @@
 						<div class="main-sidebar">
 							<!-- Single Widget -->
 							<div class="single-widget search">
-								<form method="get" action="{{route('search')}}" class="form">
+								<form method="get" action="{{route('searchDoc')}}" class="form">
 									<input name="q" value="{{request()->get("q")}}" type="text" placeholder="{{__('frontend.search-here')}}">
 									{{-- <a wire:navigate class="button" href="#"><i class="fa fa-search"></i></a> --}}
 								</form>

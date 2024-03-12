@@ -140,7 +140,6 @@ class DocumentResource extends Resource
     public static function getPages(): array
     {
         return [
-            'view' => Pages\ViewDocument::route('/{record}'),
             'index' => Pages\ListDocuments::route('/'),
             'create' => Pages\CreateDocument::route('/create'),
             'edit' => Pages\EditDocument::route('/{record}/edit'),

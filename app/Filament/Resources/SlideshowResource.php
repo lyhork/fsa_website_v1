@@ -115,7 +115,6 @@ class SlideshowResource extends Resource
     public static function getPages(): array
     {
         return [
-            'view' => Pages\ViewSlideshow::route('/{record}'),
             'index' => Pages\ListSlideshows::route('/'),
             'create' => Pages\CreateSlideshow::route('/create'),
             'edit' => Pages\EditSlideshow::route('/{record}/edit'),

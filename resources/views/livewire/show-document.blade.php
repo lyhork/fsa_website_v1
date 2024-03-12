@@ -101,7 +101,7 @@
 						<div class="main-sidebar">
 							<!-- Single Widget -->
 							<div class="single-widget search">
-								<form method="get" action="{{route('search')}}" class="form">
+								<form method="get" action="{{route('searchDoc')}}" class="form">
 									<input name="q" value="{{request()->get("q")}}" type="text" placeholder="{{__('frontend.search-here')}}">
 									{{-- <a wire:navigate class="button" href="#"><i class="fa fa-search"></i></a> --}}
 								</form>

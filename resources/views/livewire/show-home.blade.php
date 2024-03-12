@@ -165,7 +165,7 @@
 
 
 		<!-- Start Feautes -->
-		<section data-aos="fade-up" data-aos-duration="1000" data-aos-offset="0" class="Feautes section">
+		<section data-aos="fade-up" data-aos-duration="500" data-aos-offset="0" class="Feautes section">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12">
