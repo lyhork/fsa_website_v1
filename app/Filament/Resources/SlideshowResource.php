@@ -55,7 +55,7 @@ class SlideshowResource extends Resource
                                 ->imageResizeTargetWidth('1920')
                                 ->imageResizeTargetHeight('1080')
                                 ->acceptedFileTypes(['image/*'])
-                                ->directory('slideshow')
+                                ->directory('slideshows')
                                 ->required()
                                 ->image()
                                 ->openable()
@@ -86,16 +86,23 @@ class SlideshowResource extends Resource
             ->actions([
                 Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make()
+                    ->after(function (Slideshow $record) {
+                        // Delete single image
+                        if ($record->slideshow_image) {
+                            Storage::disk('public')->delete($record->slideshow_image);
+                        }
+                    }),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make()
-                    ->after(function (Slideshow $record) {
-                        // Delete single image
-                        if ($record->slideshow) {
-                            Storage::disk('public')->delete($record->slideshow);
-                        }
-                    }),
+                    // Tables\Actions\DeleteBulkAction::make()
+                    // ->after(function (Slideshow $record) {
+                    //     // Delete single image
+                    //     if ($record->slideshow) {
+                    //         Storage::disk('public')->delete($record->slideshow);
+                    //     }
+                    // }),
                 ]),
             ]);
     }

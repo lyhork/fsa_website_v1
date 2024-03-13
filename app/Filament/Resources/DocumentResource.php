@@ -103,25 +103,38 @@ class DocumentResource extends Resource
             ->actions([
                 Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make()
+                    ->after(function (Document $record) {
+                        // Delete single image
+                        if ($record->doc_file) {
+                            Storage::disk('public')->delete($record->doc_file);
+                        }
 
+                        // Delete multiple images (if applicable)
+                        if ($record->doc_images) {
+                            foreach ($record->doc_images as $doc_image) {
+                                Storage::disk('public')->delete($doc_image);
+                            }
+                        }
+                    }),
             ])
             ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make()
-                        ->after(function (Document $record) {
-                            // Delete single image
-                            if ($record->doc_file) {
-                                Storage::disk('public/doc')->delete($record->doc_file);
-                            }
+                // Tables\Actions\BulkActionGroup::make([
+                //     Tables\Actions\DeleteBulkAction::make()
+                //         ->after(function (Document $record) {
+                //             // Delete single image
+                //             if ($record->doc_file) {
+                //                 Storage::disk('public/doc')->delete($record->doc_file);
+                //             }
 
-                            // Delete multiple images (if applicable)
-                            if ($record->doc_images) {
-                                foreach ($record->doc_images as $doc_image) {
-                                    Storage::disk('public/doc')->delete($doc_image);
-                                }
-                            }
-                        }),
-                ]),
+                //             // Delete multiple images (if applicable)
+                //             if ($record->doc_images) {
+                //                 foreach ($record->doc_images as $doc_image) {
+                //                     Storage::disk('public/doc')->delete($doc_image);
+                //                 }
+                //             }
+                //         }),
+                // ]),
             ]);
     }
 

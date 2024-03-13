@@ -22,8 +22,8 @@ class EditSlideshow extends EditRecord
             Actions\DeleteAction::make()
                 ->after(function (Slideshow $record) {
                     // Delete single image
-                    if ($record->slideshow) {
-                        Storage::disk('public')->delete($record->slideshow);
+                    if ($record->slideshow_image) {
+                        Storage::disk('public')->delete($record->slideshow_image);
                     }
                 }),
         ];

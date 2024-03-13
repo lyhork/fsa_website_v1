@@ -85,6 +85,7 @@ class BlogResource extends Resource
                         ])
                     ])
             ]);
+
     }
 
     public static function table(Table $table): Table
@@ -120,24 +121,38 @@ class BlogResource extends Resource
             ->actions([
                 Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make()
+                    ->after(function (Blog $record) {
+                        // Delete single image
+                        if ($record->image) {
+                            Storage::disk('public')->delete($record->image);
+                        }
+
+                        // Delete multiple images (if applicable)
+                        if ($record->images) {
+                            foreach ($record->images as $image) {
+                                Storage::disk('public')->delete($image);
+                            }
+                        }
+                    }),
             ])
             ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make()
-                        ->after(function (Blog $record) {
-                            // Delete single image
-                            if ($record->image) {
-                                Storage::disk('public/posts')->delete($record->image);
-                            }
+                // Tables\Actions\BulkActionGroup::make([
+                //     Tables\Actions\DeleteBulkAction::make()
+                //         ->after(function (Blog $record) {
+                //             // Delete single image
+                //             if ($record->image) {
+                //                 Storage::disk('public/posts')->delete($record->image);
+                //             }
 
-                            // Delete multiple images (if applicable)
-                            if ($record->images) {
-                                foreach ($record->images as $image) {
-                                    Storage::disk('public/posts')->delete($image);
-                                }
-                            }
-                        }),
-                ]),
+                //             // Delete multiple images (if applicable)
+                //             if ($record->images) {
+                //                 foreach ($record->images as $image) {
+                //                     Storage::disk('public/posts')->delete($image);
+                //                 }
+                //             }
+                //         }),
+                // ]),
             ]);
     }
 
