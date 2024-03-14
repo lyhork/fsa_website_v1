@@ -30,6 +30,11 @@ class BlogResource extends Resource
 
     protected static ?string $model = Blog::class;
 
+    public static function getGloballySearchableAttributes(): array
+    {
+        return ['title', 'content'];
+    }
+
     protected static ?string $navigationIcon = 'heroicon-o-arrow-up-on-square-stack';
 
     public static function getNavigationLabel(): string

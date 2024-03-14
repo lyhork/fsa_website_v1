@@ -67,7 +67,10 @@ class SlideshowResource extends Resource
                     ])
             ]);
     }
-
+    public static function getGloballySearchableAttributes(): array
+    {
+        return ['author', 'quote'];
+    }
     public static function table(Table $table): Table
     {
         return $table

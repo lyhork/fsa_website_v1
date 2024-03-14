@@ -31,6 +31,11 @@ class DocumentResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
 
+    public static function getGloballySearchableAttributes(): array
+    {
+        return ['title'];
+    }
+
     public static function form(Form $form): Form
     {
         return $form
