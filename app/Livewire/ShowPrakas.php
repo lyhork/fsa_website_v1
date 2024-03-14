@@ -2,29 +2,25 @@
 
 namespace App\Livewire;
 
-use App\Models\Blog;
-use App\Models\PostView;
+use App\Models\Prakas;
 use Carbon\Carbon;
 use Livewire\Component;
 use Livewire\WithPagination;
-use Illuminate\Http\Request;
 
-class ShowBlog extends Component
+class ShowPrakas extends Component
 {
     use WithPagination;
-
     protected $paginationTheme = 'tailwind';
 
     public function render()
     {
-        $blogs = Blog::orderBy('created_at', 'DESC')
+        $prakas = Prakas::orderBy('created_at', 'DESC')
             ->where('published_at', '<=', Carbon::now())
             ->where('status',1)
             ->where('published_at','!=','NULL')
-            ->Paginate(4);
-        return view('livewire.show-blog', [
-            'blogs' => $blogs
+            ->Paginate(1);
+        return view('livewire.show-prakas', [
+            'prakas' => $prakas
         ]);
     }
-
 }

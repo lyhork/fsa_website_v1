@@ -26,10 +26,11 @@ class BlogResource extends Resource
 {
     use Translatable;
 
+    protected static ?string $navigationGroup = 'Posts';
+
     protected static ?string $model = Blog::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-    // protected static ?string $navigationLabel = 'Blog';
+    protected static ?string $navigationIcon = 'heroicon-o-arrow-up-on-square-stack';
 
     public static function getNavigationLabel(): string
     {

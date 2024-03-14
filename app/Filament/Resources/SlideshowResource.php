@@ -23,9 +23,11 @@ class SlideshowResource extends Resource
 {
     use Translatable;
 
+    protected static ?string $navigationGroup = 'Slideshows';
+
     protected static ?string $model = Slideshow::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-computer-desktop';
 
     public static function form(Form $form): Form
     {

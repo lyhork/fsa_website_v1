@@ -68,10 +68,14 @@
                                 @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                                 <li><a wire:navigate hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
                                     @if($localeCode =='km')
-                                    <img src="{{asset('kh.png')}}" style="width: 25px">
+                                    <div class="is_locale">
+                                        <img src="{{asset('km.svg')}}" style="width: 25px;display: inline-block;">
+                                    </div>
                                     @endif
                                     @if($localeCode =='en')
-                                    <img src="{{asset('uk.png')}}" style="width: 25px">
+                                    <div class="is_locale">
+                                        <img src="{{asset('en.svg')}}" style="width: 25px;display: inline-block;">
+                                    </div>
                                     @endif
                                     <!-- {{ $properties['native'] }} -->
                                     </a>
@@ -123,7 +127,7 @@
 											<li class="{{ Route::is('docsPage') ? 'active' : ''}} mef2"><a href="#">{{__('frontend.docs')}} <i class="icofont-rounded-down"></i></a>
                                                 <ul class="dropdown">
 													<li class="{{ Route::is('docsPage') ? 'active' : ''}} mef2"><a wire:navigate href="{{ route('docsPage')}}">{{__('frontend.law-and-regulation')}}</a></li>
-                                                    <li class="mef2"><a href="#">{{__('frontend.prakas')}}</a></li>
+                                                    <li class="{{ Route::is('prakasPage') ? 'active' : ''}} mef2"><a wire:navigate href="{{ route('prakasPage')}}">{{__('frontend.prakas')}}</a></li>
 													<li class="mef2"><a href="#">{{__('frontend.others')}}</a></li>
 												</ul>
                                             </li>

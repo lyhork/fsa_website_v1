@@ -7,21 +7,20 @@ use Illuminate\Database\Eloquent\Model;
 use Spatie\Translatable\HasTranslations;
 use Illuminate\Support\Str;
 use File;
-use Illuminate\Database\Eloquent\Casts\Attribute;
 
-class Document extends Model
+class Prakas extends Model
 {
     use HasTranslations;
 
     use HasFactory;
 
-    protected $fillable = ['title', 'author', 'doc_images', 'doc_file', 'status', 'published_at'];
+    protected $fillable = ['title', 'author', 'prakas_images', 'prakas_file', 'status', 'published_at'];
 
     public array $translatable = ['title'];
 
     protected $casts = [
         'title' => 'json',
-        'doc_images' => 'array'
+        'prakas_images' => 'array'
     ];
 
     public function shortTitle() {
@@ -34,7 +33,7 @@ class Document extends Model
 
     public function getFileSize()
     {
-        $filepath = public_path("storage/{$this->doc_file}");
+        $filepath = public_path("storage/{$this->prakas_file}");
         $file = File::size($filepath);
         $fileSizeInMB = $file/1000000;
         $fileSize = round($fileSizeInMB, 2);
