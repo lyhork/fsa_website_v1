@@ -124,11 +124,11 @@
 													<li class="mef2"><a href="#">{{__('frontend.manager-profile')}}</a></li>
 												</ul>
                                             </li>
-											<li class="{{ Route::is('docsPage') ? 'active' : ''}} mef2"><a href="#">{{__('frontend.docs')}} <i class="icofont-rounded-down"></i></a>
+											<li class="{{ Route::is('docsPage') || Route::is('searchDoc') || Route::is('docsDetail') || Route::is('searchPrakas') || Route::is('prakasDetail') || Route::is('prakasPage') || Route::is('otherPage') || Route::is('searchOther') || Route::is('otherDetail') ? 'active' : ''}} mef2"><a href="#">{{__('frontend.docs')}} <i class="icofont-rounded-down"></i></a>
                                                 <ul class="dropdown">
-													<li class="{{ Route::is('docsPage') ? 'active' : ''}} mef2"><a wire:navigate href="{{ route('docsPage')}}">{{__('frontend.law-and-regulation')}}</a></li>
-                                                    <li class="{{ Route::is('prakasPage') ? 'active' : ''}} mef2"><a wire:navigate href="{{ route('prakasPage')}}">{{__('frontend.prakas')}}</a></li>
-													<li class="mef2"><a href="#">{{__('frontend.others')}}</a></li>
+													<li class="{{ Route::is('docsPage') || Route::is('searchDoc') || Route::is('docsDetail') ? 'active' : ''}} mef2"><a wire:navigate href="{{ route('docsPage')}}">{{__('frontend.law-and-regulation')}}</a></li>
+                                                    <li class="{{ Route::is('prakasPage') || Route::is('searchPrakas') || Route::is('prakasDetail') ? 'active' : ''}} mef2"><a wire:navigate href="{{ route('prakasPage')}}">{{__('frontend.prakas')}}</a></li>
+													<li class="{{ Route::is('otherPage') || Route::is('otherPage') || Route::is('searchOther') || Route::is('otherDetail') ? 'active' : ''}} mef2"><a wire:navigate href="{{ route('otherPage')}}">{{__('frontend.others')}}</a></li>
 												</ul>
                                             </li>
 											<li class="{{ Route::is('newsPage') ? 'active' : ''}} mef2"><a wire:navigate href="{{ route('newsPage')}}">{{__('frontend.news')}}</a>

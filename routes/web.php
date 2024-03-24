@@ -2,14 +2,17 @@
 
 use App\Livewire\BlogDetail;
 use App\Livewire\DocDetail;
+use App\Livewire\OtherDetail;
 use App\Livewire\PrakasDetail;
 use App\Livewire\SearchBlog;
 use App\Livewire\SearchBox;
+use App\Livewire\SearchOther;
 use App\Livewire\SearchPrakas;
 use App\Livewire\ShowBlog;
 use App\Livewire\ShowDocument;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\ShowHome;
+use App\Livewire\ShowOther;
 use App\Livewire\ShowPrakas;
 
 /*
@@ -43,4 +46,6 @@ Route::get('/prakas',ShowPrakas::class)->name('prakasPage');
 Route::get('/prakas/search',SearchPrakas::class)->name('searchPrakas');
 Route::get('/prakas/{id}',PrakasDetail::class)->name('prakasDetail');
 
-
+Route::get('/others',ShowOther::class)->name('otherPage');
+Route::get('/others/search',SearchOther::class)->name('searchOther');
+Route::get('/others/{id}',OtherDetail::class)->name('otherDetail');

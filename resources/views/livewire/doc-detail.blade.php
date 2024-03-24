@@ -27,7 +27,7 @@
 					<div class="col-12">
 						<div class="inner-content">
 							<div class="body-text">
-								<h3>{{$docDetail->title}}</h3>
+								<h3 class="mef2">{{$docDetail->title}}</h3>
 								<div class="share">
                                     <span class="mef1"><i class="fa fa-clock-o"></i>  {{\Carbon\Carbon::parse($docDetail->published_at)->locale(app()->getLocale())->translatedFormat('j F Y, g:i A');}}</span>
 								</div>

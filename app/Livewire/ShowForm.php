@@ -10,7 +10,7 @@ use Livewire\WithPagination;
 class ShowForm extends Component
 {
     use WithPagination;
-    protected $paginationTheme = 'bootstrap';
+    protected $paginationTheme = 'tailwind';
 
     public function placeholder()
     {

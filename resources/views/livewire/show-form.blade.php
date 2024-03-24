@@ -34,6 +34,6 @@
         @endforelse
     </div>
     <div class="mt-5">
-        {{ $docs->links('pagination::tailwind') }}
+        {{ $docs->withQueryString()->links() }}
     </div>
 </div>

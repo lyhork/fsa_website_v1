@@ -113,8 +113,8 @@
 								<h3 class="title mef2">{{__('frontend.docs')}}</h3>
 								<ul class="categor-list mef2">
 									<li><a wire:navigate href="{{ route('docsPage')}}">{{__('frontend.law-and-regulation')}}</a></li>
-									<li><a wire:navigate href="{{ route('prakasPage')}}">{{__('frontend.prakas')}}</a></li>
-									<li><a href="#">{{__('frontend.others')}}</a></li>
+									<li class="{{ Route::is('prakasPage') || Route::is('searchPrakas') || Route::is('prakasDetail') ? 'active' : ''}}"><a wire:navigate href="{{ route('prakasPage')}}">{{__('frontend.prakas')}}</a></li>
+									<li><a wire:navigate href="{{ route('otherPage')}}">{{__('frontend.others')}}</a></li>
 								</ul>
 							</div>
 							<!--/ End Single Widget -->

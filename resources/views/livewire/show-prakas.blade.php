@@ -58,7 +58,7 @@
 		<section class="news-single section">
 			<div class="container">
 				<div class="row">
-                    <div data-aos="zoom-in-up" data-aos-duration="1000" class="col-lg-8 col-12">
+                    <div data-aos="zoom-in-up" data-aos-duration="1000" class="col-lg-8 col-12" lazy>
                         <div class="row">
                             @forelse($prakas as $praka)
                                 <div class="col-12">
@@ -94,7 +94,7 @@
                             @endforelse
                         </div>
                         <div class="mt-5">
-                            {{ $prakas->withQueryString()->links('pagination::tailwind') }}
+                            {{ $prakas->withQueryString()->links() }}
                         </div>
                     </div>
 					<div data-aos="fade-left" data-aos-duration="1000" class="col-lg-4 col-12">
@@ -110,10 +110,10 @@
 							<!-- Single Widget -->
 							<div class="single-widget category">
 								<h3 class="title mef2">{{__('frontend.docs')}}</h3>
-								<ul class="categor-list">
-									<li class="{{ Route::is('docsPage') ? 'active' : ''}} mef2"><a href="#">{{__('frontend.law-and-regulation')}}</a></li>
-									<li class="{{ Route::is('prakasPage') ? 'active' : ''}} mef2"><a href="#">{{__('frontend.prakas')}}</a></li>
-									<li class="mef2"><a href="#">{{__('frontend.others')}}</a></li>
+								<ul class="categor-list mef2">
+									<li class="{{ Route::is('docsPage') ? 'active' : ''}}"><a wire:navigate href="{{ route('docsPage')}}">{{__('frontend.law-and-regulation')}}</a></li>
+									<li class="{{ Route::is('prakasPage') ? 'active' : ''}}"><a wire:navigate href="{{ route('prakasPage')}}">{{__('frontend.prakas')}}</a></li>
+									<li><a wire:navigate href="{{ route('otherPage')}}">{{__('frontend.others')}}</a></li>
 								</ul>
 							</div>
 							<!--/ End Single Widget -->

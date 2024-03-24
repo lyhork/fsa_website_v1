@@ -40,8 +40,8 @@
 								</ul>
 							</div>
 							<div class="body-text">
-								<h3>{{$blogDetail->title}}</h3>
-								<p>{!!$blogDetail->content!!}</p>
+								<h3 class="mef2">{{$blogDetail->title}}</h3>
+								<p class="mef1">{!!$blogDetail->content!!}</p>
 								<div class="share">
 									<h4>Share Now -</h4>
 									<ul>

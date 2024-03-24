@@ -23,9 +23,6 @@ class ShowHome extends Component
         $slideshows = Slideshow::orderBy('created_at', 'DESC')
             ->where('status',1)
             ->get();
-            // $date = Carbon::parse('2024-03-16 15:45')->locale(app()->getLocale());
-            // dd($date->translatedFormat('g:i A Sj F Y'));
-            // dd($slideshows);
         return view('livewire.show-home', [
             'slideshows' => $slideshows,
             'latestBlogs' => $latestBlogs,

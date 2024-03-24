@@ -12,8 +12,14 @@ class ShowPrakas extends Component
     use WithPagination;
     protected $paginationTheme = 'tailwind';
 
+    public function placeholder()
+    {
+        return view('skeleton');
+    }
+
     public function render()
     {
+        sleep(1);
         $prakas = Prakas::orderBy('created_at', 'DESC')
             ->where('published_at', '<=', Carbon::now())
             ->where('status',1)

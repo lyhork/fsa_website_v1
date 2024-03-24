@@ -58,45 +58,7 @@
 		<section class="news-single section">
 			<div class="container">
 				<div class="row">
-                    <div data-aos="zoom-in-up" data-aos-duration="1000" class="col-lg-8 col-12">
-                        <div class="row">
-                            @forelse($docs as $doc)
-                                <div class="col-12">
-                                    <div class="single-main">
-                                        {{-- <!-- News Head -->
-                                        <div class="news-head">
-                                            <img src="img/blog1.jpg" alt="#">
-                                        </div>
-                                        <!-- News Title --> --}}
-                                        <h1 class="news-title mef2"><a wire:navigate href="{{route('docsDetail', $doc->id)}}">{{$doc->shortTitle()}}</a></h1>
-                                        <!-- Meta -->
-                                        <div class="meta">
-                                            <div class="meta-left">
-                                                <span class="date mef1"><i class="fa fa-clock-o"></i>{{\Carbon\Carbon::parse($doc->published_at)->locale(app()->getLocale())->translatedFormat('j F Y, g:i A');}}</span>
-                                            </div>
-                                            <div class="meta-right">
-                                                <span class="views"><i class="fa fa-eye"></i>33K Views</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            @empty
-                                <div class="col-12">
-                                    <div class="single-main">
-                                        {{-- <!-- News Head -->
-                                        <div class="news-head">
-                                            <img src="img/blog1.jpg" alt="#">
-                                        </div>
-                                        <!-- News Title --> --}}
-                                        <h1 class="news-title mef2">{{__('frontend.null')}}</h1>
-                                    </div>
-                                </div>
-                            @endforelse
-                        </div>
-                        <div class="mt-5">
-                            {{ $docs->withQueryString()->links('pagination::tailwind') }}
-                        </div>
-                    </div>
+                    <livewire:show-form lazy/>
 					<div data-aos="fade-left" data-aos-duration="1000" class="col-lg-4 col-12">
 						<div class="main-sidebar">
 							<!-- Single Widget -->
@@ -110,10 +72,10 @@
 							<!-- Single Widget -->
 							<div class="single-widget category">
 								<h3 class="title mef2">{{__('frontend.docs')}}</h3>
-								<ul class="categor-list">
-									<li class="{{ Route::is('docsPage') ? 'active' : ''}} mef2"><a href="#">{{__('frontend.law-and-regulation')}}</a></li>
-									<li class="mef2"><a href="#">{{__('frontend.prakas')}}</a></li>
-									<li class="mef2"><a href="#">{{__('frontend.others')}}</a></li>
+								<ul class="categor-list mef2">
+									<li class="{{ Route::is('docsPage') ? 'active' : ''}}"><a wire:navigate href="{{ route('docsPage')}}">{{__('frontend.law-and-regulation')}}</a></li>
+									<li><a wire:navigate href="{{ route('prakasPage')}}">{{__('frontend.prakas')}}</a></li>
+									<li><a wire:navigate href="{{ route('otherPage')}}">{{__('frontend.others')}}</a></li>
 								</ul>
 							</div>
 							<!--/ End Single Widget -->

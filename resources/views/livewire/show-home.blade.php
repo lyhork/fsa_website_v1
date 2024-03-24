@@ -367,9 +367,9 @@
 					</div>
 				</div>
 			</div>
-			<div data-aos="fade-right" data-aos-offset="0" class="container-fluid">
+			<div class="container-fluid">
 				<div class="row">
-					<div class="col-lg-12 col-12">
+					<div data-aos="fade-right" data-aos-offset="0" class="col-lg-12 col-12">
 						<div class="owl-carousel portfolio-slider">
 							<div class="single-pf">
 								<img src="{{asset('frontend/img/pf1.jpg') }}" alt="#">
@@ -416,67 +416,114 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="section-title">
-							<h2>We Offer Different Services To Improve Your Health</h2>
+							<h2>Management Structure</h2>
 							{{-- <img src="{{asset('frontend/img/section-img.png') }}" alt="#"> --}}
 							<p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
 						</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-lg-4 col-md-6 col-12">
-						<!-- Start Single Service -->
-						<div class="single-service">
-							<i class="icofont icofont-prescription"></i>
-							<h4><a href="service-details.html">General Treatment</a></h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet. </p>
-						</div>
-						<!-- End Single Service -->
-					</div>
-					<div class="col-lg-4 col-md-6 col-12">
-						<!-- Start Single Service -->
-						<div class="single-service">
-							<i class="icofont icofont-tooth"></i>
-							<h4><a href="service-details.html">Teeth Whitening</a></h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet. </p>
-						</div>
-						<!-- End Single Service -->
-					</div>
-					<div class="col-lg-4 col-md-6 col-12">
-						<!-- Start Single Service -->
-						<div class="single-service">
-							<i class="icofont icofont-heart-alt"></i>
-							<h4><a href="service-details.html">Heart Surgery</a></h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet. </p>
-						</div>
-						<!-- End Single Service -->
-					</div>
-					<div class="col-lg-4 col-md-6 col-12">
-						<!-- Start Single Service -->
-						<div class="single-service">
-							<i class="icofont icofont-listening"></i>
-							<h4><a href="service-details.html">Ear Treatment</a></h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet. </p>
-						</div>
-						<!-- End Single Service -->
-					</div>
-					<div class="col-lg-4 col-md-6 col-12">
-						<!-- Start Single Service -->
-						<div class="single-service">
-							<i class="icofont icofont-eye-alt"></i>
-							<h4><a href="service-details.html">Vision Problems</a></h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet. </p>
-						</div>
-						<!-- End Single Service -->
-					</div>
-					<div class="col-lg-4 col-md-6 col-12">
-						<!-- Start Single Service -->
-						<div class="single-service">
-							<i class="icofont icofont-blood"></i>
-							<h4><a href="service-details.html">Blood Transfusion</a></h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet. </p>
-						</div>
-						<!-- End Single Service -->
-					</div>
+                    <div class="container">
+                        <div class="container1">
+                            <div class="level1-img">
+                                <img src="{{asset('frontend/img/mey_vann.jpg') }}" alt="#">
+                                <div class="level-1 rectangle">
+                                    <h1>H.E Mey Vann</h1>
+                                    <p>DG</p>
+                                    <h1>Position</h1>
+                                </div>
+
+                            </div>
+                            <ol class="level-2-wrapper">
+                                <li>
+                                    <div class="level2-img">
+                                        <img src="{{asset('frontend/img/kuy_savuth.jpg') }}" alt="#">
+                                        <div class="level-2 rectangle">
+                                            <h1>H.E Kuy Savuth</h1>
+                                            <p>DG</p>
+                                            <h1>Position</h1>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <h2 class="level-2 rectangle">Mr. Ngor Dalen</h2>
+                                </li>
+                                <li>
+                                    <h2 class="level-2 rectangle">Dr. Som Phay</h2>
+                                </li>
+                            </ol>
+                            <ol class="level-3-wrapper">
+                                <li>
+                                    <h2 class="level-3 rectangle">GAD</h2>
+                                    <ol class="level-4-wrapper">
+                                        <li>
+                                          <h4 class="level-4 rectangle">Finance</h4>
+                                        </li>
+                                        <li>
+                                          <h4 class="level-4 rectangle">Admin</h4>
+                                        </li>
+                                        <li>
+                                          <h4 class="level-4 rectangle">HR</h4>
+                                        </li>
+                                        <li>
+                                          <h4 class="level-4 rectangle">IT</h4>
+                                        </li>
+                                      </ol>
+                                </li>
+                                <li>
+                                    <h2 class="level-3 rectangle">LAD</h2>
+                                    <ol class="level-4-wrapper">
+                                        <li>
+                                          <h4 class="level-4 rectangle">Person A</h4>
+                                        </li>
+                                        <li>
+                                          <h4 class="level-4 rectangle">Person B</h4>
+                                        </li>
+                                        <li>
+                                          <h4 class="level-4 rectangle">Person C</h4>
+                                        </li>
+                                        <li>
+                                          <h4 class="level-4 rectangle">Person D</h4>
+                                        </li>
+                                      </ol>
+                                </li>
+                                <li>
+                                    <h2 class="level-3 rectangle">PD</h2>
+                                    <ol class="level-4-wrapper">
+                                        <li>
+                                          <h4 class="level-4 rectangle">Person A</h4>
+                                        </li>
+                                        <li>
+                                          <h4 class="level-4 rectangle">Person B</h4>
+                                        </li>
+                                        <li>
+                                          <h4 class="level-4 rectangle">Person C</h4>
+                                        </li>
+                                        <li>
+                                          <h4 class="level-4 rectangle">Person D</h4>
+                                        </li>
+                                      </ol>
+                                </li>
+                                <li>
+                                    <h2 class="level-3 rectangle">Pintech</h2>
+                                    <ol class="level-4-wrapper">
+                                        <li>
+                                          <h4 class="level-4 rectangle">Person A</h4>
+                                        </li>
+                                        <li>
+                                          <h4 class="level-4 rectangle">Person B</h4>
+                                        </li>
+                                        <li>
+                                          <h4 class="level-4 rectangle">Person C</h4>
+                                        </li>
+                                        <li>
+                                          <h4 class="level-4 rectangle">Person D</h4>
+                                        </li>
+                                      </ol>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
 				</div>
 			</div>
 		</section>
@@ -488,102 +535,14 @@
 				<div data-aos="fade-right" data-aos-offset="0" class="row">
 					<div class="col-lg-12">
 						<div class="section-title">
-							<h2>We Provide You The Best Treatment In Resonable Price</h2>
+							<h2>Non-Bank Financial Services Authority Management Structure</h2>
 							{{-- <img src="{{asset('frontend/img/section-img.png') }}" alt="#"> --}}
 							<p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
 						</div>
 					</div>
 				</div>
-				<div data-aos="fade-right"
-                data-aos-offset="0" class="row">
-					<!-- Single Table -->
-					<div class="col-lg-4 col-md-12 col-12">
-						<div class="single-table">
-							<!-- Table Head -->
-							<div class="table-head">
-								<div class="icon">
-									<i class="icofont icofont-ui-cut"></i>
-								</div>
-								<h4 class="title">Plastic Suggery</h4>
-								<div class="price">
-									<p class="amount">$199<span>/ Per Visit</span></p>
-								</div>
-							</div>
-							<!-- Table List -->
-							<ul class="table-list">
-								<li><i class="icofont icofont-ui-check"></i>Lorem ipsum dolor sit</li>
-								<li><i class="icofont icofont-ui-check"></i>Cubitur sollicitudin fentum</li>
-								<li class="cross"><i class="icofont icofont-ui-close"></i>Nullam interdum enim</li>
-								<li class="cross"><i class="icofont icofont-ui-close"></i>Donec ultricies metus</li>
-								<li class="cross"><i class="icofont icofont-ui-close"></i>Pellentesque eget nibh</li>
-							</ul>
-							<div class="table-bottom">
-								<a class="btn" href="#">Book Now</a>
-							</div>
-							<!-- Table Bottom -->
-						</div>
-					</div>
-					<!-- End Single Table-->
-					<!-- Single Table -->
-					<div data-aos="fade-right"
-                    data-aos-offset="0" class="col-lg-4 col-md-12 col-12">
-						<div class="single-table">
-							<!-- Table Head -->
-							<div class="table-head">
-								<div class="icon">
-									<i class="icofont icofont-tooth"></i>
-								</div>
-								<h4 class="title">Teeth Whitening</h4>
-								<div class="price">
-									<p class="amount">$299<span>/ Per Visit</span></p>
-								</div>
-							</div>
-							<!-- Table List -->
-							<ul class="table-list">
-								<li><i class="icofont icofont-ui-check"></i>Lorem ipsum dolor sit</li>
-								<li><i class="icofont icofont-ui-check"></i>Cubitur sollicitudin fentum</li>
-								<li><i class="icofont icofont-ui-check"></i>Nullam interdum enim</li>
-								<li class="cross"><i class="icofont icofont-ui-close"></i>Donec ultricies metus</li>
-								<li class="cross"><i class="icofont icofont-ui-close"></i>Pellentesque eget nibh</li>
-							</ul>
-							<div class="table-bottom">
-								<a class="btn" href="#">Book Now</a>
-							</div>
-							<!-- Table Bottom -->
-						</div>
-					</div>
-					<!-- End Single Table-->
-					<!-- Single Table -->
-					<div data-aos="fade-right"
-                    data-aos-offset="0" class="col-lg-4 col-md-12 col-12">
-						<div class="single-table">
-							<!-- Table Head -->
-							<div class="table-head">
-								<div class="icon">
-									<i class="icofont-heart-beat"></i>
-								</div>
-								<h4 class="title">Heart Suggery</h4>
-								<div class="price">
-									<p class="amount">$399<span>/ Per Visit</span></p>
-								</div>
-							</div>
-							<!-- Table List -->
-							<ul class="table-list">
-								<li><i class="icofont icofont-ui-check"></i>Lorem ipsum dolor sit</li>
-								<li><i class="icofont icofont-ui-check"></i>Cubitur sollicitudin fentum</li>
-								<li><i class="icofont icofont-ui-check"></i>Nullam interdum enim</li>
-								<li><i class="icofont icofont-ui-check"></i>Donec ultricies metus</li>
-								<li><i class="icofont icofont-ui-check"></i>Pellentesque eget nibh</li>
-							</ul>
-							<div class="table-bottom">
-								<a class="btn" href="#">Book Now</a>
-							</div>
-							<!-- Table Bottom -->
-						</div>
-					</div>
-					<!-- End Single Table-->
-				</div>
 			</div>
+            <img data-aos="fade-in" data-aos-offset="0" data-aos-easing="ease-in-sine" src="{{asset('frontend/img/CHAT.jpg') }}" alt="#">
 		</section>
 		<!--/ End Pricing Table -->
 
