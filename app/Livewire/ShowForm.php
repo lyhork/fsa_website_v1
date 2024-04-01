@@ -17,9 +17,22 @@ class ShowForm extends Component
         return view('skeleton');
     }
 
+    public $downloads;
+
+    public function mount()
+    {
+        $this->downloads = Document::all();
+    }
+
+    public function download($id)
+    {
+        $download = Document::find($id);
+        $filepath = public_path("storage/{$download->doc_file}");
+        return \Response()->download($filepath);
+    }
+
     public function render()
     {
-        sleep(1);
         $docs = Document::query()
             ->orderBy('created_at', 'DESC')
             ->where('published_at', '<=', Carbon::now())

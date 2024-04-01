@@ -75,7 +75,10 @@
                                                 <span class="date mef1"><i class="fa fa-clock-o"></i>{{\Carbon\Carbon::parse($praka->published_at)->locale(app()->getLocale())->translatedFormat('j F Y, g:i A');}}</span>
                                             </div>
                                             <div class="meta-right">
-                                                <span class="views"><i class="fa fa-eye"></i>33K Views</span>
+                                                <div class="table-bottom">
+                                                    <a class="download mef1" wire:navigate href="{{route('prakasDetail', $praka->id)}}"><i class="fa fa-eye"></i> View</a>
+                                                    <a class="download mef1" wire:click="download({{$praka->id}})"><i class="fa fa-download"></i> {{__('frontend.doc_download')}}</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -104,6 +107,7 @@
 								<form method="get" action="{{route('searchPrakas')}}" class="form">
 									<input name="q" value="{{request()->get("q")}}" type="text" placeholder="{{__('frontend.search-here')}}">
 									{{-- <a wire:navigate class="button" href="#"><i class="fa fa-search"></i></a> --}}
+                                    <button class="button" type="submit"><i class="fa fa-search"></i></button>
 								</form>
 							</div>
 							<!--/ End Single Widget -->
@@ -111,7 +115,7 @@
 							<div class="single-widget category">
 								<h3 class="title mef2">{{__('frontend.docs')}}</h3>
 								<ul class="categor-list mef2">
-									<li class="{{ Route::is('docsPage') ? 'active' : ''}}"><a wire:navigate href="{{ route('docsPage')}}">{{__('frontend.law-and-regulation')}}</a></li>
+									<li><a wire:navigate href="{{ route('docsPage')}}">{{__('frontend.law-and-regulation')}}</a></li>
 									<li class="{{ Route::is('prakasPage') ? 'active' : ''}}"><a wire:navigate href="{{ route('prakasPage')}}">{{__('frontend.prakas')}}</a></li>
 									<li><a wire:navigate href="{{ route('otherPage')}}">{{__('frontend.others')}}</a></li>
 								</ul>

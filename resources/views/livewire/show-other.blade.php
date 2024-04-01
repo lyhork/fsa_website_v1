@@ -75,7 +75,10 @@
                                                 <span class="date mef1"><i class="fa fa-clock-o"></i>{{\Carbon\Carbon::parse($other->published_at)->locale(app()->getLocale())->translatedFormat('j F Y, g:i A');}}</span>
                                             </div>
                                             <div class="meta-right">
-                                                <span class="views"><i class="fa fa-eye"></i>33K Views</span>
+                                                <div class="table-bottom">
+                                                    <a class="download mef1" wire:navigate href="{{route('otherDetail', $other->id)}}"><i class="fa fa-eye"></i> View</a>
+                                                    <a class="download mef1" wire:click="download({{$other->id}})"><i class="fa fa-download"></i> {{__('frontend.doc_download')}}</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -104,6 +107,7 @@
 								<form method="get" action="{{route('searchOther')}}" class="form">
 									<input name="q" value="{{request()->get("q")}}" type="text" placeholder="{{__('frontend.search-here')}}">
 									{{-- <a wire:navigate class="button" href="#"><i class="fa fa-search"></i></a> --}}
+                                    <button class="button" type="submit"><i class="fa fa-search"></i></button>
 								</form>
 							</div>
 							<!--/ End Single Widget -->

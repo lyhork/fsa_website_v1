@@ -11,6 +11,7 @@ class PrakasDetail extends Component
 
     public function mount($id) {
         $this->prakasDetail = Prakas::findOrFail($id);
+        // dd($this->prakasDetail->prakas_file);
     }
     public function render()
     {

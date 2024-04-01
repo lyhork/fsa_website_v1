@@ -64,6 +64,7 @@
 							<div class="single-widget search">
 								<form method="get" action="{{route('searchBlog')}}" class="form">
 									<input name="q" value="{{request()->get("q")}}" type="text" placeholder="{{__('frontend.search-here')}}">
+                                    <button class="button" type="submit"><i class="fa fa-search"></i></button>
 								</form>
 							</div>
 							<!--/ End Single Widget -->

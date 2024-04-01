@@ -1276,6 +1276,7 @@ body{
 }
 .pf-details .body-text .share{
 	margin-top:40px;
+    display: grid;
 }
 .pf-details .body-text .share h4 {
 	font-size: 15px;
@@ -4307,6 +4308,17 @@ body{
 .section .table-bottom .btn:hover
 {
     color: #fff;
+}
+.section .table-bottom .download
+{
+    color: #004282;
+    cursor:pointer;
+    margin: 0 0px 0px 15px;
+}
+.section .table-bottom .download:hover
+{
+    color: #004282;
+    cursor:pointer;
 }
 
 
