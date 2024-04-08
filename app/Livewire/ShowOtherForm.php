@@ -2,13 +2,12 @@
 
 namespace App\Livewire;
 
-use App\Models\Document;
+use App\Models\Other;
 use Carbon\Carbon;
 use Livewire\Component;
-use Illuminate\Http\Request;
 use Livewire\WithPagination;
 
-class SearchBox extends Component
+class ShowOtherForm extends Component
 {
     use WithPagination;
     protected $paginationTheme = 'tailwind';
@@ -22,27 +21,25 @@ class SearchBox extends Component
 
     public function mount()
     {
-        $this->downloads = Document::all();
+        $this->downloads = Other::all();
     }
 
     public function download($id)
     {
-        $download = Document::find($id);
-        $filepath = public_path("storage/{$download->doc_file}");
+        $download = Other::find($id);
+        $filepath = public_path("storage/{$download->other_file}");
         return \Response()->download($filepath);
     }
 
-    public function render(Request $request)
+    public function render()
     {
-        $q = $request->get('q');
-        $results = Document::query()
-            ->orderBy('created_at', 'DESC')
+        $others = Other::orderBy('created_at', 'DESC')
             ->where('published_at', '<=', Carbon::now())
             ->where('status',1)
-            ->where('title','LIKE',"%$q%")
+            ->where('published_at','!=','NULL')
             ->Paginate(1);
-        return view('livewire.search-doc',[
-            'results' => $results
+        return view('livewire.show-other-form', [
+            'others' => $others
         ]);
     }
 }

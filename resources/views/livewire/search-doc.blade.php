@@ -59,7 +59,7 @@
 			<div class="container">
 				<div class="row">
                     <div data-aos="zoom-in-up" data-aos-duration="1000" class="col-lg-8 col-12 mb-3 mef1">{{__('frontend.search')}} : ' {{ Str::limit(request()->get("q"), 15, ' ...') }}  '</div>
-                    <div data-aos="zoom-in-up" data-aos-duration="1000" class="col-lg-8 col-12">
+                    <div class="col-lg-8 col-12">
                         <div class="row">
                             @forelse($results as $result)
                                 <div class="col-12">
@@ -76,7 +76,10 @@
                                                 <span class="date mef1"><i class="fa fa-clock-o"></i>{{\Carbon\Carbon::parse($result->published_at)->locale(app()->getLocale())->translatedFormat('j F Y, g:i A');}}</span>
                                             </div>
                                             <div class="meta-right">
-                                                <span class="views"><i class="fa fa-eye"></i>33K Views</span>
+                                                <div class="table-bottom">
+                                                    <a class="download mef1" wire:navigate href="{{route('docsDetail', $result->id)}}"><i class="fa fa-eye"></i> View</a>
+                                                    <a class="download mef1" wire:click="download({{$result->id}})"><i class="fa fa-download"></i> {{__('frontend.doc_download')}}</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -95,7 +98,7 @@
                             @endforelse
                         </div>
                         <div class="mt-5">
-                            {{ $results->withQueryString()->links('pagination::tailwind') }}
+                            {{ $results->withQueryString()->links() }}
                         </div>
                     </div>
 					<div data-aos="fade-left" data-aos-duration="1000" class="col-lg-4 col-12">

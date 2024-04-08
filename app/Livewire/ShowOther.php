@@ -12,18 +12,9 @@ class ShowOther extends Component
     use WithPagination;
     protected $paginationTheme = 'tailwind';
 
-    public $downloads;
-
-    public function mount()
+    public function placeholder()
     {
-        $this->downloads = Other::all();
-    }
-
-    public function download($id)
-    {
-        $download = Other::find($id);
-        $filepath = public_path("storage/{$download->other_file}");
-        return \Response()->download($filepath);
+        return view('skeleton');
     }
 
     public function render()

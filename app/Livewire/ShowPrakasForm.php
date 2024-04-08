@@ -2,13 +2,12 @@
 
 namespace App\Livewire;
 
-use App\Models\Document;
+use App\Models\Prakas;
 use Carbon\Carbon;
 use Livewire\Component;
-use Illuminate\Http\Request;
 use Livewire\WithPagination;
 
-class SearchBox extends Component
+class ShowPrakasForm extends Component
 {
     use WithPagination;
     protected $paginationTheme = 'tailwind';
@@ -22,27 +21,25 @@ class SearchBox extends Component
 
     public function mount()
     {
-        $this->downloads = Document::all();
+        $this->downloads = Prakas::all();
     }
 
     public function download($id)
     {
-        $download = Document::find($id);
-        $filepath = public_path("storage/{$download->doc_file}");
+        $download = Prakas::find($id);
+        $filepath = public_path("storage/{$download->prakas_file}");
         return \Response()->download($filepath);
     }
 
-    public function render(Request $request)
+    public function render()
     {
-        $q = $request->get('q');
-        $results = Document::query()
-            ->orderBy('created_at', 'DESC')
+        $prakas = Prakas::orderBy('created_at', 'DESC')
             ->where('published_at', '<=', Carbon::now())
             ->where('status',1)
-            ->where('title','LIKE',"%$q%")
+            ->where('published_at','!=','NULL')
             ->Paginate(1);
-        return view('livewire.search-doc',[
-            'results' => $results
+        return view('livewire.show-prakas-form', [
+            'prakas' => $prakas
         ]);
     }
 }

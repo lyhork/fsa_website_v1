@@ -3,15 +3,13 @@
 namespace App\Livewire;
 
 use App\Models\Blog;
-use App\Models\PostView;
 use Carbon\Carbon;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-class ShowBlog extends Component
+class ShowBlogForm extends Component
 {
     use WithPagination;
-
     protected $paginationTheme = 'tailwind';
 
     public function placeholder()
@@ -21,14 +19,14 @@ class ShowBlog extends Component
 
     public function render()
     {
+        sleep(1);
         $blogs = Blog::orderBy('created_at', 'DESC')
             ->where('published_at', '<=', Carbon::now())
             ->where('status',1)
             ->where('published_at','!=','NULL')
             ->Paginate(1);
-        return view('livewire.show-blog', [
+        return view('livewire.show-blog-form', [
             'blogs' => $blogs
         ]);
     }
-
 }
