@@ -37,7 +37,7 @@
 		<!-- Magnific Popup CSS -->
         <link rel="stylesheet" href="{{ asset ('frontend/css/magnific-popup.css')}}">
 
-		<!-- Medipro CSS -->
+		<!-- FSA CSS -->
         <link rel="stylesheet" href="{{ asset ('frontend/css/normalize.css')}}">
         <link rel="stylesheet" href="{{ asset ('frontend/style.css')}}">
         <link rel="stylesheet" href="{{ asset ('frontend/css/responsive.css')}}">

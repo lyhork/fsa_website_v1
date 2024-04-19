@@ -19,6 +19,7 @@ class ShowOther extends Component
 
     public function render()
     {
+        sleep(1);
         $others = Other::orderBy('created_at', 'DESC')
             ->where('published_at', '<=', Carbon::now())
             ->where('status',1)

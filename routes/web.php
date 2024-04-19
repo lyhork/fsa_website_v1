@@ -1,7 +1,10 @@
 <?php
 
 use App\Livewire\BlogDetail;
+use App\Livewire\Contact;
 use App\Livewire\DocDetail;
+use App\Livewire\InstitutionalStructure;
+use App\Livewire\ManagerProfile;
 use App\Livewire\OtherDetail;
 use App\Livewire\PrakasDetail;
 use App\Livewire\SearchBlog;
@@ -33,6 +36,11 @@ use App\Livewire\ShowPrakas;
 //     return app()->getLocale();
 // });
 Route::get('/',ShowHome::class)->name('home');
+
+Route::get('/institutional-structure',InstitutionalStructure::class)->name('institutional-structure');
+Route::get('/manager-profile',ManagerProfile::class)->name('manager-profile');
+Route::get('/contact',Contact::class)->name('contact');
+
 
 Route::get('/news',ShowBlog::class)->name('newsPage');
 Route::get('/news/search',SearchBlog::class)->name('searchBlog');

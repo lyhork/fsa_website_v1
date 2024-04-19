@@ -31,17 +31,18 @@
                                     <img src="{{asset('storage/'.$blogDetail->image) }}" alt="#">
                                 @endif
 							</div>
-							<div class="date">
+							{{-- <div class="date">
 								<ul>
 									<li><span>Category :</span> Heart Surgery</li>
 									<li><span>Date :</span> {{\Carbon\Carbon::parse($blogDetail->published_at)->locale(app()->getLocale())->translatedFormat('j F Y, g:i A');}}</li>
 									<li><span>Client :</span> Suke Agency</li>
 									<li><span>Ags :</span> Typo</li>
 								</ul>
-							</div>
-							<div class="body-text">
-								<h3 class="mef2">{{$blogDetail->title}}</h3>
-								<p class="mef1">{!!$blogDetail->content!!}</p>
+							</div> --}}
+							<div class="body-text mef1">
+								<h3>{{$blogDetail->title}}</h3>
+                                <p>{{\Carbon\Carbon::parse($blogDetail->published_at)->locale(app()->getLocale())->translatedFormat('j F Y, g:i A');}}</p>
+								<p>{!!$blogDetail->content!!}</p>
 								<div class="share">
 									<h4>Share Now -</h4>
 									<ul>

@@ -33,6 +33,7 @@ class ShowForm extends Component
 
     public function render()
     {
+        sleep(1);
         $docs = Document::query()
             ->orderBy('created_at', 'DESC')
             ->where('published_at', '<=', Carbon::now())

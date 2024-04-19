@@ -21,6 +21,7 @@ class ShowBlog extends Component
 
     public function render()
     {
+        sleep(1);
         $blogs = Blog::orderBy('created_at', 'DESC')
             ->where('published_at', '<=', Carbon::now())
             ->where('status',1)

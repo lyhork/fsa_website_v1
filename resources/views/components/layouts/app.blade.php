@@ -37,7 +37,7 @@
 		<!-- Magnific Popup CSS -->
         <link rel="stylesheet" href="{{ asset ('frontend/css/magnific-popup.css')}}">
 
-		<!-- Medipro CSS -->
+		<!-- FSA CSS -->
         <link rel="stylesheet" href="{{ asset ('frontend/css/normalize.css')}}">
         <link rel="stylesheet" href="{{ asset ('frontend/style.css')}}">
         <link rel="stylesheet" href="{{ asset ('frontend/css/responsive.css')}}">
@@ -120,8 +120,8 @@
 											<li class="mef2"><a href="#">{{__('frontend.about-us')}}<i class="icofont-rounded-down"></i></a>
                                                 <ul class="dropdown">
 													<li class="mef2"><a href="#">{{__('frontend.about-fsa')}}</a></li>
-													<li class="mef2"><a href="#">{{__('frontend.institutional-structure')}}</a></li>
-													<li class="mef2"><a href="#">{{__('frontend.manager-profile')}}</a></li>
+													<li class="mef2"><a href="{{ route('institutional-structure')}}" wire:navigate>{{__('frontend.institutional-structure')}}</a></li>
+													<li class="mef2"><a href="{{ route('manager-profile')}}" wire:navigate>{{__('frontend.manager-profile')}}</a></li>
 												</ul>
                                             </li>
 											<li class="{{ Route::is('docsPage') || Route::is('searchDoc') || Route::is('docsDetail') || Route::is('searchPrakas') || Route::is('prakasDetail') || Route::is('prakasPage') || Route::is('otherPage') || Route::is('searchOther') || Route::is('otherDetail') ? 'active' : ''}} mef2"><a href="#">{{__('frontend.docs')}} <i class="icofont-rounded-down"></i></a>
@@ -133,7 +133,7 @@
                                             </li>
 											<li class="{{ Route::is('newsPage') ? 'active' : ''}} mef2"><a wire:navigate href="{{ route('newsPage')}}">{{__('frontend.news')}}</a>
 											</li>
-											<li class="mef2"><a href="#">{{__('frontend.contact-us')}}</a></li>
+											<li class="{{ Route::is('contact') ? 'active' : ''}} mef2"><a wire:navigate href="{{ route('contact')}}">{{__('frontend.contact-us')}}</a></li>
 										</ul>
 									</nav>
 								</div>

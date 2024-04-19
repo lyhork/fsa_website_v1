@@ -21,6 +21,7 @@ class ShowPrakas extends Component
 
     public function render()
     {
+        sleep(1);
         $prakas = Prakas::orderBy('created_at', 'DESC')
             ->where('published_at', '<=', Carbon::now())
             ->where('status',1)

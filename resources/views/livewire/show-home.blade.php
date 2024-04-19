@@ -10,7 +10,7 @@
                             <div class="row">
                                 <div class="col-lg-5">
                                     <div class="text">
-                                        <h1 class="mef2"><span>{{$slideshow->author}}</span></h1>
+                                        <h1 class="mef1"><span>{{$slideshow->author}}</span></h1>
                                         <p class="mef1">{!!$slideshow->quote!!}</p>
                                         {{-- <div class="button">
                                             <a href="#" class="btn">Get Appointment</a>
@@ -26,143 +26,6 @@
                 @endif
             </div>
         </section>
-        {{-- <section class="slider">
-            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="{{ asset('frontend/img/slider2.jpg') }}" class="d-block w-100" alt="...">
-                        <div class="carousel-caption">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-8">
-                                        <div class="text1">
-                                            <h1>We Provide <span>Medical</span> Services That You Can <span>Trust!</span></h1>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nisl pellentesque, faucibus libero eu, gravida quam. </p>
-                                            <div class="button">
-                                                <a href="#" class="btn">Get Appointment</a>
-                                                <a href="#" class="btn primary">Learn More</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="{{ asset('frontend/img/slider2.jpg') }}" class="d-block w-100" alt="...">
-                        <div class="carousel-caption">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-8">
-                                        <div class="text1">
-                                            <h1>We Provide <span>Medical</span> Services That You Can <span>Trust!</span></h1>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nisl pellentesque, faucibus libero eu, gravida quam. </p>
-                                            <div class="button">
-                                                <a href="#" class="btn">Get Appointment</a>
-                                                <a href="#" class="btn primary">Learn More</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div><div class="carousel-item">
-                        <img src="{{ asset('frontend/img/slider2.jpg') }}" class="d-block w-100" alt="...">
-                        <div class="carousel-caption">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-8">
-                                        <div class="text1">
-                                            <h1>We Provide <span>Medical</span> Services That You Can <span>Trust!</span></h1>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nisl pellentesque, faucibus libero eu, gravida quam. </p>
-                                            <div class="button">
-                                                <a href="#" class="btn">Get Appointment</a>
-                                                <a href="#" class="btn primary">Learn More</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-               <button class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Next</span>
-                </button>
-              </div>
-        </section> --}}
-
-		<!--/ End Slider Area -->
-
-
-		<!-- Start Schedule Area -->
-		{{-- <section class="schedule">
-			<div class="container">
-				<div class="schedule-inner">
-					<div class="row">
-						<div class="col-lg-4 col-md-6 col-12 ">
-							<!-- single-schedule -->
-							<div class="single-schedule first">
-								<div class="inner">
-									<div class="icon">
-										<i class="fa fa-ambulance"></i>
-									</div>
-									<div class="single-content">
-										<span>Lorem Amet</span>
-										<h4>Emergency Cases</h4>
-										<p>Lorem ipsum sit amet consectetur adipiscing elit. Vivamus et erat in lacus convallis sodales.</p>
-										<a href="#">LEARN MORE<i class="fa fa-long-arrow-right"></i></a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-6 col-12">
-							<!-- single-schedule -->
-							<div class="single-schedule middle">
-								<div class="inner">
-									<div class="icon">
-										<i class="icofont-prescription"></i>
-									</div>
-									<div class="single-content">
-										<span>Fusce Porttitor</span>
-										<h4>Doctors Timetable</h4>
-										<p>Lorem ipsum sit amet consectetur adipiscing elit. Vivamus et erat in lacus convallis sodales.</p>
-										<a href="#">LEARN MORE<i class="fa fa-long-arrow-right"></i></a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-12 col-12">
-							<!-- single-schedule -->
-							<div class="single-schedule last">
-								<div class="inner">
-									<div class="icon">
-										<i class="icofont-ui-clock"></i>
-									</div>
-									<div class="single-content">
-										<span>Donec luctus</span>
-										<h4>Opening Hours</h4>
-										<ul class="time-sidual">
-											<li class="day">Monday - Fridayp <span>8.00-20.00</span></li>
-											<li class="day">Saturday <span>9.00-18.30</span></li>
-											<li class="day">Monday - Thusday <span>9.00-15.00</span></li>
-										</ul>
-										<a href="#">LEARN MORE<i class="fa fa-long-arrow-right"></i></a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section> --}}
-		<!--/End Start schedule Area -->
-
 
 		<!-- Start Feautes -->
 		<section data-aos="fade-up" data-aos-duration="500" data-aos-offset="0" class="Feautes section">
@@ -411,13 +274,12 @@
 		<!--/ End portfolio -->
 
 		<!-- Start service -->
-		<section class="services section">
+		{{-- <section class="services section">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="section-title">
 							<h2>Management Structure</h2>
-							{{-- <img src="{{asset('frontend/img/section-img.png') }}" alt="#"> --}}
 							<p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
 						</div>
 					</div>
@@ -526,24 +388,23 @@
                     </div>
 				</div>
 			</div>
-		</section>
+		</section> --}}
 		<!--/ End service -->
 
 		<!-- Pricing Table -->
-		<section class="pricing-table section">
+		{{-- <section class="pricing-table section">
 			<div class="container">
 				<div data-aos="fade-right" data-aos-offset="0" class="row">
 					<div class="col-lg-12">
 						<div class="section-title">
 							<h2>Non-Bank Financial Services Authority Management Structure</h2>
-							{{-- <img src="{{asset('frontend/img/section-img.png') }}" alt="#"> --}}
 							<p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
 						</div>
 					</div>
 				</div>
 			</div>
             <img data-aos="fade-in" data-aos-offset="0" data-aos-easing="ease-in-sine" src="{{asset('frontend/img/CHAT.jpg') }}" alt="#">
-		</section>
+		</section> --}}
 		<!--/ End Pricing Table -->
 
 

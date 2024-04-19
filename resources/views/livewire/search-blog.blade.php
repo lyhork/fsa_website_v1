@@ -34,7 +34,7 @@
                                             <div class="news-body">
                                                 <div class="news-content">
                                                     <div class="date mef1">{{\Carbon\Carbon::parse($result->published_at)->locale(app()->getLocale())->translatedFormat('j F Y, g:i A');}}</div>
-                                                    <h2 class="mef2">{{$result->shortTitle()}}</h2>
+                                                    <h2 class="mef1">{{$result->shortTitle()}}</h2>
                                                     <p class="text mef1">{!!$result->shortBody()!!}</p>
                                                 </div>
                                             </div>

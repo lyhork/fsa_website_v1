@@ -15,9 +15,9 @@
                             <span class="date mef1"><i class="fa fa-clock-o"></i>{{\Carbon\Carbon::parse($doc->published_at)->locale(app()->getLocale())->translatedFormat('j F Y, g:i A');}}</span>
                         </div>
                         <div class="meta-right">
-                            <div class="table-bottom">
-                                <a class="download mef1" wire:navigate href="{{route('docsDetail', $doc->id)}}"><i class="fa fa-eye"></i> View</a>
-                                <a class="download mef1" wire:click="download({{$doc->id}})"><i class="fa fa-download"></i> {{__('frontend.doc_download')}}</a>
+                            <div class="table-bottom mef1">
+                                <a class="download" wire:navigate href="{{route('docsDetail', $doc->id)}}"><i class="fa fa-eye"></i> View</a>
+                                <a class="download" wire:click="download({{$doc->id}})"><i class="fa fa-download"></i> {{__('frontend.doc_download')}}</a>
                             </div>
                         </div>
                     </div>

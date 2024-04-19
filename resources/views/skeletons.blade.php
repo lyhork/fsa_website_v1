@@ -49,7 +49,7 @@
         </div>
     </div>
 
-    <div class="flex items-center w-full mt-3">
+    <div class="flex items-center w-full mt-5">
         <div class="flex items-center justify-center">
             <div class="w-64">
                 <div class="max-w-sm rounded overflow-hidden shadow-lg animate-pulse">

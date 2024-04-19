@@ -31,4 +31,10 @@ return [
     'search' => 'Search results',
     'search-here' => 'Search Here...   and hit enter',
     'null' => 'No Data',
+    'social-media' => 'Social Media',
+    'address' => 'Address:   Building # 168, St. 598, Sangkat Chraing Chamres 1, Khan Russey Keo, Phnom Penh, Cambodia.',
+    'phone' => 'Phone number: (+855) 23 990 700',
+    'workDay' => 'Work Day: Monday - Friday',
+    'workingTime' => 'Open Hours: 8:00 am - 4:00 pm',
+
 ];
