@@ -12,7 +12,7 @@
                     <!-- Meta -->
                     <div class="meta">
                         <div class="meta-left">
-                            <span class="date mef1"><i class="fa fa-clock-o"></i>{{\Carbon\Carbon::parse($doc->published_at)->locale(app()->getLocale())->translatedFormat('j F Y, g:i A');}}</span>
+                            <span class="date mef1">{{\Carbon\Carbon::parse($doc->published_at)->locale(app()->getLocale())->translatedFormat('j F Y, g:i A');}}</span>
                         </div>
                         <div class="meta-right">
                             <div class="table-bottom mef1">

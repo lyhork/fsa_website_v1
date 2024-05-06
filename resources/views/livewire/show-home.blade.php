@@ -28,13 +28,12 @@
         </section>
 
 		<!-- Start Feautes -->
-		<section data-aos="fade-up" data-aos-duration="500" data-aos-offset="0" class="Feautes section">
+		{{-- <section data-aos="fade-up" data-aos-duration="500" data-aos-offset="0" class="Feautes section">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="section-title">
 							<h2>We Are Always Ready to Help You & Your Family</h2>
-							{{-- <img src="{{asset('frontend/img/section-img.png') }}" alt="#"> --}}
 							<p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
 						</div>
 					</div>
@@ -75,13 +74,13 @@
 					</div>
 				</div>
 			</div>
-		</section>
+		</section> --}}
 		<!--/ End Feautes -->
 
 
 
 		<!-- Start Fun-facts -->
-		<div id="fun-facts" class="fun-facts section overlay">
+		{{-- <div id="fun-facts" class="fun-facts section overlay">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-3 col-md-6 col-12">
@@ -130,24 +129,24 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> --}}
 		<!--/ End Fun-facts -->
 
 		<!-- Start Why choose -->
 		<section class="why-choose section" >
 			<div class="container">
 				<div data-aos="fade-right"
-                data-aos-offset="0" class="row">
+                data-aos-offset="200" class="row">
 					<div class="col-lg-12">
 						<div class="section-title">
-							<h2>We Offer Different Services To Improve Your Health</h2>
+							<h2>Who we are</h2>
 							{{-- <img src="{{asset('frontend/img/section-img.png') }}" alt="#"> --}}
 							<p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
 						</div>
 					</div>
 				</div>
 				<div data-aos="fade-right"
-                data-aos-offset="0" class="row">
+                data-aos-offset="200" class="row">
 					<div class="col-lg-6 col-12">
 						<!-- Start Choose Left -->
 						<div class="choose-left">
@@ -197,7 +196,7 @@
 		<!--/ End Why choose -->
 
 		<!-- Start Call to action -->
-		<section class="call-action overlay" data-stellar-background-ratio="0.5">
+		{{-- <section class="call-action overlay" data-stellar-background-ratio="0.5">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12 col-md-12 col-12">
@@ -212,19 +211,18 @@
 					</div>
 				</div>
 			</div>
-		</section>
+		</section> --}}
 		<!--/ End Call to action -->
 
 
 		<!-- Start portfolio -->
-		<section class="portfolio section" >
+		{{-- <section class="portfolio section" >
 			<div class="container">
 				<div data-aos="fade-right"
                 data-aos-offset="0" class="row">
 					<div class="col-lg-12">
 						<div class="section-title">
 							<h2>We Maintain Cleanliness Rules Inside Our Hospital</h2>
-							{{-- <img src="{{asset('frontend/img/section-img.png') }}" alt="#"> --}}
 							<p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
 						</div>
 					</div>
@@ -270,7 +268,7 @@
 					</div>
 				</div>
 			</div>
-		</section>
+		</section> --}}
 		<!--/ End portfolio -->
 
 		<!-- Start service -->
@@ -412,7 +410,7 @@
 		<section class="blog section" id="blog">
 			<div class="container">
 				<div data-aos="fade-right"
-                data-aos-offset="0" class="row">
+                data-aos-offset="200" class="row">
 					<div class="col-lg-12">
 						<div class="section-title">
 							<h2>Keep up with Our Most Recent FSA News.</h2>
@@ -422,7 +420,7 @@
 					</div>
 				</div>
 				<div data-aos="fade-in"
-                data-aos-offset="0"
+                data-aos-offset="200"
                 data-aos-easing="ease-in-sine" class="row">
                     @foreach ($latestBlogs as $latestBlog)
                     <div class="col-lg-4 col-md-6 col-12">
@@ -461,19 +459,18 @@
 		<!-- End Blog Area -->
 
 		<!-- Start clients -->
-		<div class="clients overlay">
-			<div data-aos="fade-right"
-            data-aos-offset="100" class="container">
+		<div data-aos="fade-right" data-aos-easing="ease-in-sine" data-aos-offset="200" class="clients">
+			<div class="container">
                 <div class="row">
 					<div class="col-lg-12">
 						<div class="section-title">
-							<h2 class="mef2">អាជ្ញាធរ</h2>
+							<h2 class="mef2">អង្គភាពក្រោមឱវាទ</h2>
 							{{-- <img src="{{asset('frontend/img/section-img.png') }}" alt="#"> --}}
 							<p class="mef1">អាជ្ញាធរក្នុងវិស័យហិរញ្ញវត្ថុមិនមែនធនាគារ</p>
 						</div>
 					</div>
 				</div>
-				<div data-aos="fade-left" data-aos-easing="ease-in-sine" data-aos-offset="0" data-aos-duration="1000" class="row">
+				<div class="row">
 					<div class="col-lg-12 col-md-12 col-12">
 						<div class="owl-carousel clients-slider">
 							<div class="single-clients">
@@ -596,7 +593,7 @@
 		<!-- End Appointment -->
 
 		<!-- Start Newsletter Area -->
-		<section class="newsletter section">
+		{{-- <section class="newsletter section">
 			<div class="container">
 				<div class="row ">
 					<div class="col-lg-6  col-12">
@@ -620,6 +617,6 @@
 					</div>
 				</div>
 			</div>
-		</section>
+		</section> --}}
 		<!-- /End Newsletter Area -->
 </main>

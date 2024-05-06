@@ -9,10 +9,10 @@
                             <img src="{{asset('storage/'.$blog->image) }}" alt="#">
                         </div>
                         <div class="news-body">
-                            <div class="news-content">
-                                <div class="date mef1">{{\Carbon\Carbon::parse($blog->published_at)->locale(app()->getLocale())->translatedFormat('j F Y, g:i A');}}</div>
-                                <h2 class="mef1">{{$blog->shortTitle()}}</h2>
-                                <p class="text mef1">{!!$blog->shortBody()!!}</p>
+                            <div class="news-content mef1">
+                                <div class="date">{{\Carbon\Carbon::parse($blog->published_at)->locale(app()->getLocale())->translatedFormat('j F Y, g:i A');}}</div>
+                                <h2>{{$blog->shortTitle()}}</h2>
+                                <p class="text">{!!$blog->shortBody()!!}</p>
                             </div>
                         </div>
                     </a>

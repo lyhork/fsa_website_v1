@@ -56,8 +56,8 @@ class OtherResource extends Resource
                             ->minSize(50) // 50 kb
                             ->maxSize(2048) // 2 MB
                             ->imageResizeMode('cover')
-                            ->imageResizeTargetWidth('1080')
-                            ->imageResizeTargetHeight('1920')
+                            // ->imageResizeTargetWidth('1080')
+                            // ->imageResizeTargetHeight('1920')
                             ->acceptedFileTypes(['image/*'])
                             ->directory('others')
                             ->required()

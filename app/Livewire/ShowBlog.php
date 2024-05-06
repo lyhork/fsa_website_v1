@@ -22,13 +22,20 @@ class ShowBlog extends Component
     public function render()
     {
         sleep(1);
+        $recentBlogs = Blog::orderBy('created_at', 'DESC')
+            ->get()
+            ->where('published_at', '<=', Carbon::now())
+            ->where('status',1)
+            ->where('published_at','!=','NULL')
+            ->take(5);
         $blogs = Blog::orderBy('created_at', 'DESC')
             ->where('published_at', '<=', Carbon::now())
             ->where('status',1)
             ->where('published_at','!=','NULL')
             ->Paginate(1);
         return view('livewire.show-blog', [
-            'blogs' => $blogs
+            'blogs' => $blogs,
+            'recentBlogs' => $recentBlogs,
         ]);
     }
 

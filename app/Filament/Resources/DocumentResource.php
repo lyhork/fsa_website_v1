@@ -58,8 +58,8 @@ class DocumentResource extends Resource
                                 ->minSize(50) // 50 kb
                                 ->maxSize(2048) // 2 MB
                                 ->imageResizeMode('cover')
-                                ->imageResizeTargetWidth('1080')
-                                ->imageResizeTargetHeight('1920')
+                                // ->imageResizeTargetWidth('1080')
+                                // ->imageResizeTargetHeight('1920')
                                 ->acceptedFileTypes(['image/*'])
                                 ->directory('docs')
                                 ->required()
@@ -70,7 +70,7 @@ class DocumentResource extends Resource
                                 ->storeFileNamesIn('original_filename'),
                             FileUpload::make('doc_file')
                                 ->minSize(50) // 50 kb
-                                ->maxSize(307200) // 20MB
+                                ->maxSize(307200) // 30MB
                                 ->acceptedFileTypes(['application/pdf'])
                                 ->directory('docs')
                                 ->required()

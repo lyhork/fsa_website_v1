@@ -1002,7 +1002,7 @@ body{
 }
 /* Start Faq CSS */
 .why-choose{
-	background:#fff;
+	background:#f9f9f9;
 }
 .why-choose .choose-right{
 	height:100%;
@@ -1714,11 +1714,14 @@ body{
 	Start Clients CSS
 ==========================*/
 .clients{
-	background-image:url('img/client-bg.jpg');
+	/* background-image:url('img/client-bg.jpg');
 	background-size:cover;
 	background-position:center;
 	padding:100px 0px;
-	position:relative;
+	position:relative; */
+    padding: 100px 0px;
+    position: relative;
+    background: #f9f9f9;
 }
 .clients .single-clients{
 
@@ -2011,6 +2014,7 @@ body{
 	width:100%;
 	margin:0;
 	padding:0;
+    border-radius: 10px 10px 0 0;
 	-webkit-transition:all 0.4s ease;
 	-moz-transition:all 0.4s ease;
 	transition:all 0.4s ease;
@@ -2204,6 +2208,11 @@ body{
 	display: inline-block;
 	padding: 17px 0;
 }
+.main-sidebar .doc_single-post {
+	position: relative;
+	border-bottom: 1px solid #ddd;
+	padding: 17px 0;
+}
 .main-sidebar .single-post:last-child{
 	padding-bottom:0px;
 	border:none;
@@ -2231,7 +2240,20 @@ body{
 	margin-bottom: 10px;
 	margin-top: 0;
 }
+.main-sidebar .doc_single-post .doc_content h5 a {
+	color: #2C2D3F;
+	font-weight: 500;
+	font-size: 14px;
+	font-weight: 500;
+	margin-top: 10px;
+	display: block;
+	margin-bottom: 10px;
+	margin-top: 0;
+}
 .main-sidebar .single-post .content h5 a:hover{
+	color:#4db55f;
+}
+.main-sidebar .doc_single-post .doc_content h5 a:hover{
 	color:#4db55f;
 }
 .main-sidebar .single-post .content .comment li{
@@ -2285,6 +2307,42 @@ body{
 	-moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.10);
 	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.10);
 	border-radius: 8px;
+}
+.news-single .single-main .f-link p a i{
+	margin-right:10px;
+}
+.news-single .single-main .f-link h2, .news-single .single-main .f-link p{
+	margin-bottom:20px;
+}
+.news-single .single-main .f-link h2{
+	color: #585858;
+    font-size: 16px;
+    font-weight: 600;
+}
+.news-single .single-main .f-link p{
+	text-indent: 20px;
+}
+.news-single .single-main .table-bottom{
+	margin: 30px 0 0 0;
+}
+.news-single .single-main .f-link ul li{
+	margin: 0 0 15px 15px;
+    line-height: 25px;
+}
+/* .news-single .single-main .f-link p:last-child{
+	margin:0;
+} */
+.news-single .single-main .f-link li {
+	display: block;
+	color: #757575;
+	text-transform: capitalize;
+	-webkit-transition: all 0.4s ease;
+	-moz-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+	font-weight: 400;
+}
+.news-single .single-main .f-link li:hover{
+	padding-left:3px;
 }
 .blog .single-main {
 	margin-top: 30px;

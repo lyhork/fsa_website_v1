@@ -1,10 +1,9 @@
 <?php
 
+use App\Livewire\AboutFsa;
 use App\Livewire\BlogDetail;
 use App\Livewire\Contact;
 use App\Livewire\DocDetail;
-use App\Livewire\InstitutionalStructure;
-use App\Livewire\ManagerProfile;
 use App\Livewire\OtherDetail;
 use App\Livewire\PrakasDetail;
 use App\Livewire\SearchBlog;
@@ -15,6 +14,8 @@ use App\Livewire\ShowBlog;
 use App\Livewire\ShowDocument;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\ShowHome;
+use App\Livewire\ShowInstitutionalStructure;
+use App\Livewire\ShowManagerProfile;
 use App\Livewire\ShowOther;
 use App\Livewire\ShowPrakas;
 
@@ -29,17 +30,18 @@ use App\Livewire\ShowPrakas;
 |
 */
 
-// Route::get('/test', function () {
-//     return dd(phpinfo());
-// });
+Route::get('/test', function () {
+    return dd(phpinfo());
+});
 // Route::get('/',function() {
 //     return app()->getLocale();
 // });
 Route::get('/',ShowHome::class)->name('home');
 
-Route::get('/institutional-structure',InstitutionalStructure::class)->name('institutional-structure');
-Route::get('/manager-profile',ManagerProfile::class)->name('manager-profile');
+Route::get('/institutional-structure',ShowInstitutionalStructure::class)->name('institutional-structure');
+Route::get('/manager-profile',ShowManagerProfile::class)->name('manager-profile');
 Route::get('/contact',Contact::class)->name('contact');
+Route::get('/about',AboutFsa::class)->name('about-fsa');
 
 
 Route::get('/news',ShowBlog::class)->name('newsPage');

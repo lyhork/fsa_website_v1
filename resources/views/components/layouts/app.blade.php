@@ -95,7 +95,7 @@
 				<div class="container">
 					<div class="inner">
 						<div class="row">
-							<div class="col-xl-5 col-lg-4 col-md-4 col-12">
+							<div class="col-xl-5 col-lg-5 col-md-5 col-12">
 								<!-- Start Logo -->
 								<div class="logo">
 									<a href="{{ route('home')}}" wire:navigate><img src="{{ asset ('images/Logo FSA.png')}}" class="logo-2" alt="#"></a>
@@ -110,21 +110,21 @@
                                 </div>
 								<!-- End Mobile Nav -->
 							</div>
-							<div class="col-xl-7 col-lg-8 col-md-8 col-12">
+							<div class="col-xl-7 col-lg-7 col-md-7 col-12">
 								<!-- Main Menu -->
 								<div class="main-menu">
 									<nav class="navigation">
 										<ul class="nav menu ml-auto">
 											<li class="{{ Route::is('home') ? 'active' : ''}} mef2"><a href="{{ route('home')}}" wire:navigate>{{__('frontend.home')}}</a>
 											</li>
-											<li class="mef2"><a href="#">{{__('frontend.about-us')}}<i class="icofont-rounded-down"></i></a>
+											<li class="{{ Route::is('about-fsa')|| Route::is('institutional-structure') || Route::is('manager-profile') ? 'active' : ''}} mef2"><a wire:navigate href="">{{__('frontend.about-us')}}<i class="icofont-rounded-down"></i></a>
                                                 <ul class="dropdown">
-													<li class="mef2"><a href="#">{{__('frontend.about-fsa')}}</a></li>
-													<li class="mef2"><a href="{{ route('institutional-structure')}}" wire:navigate>{{__('frontend.institutional-structure')}}</a></li>
-													<li class="mef2"><a href="{{ route('manager-profile')}}" wire:navigate>{{__('frontend.manager-profile')}}</a></li>
+													<li class="{{ Route::is('about-fsa') ? 'active' : ''}} mef2"><a href="{{ route('about-fsa')}}" wire:navigate>{{__('frontend.about-fsa')}}</a></li>
+													<li class="{{ Route::is('institutional-structure') ? 'active' : ''}} mef2"><a href="{{ route('institutional-structure')}}" wire:navigate>{{__('frontend.institutional-structure')}}</a></li>
+													<li class="{{ Route::is('manager-profile') ? 'active' : ''}} mef2"><a href="{{ route('manager-profile')}}" wire:navigate>{{__('frontend.manager-profile')}}</a></li>
 												</ul>
                                             </li>
-											<li class="{{ Route::is('docsPage') || Route::is('searchDoc') || Route::is('docsDetail') || Route::is('searchPrakas') || Route::is('prakasDetail') || Route::is('prakasPage') || Route::is('otherPage') || Route::is('searchOther') || Route::is('otherDetail') ? 'active' : ''}} mef2"><a href="#">{{__('frontend.docs')}} <i class="icofont-rounded-down"></i></a>
+											<li class="{{ Route::is('docsPage') || Route::is('searchDoc') || Route::is('docsDetail') || Route::is('searchPrakas') || Route::is('prakasDetail') || Route::is('prakasPage') || Route::is('otherPage') || Route::is('searchOther') || Route::is('otherDetail') ? 'active' : ''}} mef2"><a wire:navigate href="">{{__('frontend.docs')}} <i class="icofont-rounded-down"></i></a>
                                                 <ul class="dropdown">
 													<li class="{{ Route::is('docsPage') || Route::is('searchDoc') || Route::is('docsDetail') ? 'active' : ''}} mef2"><a wire:navigate href="{{ route('docsPage')}}">{{__('frontend.law-and-regulation')}}</a></li>
                                                     <li class="{{ Route::is('prakasPage') || Route::is('searchPrakas') || Route::is('prakasDetail') ? 'active' : ''}} mef2"><a wire:navigate href="{{ route('prakasPage')}}">{{__('frontend.prakas')}}</a></li>
@@ -158,58 +158,55 @@
 			<div class="footer-top">
 				<div class="container">
 					<div class="row">
-						<div class="col-lg-3 col-md-6 col-12">
+						<div class="col-lg-4 col-md-6 col-12">
 							<div class="single-footer">
 								<h2>About Us</h2>
 								<p>Lorem ipsum dolor sit am consectetur adipisicing elit do eiusmod tempor incididunt ut labore dolore magna.</p>
 								<!-- Social -->
 								<ul class="social">
-									<li><a href="#"><i class="icofont-facebook"></i></a></li>
-									<li><a href="#"><i class="icofont-google-plus"></i></a></li>
-									<li><a href="#"><i class="icofont-twitter"></i></a></li>
-									<li><a href="#"><i class="icofont-vimeo"></i></a></li>
-									<li><a href="#"><i class="icofont-pinterest"></i></a></li>
+									<li><a target="_blank" href="https://www.facebook.com/FSA.Cambodia"><i class="icofont-facebook"></i></a></li>
+									<li><a target="_blank" href="https://t.me/fsacambodia"><i class="icofont-telegram"></i></a></li>
+									<li><a target="_blank" href="#"><i class="icofont-link"></i></a></li>
 								</ul>
 								<!-- End Social -->
 							</div>
 						</div>
-						<div class="col-lg-3 col-md-6 col-12">
+						<div class="col-lg-4 col-md-6 col-12">
 							<div class="single-footer f-link">
 								<h2>Quick Links</h2>
 								<div class="row">
 									<div class="col-lg-6 col-md-6 col-12">
 										<ul>
-											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Home</a></li>
-											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>About Us</a></li>
-											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Services</a></li>
-											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Our Cases</a></li>
-											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Other Links</a></li>
+											<li><a href="{{ route('home')}}" wire:navigate><i class="fa fa-caret-right" aria-hidden="true"></i>{{__('frontend.home')}}</a></li>
+											<li><a href="{{ route('about-fsa')}}" wire:navigate><i class="fa fa-caret-right" aria-hidden="true"></i>{{__('frontend.about-fsa')}}</a></li>
+											<li><a href="{{ route('institutional-structure')}}" wire:navigate><i class="fa fa-caret-right" aria-hidden="true"></i>{{__('frontend.institutional-structure')}}</a></li>
+											<li><a href="{{ route('manager-profile')}}" wire:navigate><i class="fa fa-caret-right" aria-hidden="true"></i>{{__('frontend.manager-profile')}}</a></li>
+											<li><a wire:navigate href="{{ route('docsPage')}}"><i class="fa fa-caret-right" aria-hidden="true"></i>{{__('frontend.law-and-regulation')}}</a></li>
 										</ul>
 									</div>
 									<div class="col-lg-6 col-md-6 col-12">
 										<ul>
-											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Consuling</a></li>
-											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Finance</a></li>
-											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Testimonials</a></li>
-											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>FAQ</a></li>
-											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Contact Us</a></li>
+											<li><a wire:navigate href="{{ route('prakasPage')}}"><i class="fa fa-caret-right" aria-hidden="true"></i>{{__('frontend.prakas')}}</a></li>
+											<li><a wire:navigate href="{{ route('otherPage')}}"><i class="fa fa-caret-right" aria-hidden="true"></i>{{__('frontend.others')}}</a></li>
+											<li><a wire:navigate href="{{ route('newsPage')}}"><i class="fa fa-caret-right" aria-hidden="true"></i>{{__('frontend.news')}}</a></li>
+											<li><a wire:navigate href="{{ route('contact')}}"><i class="fa fa-caret-right" aria-hidden="true"></i>{{__('frontend.contact-us')}}</a></li>
 										</ul>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="col-lg-3 col-md-6 col-12">
+						<div class="col-lg-4 col-md-6 col-12">
 							<div class="single-footer">
 								<h2>Open Hours</h2>
 								<p>Lorem ipsum dolor sit ame consectetur adipisicing elit do eiusmod tempor incididunt.</p>
 								<ul class="time-sidual">
-									<li class="day">Monday - Fridayp <span>8.00-20.00</span></li>
+									<li class="day">Monday - Friday <span>8.00-20.00</span></li>
 									<li class="day">Saturday <span>9.00-18.30</span></li>
 									<li class="day">Monday - Thusday <span>9.00-15.00</span></li>
 								</ul>
 							</div>
 						</div>
-						<div class="col-lg-3 col-md-6 col-12">
+						{{-- <div class="col-lg-3 col-md-6 col-12">
 							<div class="single-footer">
 								<h2>Newsletter</h2>
 								<p>subscribe to our newsletter to get allour news in your inbox.. Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p>
@@ -219,7 +216,7 @@
 									<button class="button"><i class="icofont icofont-paper-plane"></i></button>
 								</form>
 							</div>
-						</div>
+						</div> --}}
 					</div>
 				</div>
 			</div>
@@ -281,9 +278,6 @@
 		<!-- Main JS -->
 		<script src="{{ asset ('frontend/js/main.js')}}"></script>
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        <script>
-            AOS.init();
-        </script>
         <script data-navigate-once>
             document.addEventListener('livewire:navigated', () => {
                 src="{{ asset ('frontend/js/bootstrap.min.js')}}"
@@ -336,6 +330,49 @@
                     }, 1000);
                 e.preventDefault();
             });
+
+            $('.clients-slider').owlCarousel({
+                items:5,
+                autoplay:true,
+                autoplayTimeout:3500,
+                margin:15,
+                smartSpeed: 400,
+                autoplayHoverPause:true,
+                loop:true,
+                nav:false,
+                dots:false,
+                responsive:{
+                    300: {
+                        items:1,
+                    },
+                    480: {
+                        items:2,
+                    },
+                    768: {
+                        items:3,
+                    },
+                    1170: {
+                        items:5,
+                    },
+                }
+		    });
+
+            /*====================================
+                Single Portfolio Slider JS
+            ======================================*/
+            $('.pf-details-slider').owlCarousel({
+                items:5,
+                autoplay:false,
+                autoplayTimeout:5000,
+                smartSpeed: 400,
+                autoplayHoverPause:true,
+                loop:true,
+                merge:true,
+                nav:true,
+                dots:false,
+                navText: ['<i class="icofont-rounded-left"></i>', '<i class="icofont-rounded-right"></i>'],
+            });
+            AOS.init();
         })
         </script>
         @livewireScripts

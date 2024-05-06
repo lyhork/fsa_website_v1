@@ -66,9 +66,9 @@ class BlogResource extends Resource
                                 ->minSize(50) // 50 kb
                                 ->maxSize(2048) // 2 MB
                                 ->imageResizeMode('cover')
-                                ->imageCropAspectRatio('16:9')
-                                ->imageResizeTargetWidth('1920')
-                                ->imageResizeTargetHeight('1080')
+                                // ->imageCropAspectRatio('16:9')
+                                // ->imageResizeTargetWidth('1920')
+                                // ->imageResizeTargetHeight('1080')
                                 ->acceptedFileTypes(['image/*'])
                                 ->directory('posts/')
                                 ->required()
@@ -77,9 +77,9 @@ class BlogResource extends Resource
                                 ->minSize(50) // 50 kb
                                 ->maxSize(2048) // 2 MB
                                 ->imageResizeMode('cover')
-                                ->imageCropAspectRatio('16:9')
-                                ->imageResizeTargetWidth('1920')
-                                ->imageResizeTargetHeight('1080')
+                                // ->imageCropAspectRatio('16:9')
+                                // ->imageResizeTargetWidth('1920')
+                                // ->imageResizeTargetHeight('1080')
                                 ->acceptedFileTypes(['image/*'])
                                 ->directory('posts/')
                                 ->required()
@@ -87,7 +87,7 @@ class BlogResource extends Resource
                                 ->multiple()
                                 ->reorderable()
                                 ->openable()
-                                ->storeFileNamesIn('original_filename'),
+                                ->storeFileNamesIn('attachment_file_names'),
                         ])
                     ])
             ]);

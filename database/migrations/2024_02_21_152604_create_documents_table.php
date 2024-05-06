@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('author')->nullable();
             $table->string('doc_images')->nullable();
-            $table->string('doc_file')->nullable();
+            $table->string('doc_file', 2048)->nullable();
             $table->boolean('status')->default(1);
             $table->dateTime('published_at')->nullable();
             $table->timestamps();

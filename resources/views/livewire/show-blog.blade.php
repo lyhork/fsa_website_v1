@@ -33,7 +33,7 @@
 							</div>
 							<!--/ End Single Widget -->
 							<!-- Single Widget -->
-							<div class="single-widget category">
+							{{-- <div class="single-widget category">
 								<h3 class="title">Blog Categories</h3>
 								<ul class="categor-list">
 									<li><a href="#">Men's Apparel</a></li>
@@ -42,59 +42,37 @@
 									<li><a href="#">Accessories</a></li>
 									<li><a href="#">Sun Glasses</a></li>
 								</ul>
-							</div>
+							</div> --}}
 							<!--/ End Single Widget -->
 							<!-- Single Widget -->
+                            @if( $recentBlogs -> isNotEmpty())
 							<div class="single-widget recent-post">
-								<h3 class="title">Recent post</h3>
+								<h3 class="title mef2">Recent post</h3>
 								<!-- Single Post -->
-								<div class="single-post">
-									<div class="image">
-										<img src="img/blog-sidebar1.jpg" alt="#">
-									</div>
-									<div class="content">
-										<h5><a href="#">We have annnocuced our new product.</a></h5>
-										<ul class="comment">
-											<li><i class="fa fa-calendar" aria-hidden="true"></i>Jan 11, 2020</li>
-											<li><i class="fa fa-commenting-o" aria-hidden="true"></i>35</li>
-										</ul>
-									</div>
-								</div>
-								<!-- End Single Post -->
-								<!-- Single Post -->
-								<div class="single-post">
-									<div class="image">
-										<img src="img/blog-sidebar2.jpg" alt="#">
-									</div>
-									<div class="content">
-										<h5><a href="#">Top five way for solving teeth problems.</a></h5>
-										<ul class="comment">
-											<li><i class="fa fa-calendar" aria-hidden="true"></i>Mar 05, 2019</li>
-											<li><i class="fa fa-commenting-o" aria-hidden="true"></i>59</li>
-										</ul>
-									</div>
-								</div>
-								<!-- End Single Post -->
-								<!-- Single Post -->
-								<div class="single-post">
-									<div class="image">
-										<img src="img/blog-sidebar3.jpg" alt="#">
-									</div>
-									<div class="content">
-										<h5><a href="#">We provide highly business soliutions.</a></h5>
-										<ul class="comment">
-											<li><i class="fa fa-calendar" aria-hidden="true"></i>June 09, 2019</li>
-											<li><i class="fa fa-commenting-o" aria-hidden="true"></i>44</li>
-										</ul>
-									</div>
-								</div>
+                                @foreach ($recentBlogs as $recentBlog)
+                                    <div class="single-post mef1">
+                                        @if ($recentBlog ->image != "")
+                                            <div class="image">
+                                                <img loading="lazy"  decoding="async" src="{{asset('storage/'.$recentBlog->image) }}" alt="#">
+                                            </div>
+                                        @endif
+
+                                        <div class="content">
+                                            <h5><a wire:navigate href="{{route('newsDetail', $recentBlog->id)}}">{{$recentBlog->shortTitle()}}</a></h5>
+                                            <ul class="comment">
+                                                <li>{{\Carbon\Carbon::parse($recentBlog->published_at)->locale(app()->getLocale())->translatedFormat('j F Y, g:i A');}}</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                @endforeach
 								<!-- End Single Post -->
 							</div>
+                            @endif
 							<!--/ End Single Widget -->
 							<!-- Single Widget -->
 							<!--/ End Single Widget -->
 							<!-- Single Widget -->
-							<div class="single-widget side-tags">
+							{{-- <div class="single-widget side-tags">
 								<h3 class="title">Tags</h3>
 								<ul class="tag">
 									<li><a href="#">business</a></li>
@@ -105,7 +83,7 @@
 									<li><a href="#">template</a></li>
 									<li><a href="#">Ecommerce</a></li>
 								</ul>
-							</div>
+							</div> --}}
 							<!--/ End Single Widget -->
 						</div>
 					</div>

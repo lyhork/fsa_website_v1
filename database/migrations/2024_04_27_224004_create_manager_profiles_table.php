@@ -11,11 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('prakas_views', function (Blueprint $table) {
+        Schema::create('manager_profiles', function (Blueprint $table) {
             $table->id();
-            $table->string('ip_address', 55);
-            $table->string('user_agent', 255);
-            $table->foreignId('prakas_id')->nullable()->constrained();
+            $table->string('manager_image')->nullable();
             $table->timestamps();
         });
     }
@@ -25,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('prakas_views');
+        Schema::dropIfExists('manager_profiles');
     }
 };

@@ -19,6 +19,12 @@ class ShowDocument extends Component
 
     public function render()
     {
+        $recentDocs = Document::orderBy('created_at', 'DESC')
+            ->get()
+            ->where('published_at', '<=', Carbon::now())
+            ->where('status',1)
+            ->where('published_at','!=','NULL')
+            ->take(5);
         $docs = Document::orderBy('created_at', 'DESC')
             ->where('published_at', '<=', Carbon::now())
             ->where('status',1)
@@ -27,6 +33,7 @@ class ShowDocument extends Component
 
         return view('livewire.show-document', [
             'docs' => $docs,
+            'recentDocs' => $recentDocs,
         ]);
     }
 

@@ -11,11 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('doc_views', function (Blueprint $table) {
+        Schema::create('about_us', function (Blueprint $table) {
             $table->id();
-            $table->string('ip_address', 55);
-            $table->string('user_agent', 255);
-            $table->foreignId('document_id')->nullable()->constrained();
+            $table->string('aboutus_file', 2048)->nullable();
             $table->timestamps();
         });
     }
@@ -25,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('doc_views');
+        Schema::dropIfExists('about_us');
     }
 };

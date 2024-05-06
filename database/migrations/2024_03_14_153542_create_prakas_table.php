@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('author')->nullable();
             $table->string('prakas_images')->nullable();
-            $table->string('prakas_file')->nullable();
+            $table->string('prakas_file', 2048)->nullable();
             $table->boolean('status')->default(1);
             $table->dateTime('published_at')->nullable();
             $table->timestamps();

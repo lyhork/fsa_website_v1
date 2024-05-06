@@ -29,8 +29,7 @@
 							<div class="body-text">
 								<h3 class="mef2">{{$docDetail->title}}</h3>
 								<div class="mef1 share">
-                                    <span><i class="fa fa-clock-o"></i>  {{\Carbon\Carbon::parse($docDetail->published_at)->locale(app()->getLocale())->translatedFormat('j F Y, g:i A');}}</span>
-                                    <span class="views"><i class="fa fa-eye"></i> {{ $itemCount }} Views</span>
+                                    <span>{{\Carbon\Carbon::parse($docDetail->published_at)->locale(app()->getLocale())->translatedFormat('j F Y, g:i A');}}</span>
 								</div>
 							</div>
 							{{-- <div class="image-slider">

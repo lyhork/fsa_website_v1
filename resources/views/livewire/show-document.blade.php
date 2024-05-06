@@ -81,51 +81,26 @@
 							</div>
 							<!--/ End Single Widget -->
 							<!-- Single Widget -->
+                            @if( $recentDocs->isNotEmpty())
 							<div class="single-widget recent-post">
-								<h3 class="title">Recent post</h3>
+								<h3 class="title mef2">Recent post</h3>
 								<!-- Single Post -->
-								<div class="single-post">
-									<div class="image">
-										<img src="{{ asset('frontend/img/blog-sidebar1.jpg') }}" alt="#">
-									</div>
-									<div class="content">
-										<h5><a href="#">We have annnocuced our new product.</a></h5>
-										<ul class="comment">
-											<li><i class="fa fa-calendar" aria-hidden="true"></i>Jan 11, 2020</li>
-											<li><i class="fa fa-eye" aria-hidden="true"></i>35</li>
-										</ul>
-									</div>
-								</div>
-								<!-- End Single Post -->
-								<!-- Single Post -->
-								<div class="single-post">
-									<div class="image">
-										<img src="{{ asset('frontend/img/blog-sidebar2.jpg') }}" alt="#">
-									</div>
-									<div class="content">
-										<h5><a href="#">Top five way for solving teeth problems.</a></h5>
-										<ul class="comment">
-											<li><i class="fa fa-calendar" aria-hidden="true"></i>Mar 05, 2019</li>
-											<li><i class="fa fa-commenting-o" aria-hidden="true"></i>59</li>
-										</ul>
-									</div>
-								</div>
-								<!-- End Single Post -->
-								<!-- Single Post -->
-								<div class="single-post">
-                                    <div class="image">
-										<img src="{{ asset('frontend/img/blog-sidebar3.jpg') }}" alt="#">
-									</div>
-									<div class="content">
-										<h5><a href="#">We provide highly business soliutions.</a></h5>
-										<ul class="comment">
-											<li><i class="fa fa-calendar" aria-hidden="true"></i>June 09, 2019</li>
-											<li><i class="fa fa-commenting-o" aria-hidden="true"></i>44</li>
-										</ul>
-									</div>
-								</div>
+                                @foreach ($recentDocs as $recentDoc)
+                                    <div class="doc_single-post mef1">
+                                        {{-- <div class="image">
+                                            <img src="{{ asset('frontend/img/blog-sidebar1.jpg') }}" alt="#">
+                                        </div> --}}
+                                        <div class="doc_content">
+                                            <h5><a wire:navigate href="{{route('docsDetail', $recentDoc->id)}}">{{$recentDoc->shortTitle()}}</a></h5>
+                                            <ul class="comment">
+                                                <li>{{\Carbon\Carbon::parse($recentDoc->published_at)->locale(app()->getLocale())->translatedFormat('j F Y, g:i A');}}</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                @endforeach
 								<!-- End Single Post -->
 							</div>
+                            @endif
 							<!--/ End Single Widget -->
 							<!-- Single Widget -->
 							<!--/ End Single Widget -->

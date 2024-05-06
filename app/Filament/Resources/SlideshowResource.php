@@ -54,8 +54,8 @@ class SlideshowResource extends Resource
                                 ->minSize(50) // 50 kb
                                 ->maxSize(2048) // 2 MB
                                 ->imageResizeMode('cover')
-                                ->imageResizeTargetWidth('1920')
-                                ->imageResizeTargetHeight('1080')
+                                // ->imageResizeTargetWidth('1920')
+                                // ->imageResizeTargetHeight('1080')
                                 ->acceptedFileTypes(['image/*'])
                                 ->directory('slideshows')
                                 ->required()

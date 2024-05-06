@@ -120,11 +120,12 @@
     .logo .logo-title{
         font-size: 12px;
         font-weight: 500;
+        margin: -15px 0px 0px 0px;
     }
 
     .logo a{
         width: 80px;
-        margin: 16px 0px 0px -71px;
+        margin: 16px 0px 0px 5px;
     }
     .slider .single-slider {
         height: 380px;
@@ -146,7 +147,7 @@
     .slider .single-slider{
         position:relative;
     }
-    .slider .single-slider:before{
+    /* .slider .single-slider:before{
         position:absolute;
         content:"";
         left:0;
@@ -155,7 +156,7 @@
         width:100%;
         background:#fff;
         opacity:0.5;
-    }
+    } */
     .slider .single-slider h1 {
         font-size: 28px;
         font-weight: 600;
@@ -605,7 +606,7 @@
     .slider .single-slider{
         position:relative;
     }
-    .slider .single-slider:before{
+    /* .slider .single-slider:before{
         position:absolute;
         content:"";
         left:0;
@@ -614,7 +615,7 @@
         width:100%;
         background:#fff;
         opacity:0.5;
-    }
+    } */
     .slider .single-slider h1 {
         font-size: 28px;
         font-weight: 600;
@@ -1038,7 +1039,9 @@
     .footer .copyright {
         padding: 20px 0;
     }
-
+    .slider .owl-carousel .owl-nav {
+        display:none;
+    }
 
     }
     /* Mobile Screen */
@@ -1104,7 +1107,7 @@
     .slider .single-slider{
         position:relative;
     }
-    .slider .single-slider:before{
+    /* .slider .single-slider:before{
         position:absolute;
         content:"";
         left:0;
@@ -1113,7 +1116,7 @@
         width:100%;
         background:#fff;
         opacity:0.5;
-    }
+    } */
     .slider .single-slider h1 {
         font-size: 20px;
         font-weight: 600;
@@ -1334,9 +1337,34 @@
         font-size: 12px;
         font-weight: 500;
     }
-
     .logo a{
         width: 89px;
         margin: 20px 0px 0px 0px;
     }
+    .header .nav li a {
+        font-size: 13px;
+        font-weight: 500;
+        padding: 25px 5px;
     }
+    .header .nav li .dropdown {
+        width: 200px;
+        left: -20px;
+        top: 65px;
+    }
+    .header .nav li .dropdown li a {
+        padding: 10px 15px;
+        font-size: 13px;
+    }
+    }
+
+    @media only screen and (min-width: 1200px) {
+        .logo .logo-title{
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .logo a{
+            width: 89px;
+            margin: 20px 0px 0px 0px;
+        }
+        }

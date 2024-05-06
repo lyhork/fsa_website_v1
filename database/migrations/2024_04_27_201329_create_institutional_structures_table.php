@@ -11,11 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('other_views', function (Blueprint $table) {
+        Schema::create('institutional_structures', function (Blueprint $table) {
             $table->id();
-            $table->string('ip_address', 55);
-            $table->string('user_agent', 255);
-            $table->foreignId('other_id')->nullable()->constrained();
+            $table->string('structure_image')->nullable();
             $table->timestamps();
         });
     }
@@ -25,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('other_views');
+        Schema::dropIfExists('institutional_structures');
     }
 };
