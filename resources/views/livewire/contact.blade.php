@@ -55,7 +55,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <h2>{{__('frontend.social-media')}}</h2>
+                                <h2>{{__('frontend.followUS')}}</h2>
                                 <ul class="social">
 									<li><a target="_blank" href="https://www.facebook.com/FSA.Cambodia"><i class="icofont-facebook"></i></a></li>
 									<li><a target="_blank" href="https://t.me/fsacambodia"><i class="icofont-telegram"></i></a></li>
@@ -72,7 +72,7 @@
 							<div class="single-info">
 								<i class="icofont icofont-ui-call"></i>
 								<div class="content">
-									<h3>(+855) 23 990 700</h3>
+									<h3>{{__('frontend.phone-foot')}}</h3>
 									<p>info@fsa.gov.kh</p>
 								</div>
 							</div>
@@ -83,8 +83,8 @@
 							<div class="single-info">
 								<i class="icofont-google-map"></i>
 								<div class="content">
-									<h3>ផ្លូវលេខ ៥៩៨</h3>
-									<p>Sangkat Chrang Chamres 1 , Phnom Penh</p>
+									<h3>{{__('frontend.address-short')}}</h3>
+									<p>{{__('frontend.address-long')}}</p>
 								</div>
 							</div>
 						</div>
@@ -94,8 +94,8 @@
 							<div class="single-info">
 								<i class="icofont icofont-wall-clock"></i>
 								<div class="content">
-									<h3>Mon - Fri: 8am - 4pm</h3>
-									<p>Sat - Sun Closed</p>
+									<h3>{{__('frontend.DateTime')}}</h3>
+									<p>{{__('frontend.ClosedDate')}}</p>
 								</div>
 							</div>
 						</div>

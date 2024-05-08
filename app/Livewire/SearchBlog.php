@@ -22,8 +22,15 @@ class SearchBlog extends Component
             ->where('status',1)
             ->where('title','LIKE',"%$q%")
             ->Paginate(2);
+        $recentBlogs = Blog::orderBy('created_at', 'DESC')
+        ->get()
+        ->where('published_at', '<=', Carbon::now())
+        ->where('status',1)
+        ->where('published_at','!=','NULL')
+        ->take(5);
         return view('livewire.search-blog' ,[
-            'results' => $results
+            'results' => $results,
+            'recentBlogs' => $recentBlogs,
         ]);
     }
 }

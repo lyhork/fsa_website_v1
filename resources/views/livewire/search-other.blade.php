@@ -121,54 +121,26 @@
 								</ul>
 							</div>
 							<!--/ End Single Widget -->
-							<!-- Single Widget -->
+							@if( $recentOthers->isNotEmpty())
 							<div class="single-widget recent-post">
-								<h3 class="title">Recent post</h3>
+								<h3 class="title mef2">Recent post</h3>
 								<!-- Single Post -->
-								<div class="single-post">
-									<div class="image">
-										<img src="{{'frontend/img/blog-sidebar1.jpg'}}" alt="#">
-									</div>
-									<div class="content">
-										<h5><a href="#">We have annnocuced our new product.</a></h5>
-										<ul class="comment">
-											<li><i class="fa fa-calendar" aria-hidden="true"></i>Jan 11, 2020</li>
-											<li><i class="fa fa-commenting-o" aria-hidden="true"></i>35</li>
-										</ul>
-									</div>
-								</div>
-								<!-- End Single Post -->
-								<!-- Single Post -->
-								<div class="single-post">
-									<div class="image">
-										<img src="img/blog-sidebar2.jpg" alt="#">
-									</div>
-									<div class="content">
-										<h5><a href="#">Top five way for solving teeth problems.</a></h5>
-										<ul class="comment">
-											<li><i class="fa fa-calendar" aria-hidden="true"></i>Mar 05, 2019</li>
-											<li><i class="fa fa-commenting-o" aria-hidden="true"></i>59</li>
-										</ul>
-									</div>
-								</div>
-								<!-- End Single Post -->
-								<!-- Single Post -->
-								<div class="single-post">
-									<div class="image">
-										<img src="img/blog-sidebar3.jpg" alt="#">
-									</div>
-									<div class="content">
-										<h5><a href="#">We provide highly business soliutions.</a></h5>
-										<ul class="comment">
-											<li><i class="fa fa-calendar" aria-hidden="true"></i>June 09, 2019</li>
-											<li><i class="fa fa-commenting-o" aria-hidden="true"></i>44</li>
-										</ul>
-									</div>
-								</div>
+                                @foreach ($recentOthers as $recentOther)
+                                    <div class="doc_single-post mef1">
+                                        {{-- <div class="image">
+                                            <img src="{{ asset('frontend/img/blog-sidebar1.jpg') }}" alt="#">
+                                        </div> --}}
+                                        <div class="doc_content">
+                                            <h5><a wire:navigate href="{{route('otherDetail', $recentOther->id)}}">{{$recentOther->shortTitle()}}</a></h5>
+                                            <ul class="comment">
+                                                <li>{{\Carbon\Carbon::parse($recentOther->published_at)->locale(app()->getLocale())->translatedFormat('j F Y, g:i A');}}</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                @endforeach
 								<!-- End Single Post -->
 							</div>
-							<!--/ End Single Widget -->
-							<!-- Single Widget -->
+                            @endif
 							<!--/ End Single Widget -->
 						</div>
 					</div>

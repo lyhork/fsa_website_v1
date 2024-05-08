@@ -81,7 +81,7 @@
                                     </a>
                                 </li>
                                 @endforeach
-								<li><i class="fa fa-phone"></i>+855 23 990 700</li>
+								<li><i class="fa fa-phone"></i>{{__('frontend.phone-foot')}}</li>
 								<li><i class="fa fa-envelope"></i><a href="mailto:support@yourmail.com">info@fsa.gov.kh</a></li>
 							</ul>
 							<!-- End Top Contact -->
@@ -158,23 +158,38 @@
 			<div class="footer-top">
 				<div class="container">
 					<div class="row">
-						<div class="col-lg-4 col-md-6 col-12">
+						<div class="col-lg-3 col-md-6 col-12">
 							<div class="single-footer">
-								<h2>About Us</h2>
-								<p>Lorem ipsum dolor sit am consectetur adipisicing elit do eiusmod tempor incididunt ut labore dolore magna.</p>
+                                <img src="{{ asset ('images/Logo FSA.png')}}" class="logo-footer mx-auto mt-3" alt="#">
+                                <div class="logo-title mef2 mx-auto">
+                                    <p class="mb-2">អាជ្ញាធរហិរញ្ញវត្ថុមិនមែនធនាគារ</p>
+                                    <p>Non-Bank Financial Services Authority</p>
+                                </div>
+								{{-- <h2>About Us</h2>
+								<p>Lorem ipsum dolor sit am consectetur adipisicing elit do eiusmod tempor incididunt ut labore dolore magna.</p> --}}
 								<!-- Social -->
-								<ul class="social">
+								{{-- <ul class="social">
 									<li><a target="_blank" href="https://www.facebook.com/FSA.Cambodia"><i class="icofont-facebook"></i></a></li>
 									<li><a target="_blank" href="https://t.me/fsacambodia"><i class="icofont-telegram"></i></a></li>
 									<li><a target="_blank" href="#"><i class="icofont-link"></i></a></li>
-								</ul>
+								</ul> --}}
 								<!-- End Social -->
 							</div>
 						</div>
-						<div class="col-lg-4 col-md-6 col-12">
+						<div class="col-lg-3 col-md-6 col-12">
 							<div class="single-footer f-link">
-								<h2>Quick Links</h2>
-								<div class="row">
+								<h2 class="mef2">{{__('frontend.contact-us')}}</h2>
+                                <ul class="mef1">
+                                    <li><a target="_blank" href="https://maps.app.goo.gl/9UQHRSUX26kkQUNc9"><i class="fa fa-map-marker" aria-hidden="true"></i>{{__('frontend.address-foot')}}</a></li>
+                                    <li><a target="_blank" href="tel:+85523990700"><i class="fa fa-phone" aria-hidden="true"></i>{{__('frontend.phone-foot')}}</a></li>
+                                    <li><a target="_blank" href="mailto:support@yourmail.com"><i class="fa fa-envelope"></i>info@fsa.gov.kh</a></li>
+                                </ul>
+							</div>
+						</div>
+                        <div class="col-lg-3 col-md-6 col-12">
+							<div class="single-footer f-link">
+								<h2 class="mef2">{{__('frontend.quickLink')}}</h2>
+								<div class="row mef1">
 									<div class="col-lg-6 col-md-6 col-12">
 										<ul>
 											<li><a href="{{ route('home')}}" wire:navigate><i class="fa fa-caret-right" aria-hidden="true"></i>{{__('frontend.home')}}</a></li>
@@ -195,7 +210,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-lg-4 col-md-6 col-12">
+						{{-- <div class="col-lg-3 col-md-6 col-12">
 							<div class="single-footer">
 								<h2>Open Hours</h2>
 								<p>Lorem ipsum dolor sit ame consectetur adipisicing elit do eiusmod tempor incididunt.</p>
@@ -205,18 +220,19 @@
 									<li class="day">Monday - Thusday <span>9.00-15.00</span></li>
 								</ul>
 							</div>
-						</div>
-						{{-- <div class="col-lg-3 col-md-6 col-12">
-							<div class="single-footer">
-								<h2>Newsletter</h2>
-								<p>subscribe to our newsletter to get allour news in your inbox.. Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p>
-								<form action="mail/mail.php" method="get" target="_blank" class="newsletter-inner">
-									<input name="email" placeholder="Email Address" class="common-input" onfocus="this.placeholder = ''"
-										onblur="this.placeholder = 'Your email address'" required="" type="email">
-									<button class="button"><i class="icofont icofont-paper-plane"></i></button>
-								</form>
-							</div>
 						</div> --}}
+						<div class="col-lg-3 col-md-6 col-12">
+							<div class="single-footer">
+								<h2 class="mef2">{{__('frontend.followUS')}}</h2>
+								{{-- <p>subscribe to our newsletter to get allour news in your inbox.. Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p> --}}
+                                <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FFSA.Cambodia&tabs=timeline&width=340&height=130px&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="130px" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                                <ul class="social mef1">
+									<li><a target="_blank" href="https://www.facebook.com/FSA.Cambodia"><i class="icofont-facebook"></i></a></li>
+									<li><a target="_blank" href="https://t.me/fsacambodia"><i class="icofont-telegram"></i></a></li>
+									<li><a target="_blank" href="#"><i class="icofont-link"></i></a></li>
+								</ul>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -227,7 +243,9 @@
 					<div class="row">
 						<div class="col-lg-12 col-md-12 col-12">
 							<div class="copyright-content">
-								<p>&copy;2024 {{__('frontend.footer')}}</p>
+								<p>&copy;
+                                    <script data-navigate-once>document.write(new Date().getFullYear());</script> {{__('frontend.footer')}}
+                                </p>
 							</div>
 						</div>
 					</div>

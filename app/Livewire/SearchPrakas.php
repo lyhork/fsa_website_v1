@@ -41,8 +41,15 @@ class SearchPrakas extends Component
             ->where('status',1)
             ->where('title','LIKE',"%$q%")
             ->Paginate(1);
+        $recentPrakas = Prakas::orderBy('created_at', 'DESC')
+        ->get()
+        ->where('published_at', '<=', Carbon::now())
+        ->where('status',1)
+        ->where('published_at','!=','NULL')
+        ->take(5);
         return view('livewire.search-prakas',[
-            'results' => $results
+            'results' => $results,
+            'recentPrakas' => $recentPrakas,
         ]);
     }
 }

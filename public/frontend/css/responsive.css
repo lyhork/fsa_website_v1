@@ -21,10 +21,10 @@
         font-size: 13px;
     }
     .breadcrumbs {
-        padding: 60px 0;
+        padding: 70px 0;
     }
     .breadcrumbs h2 {
-        font-size: 32px;
+        font-size: 28px;
         font-weight:600;
     }
     .breadcrumbs .bread-list {
@@ -128,7 +128,7 @@
         margin: 16px 0px 0px 5px;
     }
     .slider .single-slider {
-        height: 380px;
+        height: 480px;
     }
     .schedule {
         background: #fff;
@@ -296,7 +296,7 @@
         height: 400px;
     }
     .contact-us .contact-us-form h2 {
-        font-size: 28px;
+        font-size: 20px;
     }
     .contact-us .single-info {
         margin: 10px 0;
@@ -465,14 +465,14 @@
         margin:0;
     }
     .slicknav_nav li:hover a{
-        color:#1A76D1;
+        color:#4db55f;
     }
     .slicknav_nav li .dropdown li a{
         color:#2C2D3F;
         background:transparent;
     }
     .slicknav_nav li .dropdown li a:hover{
-        color:#1A76D1;
+        color:#4db55f;
     }
     .slicknav_nav li .slicknav_item{
         background:transparent;
@@ -492,7 +492,7 @@
         color:#2C2D3F;
     }
     .slicknav_nav li:hover .slicknav_arrow{
-        color:#1A76D1;
+        color:#4db55f;
     }
     .slicknav_menu .slicknav_icon-bar {
         display: block;
@@ -556,18 +556,18 @@
         padding: 60px 0;
     }
     .breadcrumbs h2 {
-        font-size: 32px;
+        font-size: 20px;
         font-weight:600;
     }
     .breadcrumbs .bread-list {
         margin-top:10px;
     }
     .breadcrumbs ul li{
-        font-size: 14px;
+        font-size: 10px;
         font-weight: 400;
     }
     .breadcrumbs ul li a {
-        font-size: 14px;
+        font-size: 10px;
         font-weight: 400;
     }
     .btn {
@@ -587,7 +587,7 @@
         margin: 0px 0px 10px 0px;
     }
     .slider .single-slider {
-        height: 380px;
+        height: 400px;
     }
     .schedule {
         background: #fff;
@@ -839,9 +839,9 @@
     .news-single .comments-form {
         padding: 15px;
     }
-    .main-sidebar .single-widget {
+    /* .main-sidebar .single-widget {
         padding: 20px;
-    }
+    } */
     .newsletter .subscribe-text {
         text-align: center;
         margin-bottom: 25px;
@@ -913,7 +913,7 @@
         height: 300px;
     }
     .contact-us .contact-us-form h2 {
-        font-size: 25px;
+        font-size: 20px;
     }
     .contact-us .single-info {
         margin: 10px 0;
@@ -1085,6 +1085,21 @@
 
     .logo a{
         width: 70px;
+    }
+
+    .breadcrumbs {
+        padding: 30px 0;
+    }
+    .breadcrumbs h2 {
+        font-size: 16px;
+        font-weight:600;
+    }
+    .breadcrumbs .bread-list {
+        margin-top: 5px;
+    }
+    .breadcrumbs ul li a {
+        font-size: 10px;
+        font-weight: 400;
     }
 
     .slider .single-slider {
@@ -1355,11 +1370,21 @@
         padding: 10px 15px;
         font-size: 13px;
     }
+    .slider .single-slider {
+        height: 580px;
+    }
+    .slider .single-slider{
+        position:relative;
+    }
+    .breadcrumbs {
+        padding: 80px 0;
+    }
+
     }
 
     @media only screen and (min-width: 1200px) {
         .logo .logo-title{
-            font-size: 12px;
+            font-size: 15px;
             font-weight: 500;
         }
 
@@ -1367,4 +1392,13 @@
             width: 89px;
             margin: 20px 0px 0px 0px;
         }
+        .slider .single-slider {
+            height: 800px;
         }
+        .slider .single-slider{
+            position:relative;
+        }
+        .breadcrumbs {
+            padding: 150px 0;
+        }
+    }
