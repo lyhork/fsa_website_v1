@@ -471,8 +471,8 @@ Preloader Area CSS
 }
 .section-title h2 {
    font-size: 32px;
-   font-weight: 600;
-   text-transform: capitalize;
+   font-weight: 100;
+   /* text-transform: capitalize; */
    margin-bottom: 24px;
    position: relative;
    color: #4db55f;
@@ -498,7 +498,7 @@ Preloader Area CSS
 }
 /* Bread Crumbs */
 .breadcrumbs {
-   background-image: url('../img/banner4.png');
+   background-image: url('../img/banner.png');
    background-size: cover;
    background-position: center;
    background-repeat: no-repeat;
@@ -512,7 +512,7 @@ Preloader Area CSS
 .breadcrumbs h2{
    color: #4db55f;
    text-transform:capitalize;
-   font-size: 38px;
+   font-size: 35px;
    margin: 0;
    padding: 0;
 }

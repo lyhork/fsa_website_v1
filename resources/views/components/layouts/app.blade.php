@@ -99,9 +99,9 @@
 								<!-- Start Logo -->
 								<div class="logo">
 									<a href="{{ route('home')}}" wire:navigate><img src="{{ asset ('images/Logo FSA.png')}}" class="logo-2" alt="#"></a>
-                                    <div class="logo-title mef2 mx-auto">
-                                        <p class="mb-2">អាជ្ញាធរហិរញ្ញវត្ថុមិនមែនធនាគារ</p>
-                                        <p>Non-Bank Financial Services Authority</p>
+                                    <div class="mef2 mx-auto">
+                                        <p class="logo-title mb-2">អាជ្ញាធរសេវាហិរញ្ញវត្ថុមិនមែនធនាគារ</p>
+                                        <p class="logo-en-title">Non-Bank Financial Services Authority</p>
                                     </div>
 								</div>
 								<!-- End Logo -->
@@ -124,9 +124,10 @@
 													<li class="{{ Route::is('manager-profile') ? 'active' : ''}} mef2"><a href="{{ route('manager-profile')}}" wire:navigate>{{__('frontend.manager-profile')}}</a></li>
 												</ul>
                                             </li>
-											<li class="{{ Route::is('docsPage') || Route::is('searchDoc') || Route::is('docsDetail') || Route::is('searchPrakas') || Route::is('prakasDetail') || Route::is('prakasPage') || Route::is('otherPage') || Route::is('searchOther') || Route::is('otherDetail') ? 'active' : ''}} mef2"><a wire:navigate href="">{{__('frontend.docs')}} <i class="icofont-rounded-down"></i></a>
+											<li class="{{ Route::is('docsPage') || Route::is('searchDoc') || Route::is('docsDetail') || Route::is('pressRelease') || Route::is('searchPress') || Route::is('searchPrakas') || Route::is('prakasDetail') || Route::is('prakasPage') || Route::is('otherPage') || Route::is('searchOther') || Route::is('otherDetail') ? 'active' : ''}} mef2"><a wire:navigate href="">{{__('frontend.docs')}} <i class="icofont-rounded-down"></i></a>
                                                 <ul class="dropdown">
 													<li class="{{ Route::is('docsPage') || Route::is('searchDoc') || Route::is('docsDetail') ? 'active' : ''}} mef2"><a wire:navigate href="{{ route('docsPage')}}">{{__('frontend.law-and-regulation')}}</a></li>
+													<li class="{{ Route::is('pressRelease') || Route::is('searchPress') ? 'active' : ''}} mef2"><a wire:navigate href="{{ route('pressRelease')}}">{{__('frontend.press-release')}}</a></li>
                                                     <li class="{{ Route::is('prakasPage') || Route::is('searchPrakas') || Route::is('prakasDetail') ? 'active' : ''}} mef2"><a wire:navigate href="{{ route('prakasPage')}}">{{__('frontend.prakas')}}</a></li>
 													<li class="{{ Route::is('otherPage') || Route::is('otherPage') || Route::is('searchOther') || Route::is('otherDetail') ? 'active' : ''}} mef2"><a wire:navigate href="{{ route('otherPage')}}">{{__('frontend.others')}}</a></li>
 												</ul>
@@ -161,9 +162,9 @@
 						<div class="col-lg-3 col-md-6 col-12">
 							<div class="single-footer">
                                 <img src="{{ asset ('images/Logo FSA.png')}}" class="logo-footer mx-auto mt-3" alt="#">
-                                <div class="logo-title mef2 mx-auto">
-                                    <p class="mb-2">អាជ្ញាធរហិរញ្ញវត្ថុមិនមែនធនាគារ</p>
-                                    <p>Non-Bank Financial Services Authority</p>
+                                <div class="mef2 mx-auto">
+                                    <p class="logo-title mb-2">អាជ្ញាធរសេវាហិរញ្ញវត្ថុមិនមែនធនាគារ</p>
+                                    <p class="logo-footer-en-title">Non-Bank Financial Services Authority</p>
                                 </div>
 								{{-- <h2>About Us</h2>
 								<p>Lorem ipsum dolor sit am consectetur adipisicing elit do eiusmod tempor incididunt ut labore dolore magna.</p> --}}
@@ -225,7 +226,11 @@
 							<div class="single-footer">
 								<h2 class="mef2">{{__('frontend.followUS')}}</h2>
 								{{-- <p>subscribe to our newsletter to get allour news in your inbox.. Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p> --}}
-                                <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FFSA.Cambodia&tabs=timeline&width=340&height=130px&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="130px" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                                <div class="row">
+                                    <div class="facebook">
+                                        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FFSA.Cambodia&tabs=timeline&width=290&height=130px&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="290" height="130px" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                                    </div>
+                                </div>
                                 <ul class="social mef1">
 									<li><a target="_blank" href="https://www.facebook.com/FSA.Cambodia"><i class="icofont-facebook"></i></a></li>
 									<li><a target="_blank" href="https://t.me/fsacambodia"><i class="icofont-telegram"></i></a></li>
@@ -243,8 +248,7 @@
 					<div class="row">
 						<div class="col-lg-12 col-md-12 col-12">
 							<div class="copyright-content">
-								<p>&copy;
-                                    <script data-navigate-once>document.write(new Date().getFullYear());</script> {{__('frontend.footer')}}
+								<p>&copy; {{__('frontend.footer')}}
                                 </p>
 							</div>
 						</div>
@@ -307,7 +311,7 @@
                 prependTo:".mobile-nav",
                 duration: 300,
                 closeOnClick:true,
-        });
+                });
             })
         </script>
         <script data-navigate-once>
@@ -337,7 +341,6 @@
                 scrollSpeed: 900,
                 animation: 'fade'
             });
-
             /*=======================
                 Animate Scroll JS
             =========================*/
@@ -361,13 +364,13 @@
                 dots:false,
                 responsive:{
                     300: {
-                        items:1,
-                    },
-                    480: {
                         items:2,
                     },
-                    768: {
+                    480: {
                         items:3,
+                    },
+                    768: {
+                        items:5,
                     },
                     1170: {
                         items:5,
@@ -390,7 +393,10 @@
                 dots:false,
                 navText: ['<i class="icofont-rounded-left"></i>', '<i class="icofont-rounded-right"></i>'],
             });
-            AOS.init();
+            AOS.init({
+                offset: 200,
+                duration: 1000
+            });
         })
         </script>
         @livewireScripts

@@ -94,7 +94,7 @@
 								<div class="logo">
 									<a href="{{ route('home')}}" wire:navigate><img src="{{ asset ('images/Logo FSA.png')}}" class="logo-2" alt="#"></a>
                                     <div class="logo-title mef2 mx-auto">
-                                        <p class="mb-2">អាជ្ញាធរហិរញ្ញវត្ថុមិនមែនធនាគារ</p>
+                                        <p class="mb-2">អាជ្ញាធរសេវាហិរញ្ញវត្ថុមិនមែនធនាគារ</p>
                                         <p>Non-Bank Financial Services Authority</p>
                                     </div>
 								</div>

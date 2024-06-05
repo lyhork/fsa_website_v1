@@ -23,7 +23,7 @@ class SlideshowResource extends Resource
 {
     use Translatable;
 
-    protected static ?string $navigationGroup = 'Slideshows';
+    protected static ?string $navigationGroup = 'Home';
 
     protected static ?string $model = Slideshow::class;
 

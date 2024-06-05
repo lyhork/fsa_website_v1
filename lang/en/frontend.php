@@ -43,5 +43,10 @@ return [
     'workingTime' => 'Open Hours: 8:00 am - 4:00 pm',
     'followUS' => 'Follow Us',
     'quickLink' => 'Quick Link',
+    'subordinate' => 'Subordinate Units of FSA',
+    'latest_news' => 'Latest News',
+    'press-release' => 'Press Release',
+    'organization-chart' => 'FSA Organization Chart',
+    'bod' => 'FSA Board of Directors',
 
 ];

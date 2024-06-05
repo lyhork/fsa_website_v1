@@ -21,13 +21,13 @@
 			<div class="container">
 				<div class="row">
                     @forelse($abouts as $about)
-                    <div class="col-lg-8 col-12">
+                    <div class="col-lg-9 col-12">
                         <div class="row">
                                 <div class="col-12">
                                     <div class="single-main">
                                         <div class="single-footer f-link mef1">
                                             <p>យោងតាមព្រះរាជក្រមលេខ នស/រកម/០១២១/០០៣ ចុះថ្ងៃទី១៤ ខែមករា ឆ្នាំ២០២១ ដែលប្រកាសឱ្យប្រើ
-                                                ច្បាប់ស្ដីពីការរៀបចំ និងការប្រព្រឹត្តទៅនៃអាជ្ញាធរសេវាាហិរញ្ញវត្ថុមិនមែនធនាគារ ។
+                                                ច្បាប់ស្ដីពីការរៀបចំ និងការប្រព្រឹត្តទៅនៃអាជ្ញាធរសេវាហិរញ្ញវត្ថុមិនមែនធនាគារ ។
                                                 ត្រូវបានបង្កើតអាជ្ញាធរសេវាហិរញ្ញវត្ថុមិនមែនធនាគារ សរសេរជាអក្សរកាត់ថា អ.ស.ហ. ដែលមានឯករាជ្យភាពក្នុងការបំពេញមុខងាររបស់ខ្លួន ដោយ
                                                 ធ្វើសមាហរណកម្មយន្តការនៃការគ្រប់គ្រងនិងត្រួតពិនិត្យលើវិស័យហិរញ្ញវត្ថុមិនមែនធនាគារ មានជាអាទិ៍ វិស័យធានារ៉ាប់រងនិងសោធនឯកជន វិស័យ
                                                 មូលបត្រ វិស័យសន្ដិសុខសង្គម វិស័យបរធនបាលកិច្ច វិស័យគណនេយ្យនិងសវនកម្ម និងវិស័យអចលនវត្ថុ វិស័យបញ្ចាំ និងប្រាតិភោគដោយអនុប្បទាន ក្នុងគោលបំណងពង្រឹងនិងធានាប្រសិទ្ធភាពនៃការគ្រប់គ្រង ការត្រួតពិនិត្យ
@@ -59,7 +59,7 @@
                         </div>
                     </div>
                     @empty
-                    <div class="col-lg-8 col-12">
+                    <div class="col-lg-9 col-12">
                         <div class="row">
                                 <div class="col-12">
                                     <div class="single-main">
@@ -69,7 +69,7 @@
                         </div>
                     </div>
                     @endforelse
-					<div data-aos="fade-left" data-aos-duration="1000" class="col-lg-4 col-12">
+					<div data-aos="fade-left" data-aos-duration="1000" data-aos-offset="200" class="col-lg-3 col-12">
 						<div class="main-sidebar">
 							<!-- Single Widget -->
 							<div class="single-widget category">

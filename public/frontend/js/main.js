@@ -156,7 +156,7 @@
 			Clients Slider JS
 		=================================*/
 		$('.clients-slider').owlCarousel({
-			items:5,
+			items:4,
 			autoplay:true,
 			autoplayTimeout:3500,
 			margin:15,
@@ -167,13 +167,13 @@
 			dots:false,
 			responsive:{
 				300: {
-					items:1,
-				},
-				480: {
 					items:2,
 				},
-				768: {
+				480: {
 					items:3,
+				},
+				768: {
+					items:5,
 				},
 				1170: {
 					items:5,

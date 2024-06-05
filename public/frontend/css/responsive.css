@@ -10,6 +10,7 @@
     }
     .section-title h2 {
         font-size: 25px;
+        font-weight: 100;
         margin-bottom: 12px;
     }
     .section-title p {
@@ -122,10 +123,14 @@
         font-weight: 500;
         margin: -15px 0px 0px 0px;
     }
+    .logo .logo-en-title{
+        font-size: 9px;
+        font-weight: 500;
+    }
 
     .logo a{
         width: 80px;
-        margin: 16px 0px 0px 5px;
+        margin: 10px 10px 0px 0px;
     }
     .slider .single-slider {
         height: 480px;
@@ -160,6 +165,11 @@
     .slider .single-slider h1 {
         font-size: 28px;
         font-weight: 600;
+        line-height: 35px;
+    }
+    .slider .single-slider p {
+        font-size: 17px;
+        font-weight: 300;
         line-height: 35px;
     }
     .slider .single-slider .text {
@@ -372,12 +382,6 @@
     }
 
 
-
-
-
-
-
-
     }
     /* Mobile Screen */
     @media only screen and (max-width: 767px) {
@@ -386,6 +390,11 @@
     }
     .logo .logo-title{
         font-size: 15px;
+        font-weight: 500;
+    }
+
+    .logo .logo-en-title{
+        font-size: 13px;
         font-weight: 500;
     }
 
@@ -405,7 +414,7 @@
         z-index: 333;
         position: absolute;
         position: relative;
-        padding-bottom: 20px;
+        padding-bottom: 5px;
         background: #fff;
     }
     .slicknav_menu{
@@ -546,6 +555,7 @@
     }
     .section-title h2 {
         font-size: 22px;
+        font-weight: 100;
         margin-bottom: 10px;
     }
     .section-title p {
@@ -620,6 +630,11 @@
         font-size: 28px;
         font-weight: 600;
         line-height: 35px;
+    }
+    .slider .single-slider p {
+        font-size: 16px;
+        font-weight: 200;
+        line-height: 20px;
     }
     .slider .single-slider .text {
         margin-top: 80px;
@@ -781,19 +796,35 @@
     .news-single .single-main {
         padding: 15px;
     }
+    .news-single .news-head {
+        margin-right: 15px;
+        float: left;
+        width: 90px;
+        max-height: 150px;
+        overflow: hidden;
+        border: 1px solid #f2f2f2;
+    }
+    .news-single .meta {
+        overflow: hidden;
+        border-top: 1px solid #ebebeb;
+        border-bottom: 1px solid #ebebeb;
+        /* width: 100%; */
+        padding: 7px 0;
+        margin-bottom: 10px;
+    }
     .news-single .news-title {
-        font-size: 20px;
+        font-size: 17px;
         font-weight: 500;
     }
     .news-single .news-title a{
-        font-size: 20px;
+        font-size: 17px;
         font-weight: 500;
     }
     .news-single .meta-right {
         float: none;
         display: inline-block;
-        margin-top: -6px;
-        margin-left: 56px;
+        /* margin-top: -6px; */
+        margin-left: -13px;
         float: left;
     }
     .news-single .image-gallery .single-image {
@@ -1057,6 +1088,7 @@
     }
     .section-title h2 {
         font-size: 22px;
+        font-weight: 100;
         margin-bottom: 10px;
     }
     .section-title p {
@@ -1080,11 +1112,15 @@
     }
 
     .logo .logo-title{
+        font-size: 11px;
+    }
+
+    .logo .logo-en-title{
         font-size: 9px;
     }
 
     .logo a{
-        width: 70px;
+        width: 75px;
     }
 
     .breadcrumbs {
@@ -1344,17 +1380,29 @@
         padding: 65px 0px;
     }
 
+    .news-single .news-head {
+        margin-right: 15px;
+        float: left;
+        width: 75px;
+        max-height: 150px;
+        overflow: hidden;
+        border: 1px solid #f2f2f2;
+    }
+
     }
 
 
     @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .logo .logo-title{
-        font-size: 12px;
+        font-size: 13px;
         font-weight: 500;
+    }
+    .logo .logo-en-title{
+        font-size: 10px;
     }
     .logo a{
         width: 89px;
-        margin: 20px 0px 0px 0px;
+        margin: 10px 10px 0px -17px;
     }
     .header .nav li a {
         font-size: 13px;
@@ -1384,13 +1432,13 @@
 
     @media only screen and (min-width: 1200px) {
         .logo .logo-title{
-            font-size: 15px;
+            font-size: 17px;
             font-weight: 500;
         }
 
         .logo a{
-            width: 89px;
-            margin: 20px 0px 0px 0px;
+            width: 105px;
+            margin: 0px 20px 0px 0px;
         }
         .slider .single-slider {
             height: 800px;
@@ -1400,5 +1448,14 @@
         }
         .breadcrumbs {
             padding: 150px 0;
+        }
+        .why-choose .choose-left h1{
+            padding: 75px 0;
+            font-size: 18px;
+            line-height: 2;
+        }
+        .why-choose img{
+            border-radius: 10px;
+            width: 90%;
         }
     }

@@ -22,17 +22,18 @@
 			<div class="container">
 				<div class="row">
                     @forelse($structures as $structure)
-                        <div class="col-lg-8 col-12">
+                        <div class="col-lg-9 col-12">
                             <div class="row">
                                     <div class="col-12">
                                         <div class="single-main">
+                                            <h1 class="structure-title mef2">{{__('frontend.organization-chart')}}</h1>
                                             <img data-aos="fade-in" data-aos-offset="0" data-aos-easing="ease-in-sine" src="{{asset('storage/'.$structure->structure_image) }}" alt="#">
                                         </div>
                                     </div>
                             </div>
                         </div>
                     @empty
-                        <div class="col-lg-8 col-12">
+                        <div class="col-lg-9 col-12">
                             <div class="row">
                                     <div class="col-12">
                                         <div class="single-main">
@@ -42,7 +43,7 @@
                             </div>
                         </div>
                     @endforelse
-					<div data-aos="fade-left" data-aos-duration="1000" class="col-lg-4 col-12">
+					<div data-aos="fade-left" data-aos-duration="1000" class="col-lg-3 col-12">
 						<div class="main-sidebar">
 							<!-- Single Widget -->
 							<div class="single-widget category">

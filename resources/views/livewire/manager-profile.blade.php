@@ -22,17 +22,18 @@
 			<div class="container">
 				<div class="row">
                     @forelse($managers as $manager)
-                        <div class="col-lg-8 col-12">
+                        <div class="col-lg-9 col-12">
                             <div class="row">
                                     <div class="col-12">
-                                        <div class="single-main">
+                                        <div class="leader-profile mx-auto">
+                                            <h1 class="structure-title mef2">{{__('frontend.bod')}}</h1>
                                             <img data-aos="fade-in" data-aos-offset="0" data-aos-easing="ease-in-sine" src="{{asset('storage/'.$manager->manager_image) }}" alt="#">
                                         </div>
                                     </div>
                             </div>
                         </div>
                     @empty
-                        <div class="col-lg-8 col-12">
+                        <div class="col-lg-9 col-12">
                             <div class="row">
                                     <div class="col-12">
                                         <div class="single-main">
@@ -103,7 +104,7 @@
                             </div>
                         </div>
                     </div> --}}
-					<div data-aos="fade-left" data-aos-duration="1000" class="col-lg-4 col-12">
+					<div data-aos="fade-left" data-aos-duration="1000" class="col-lg-3 col-12">
 						<div class="main-sidebar">
 							<!-- Single Widget -->
 							<div class="single-widget category">

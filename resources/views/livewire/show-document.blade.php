@@ -75,34 +75,11 @@
 								<h3 class="title mef2">{{__('frontend.docs')}}</h3>
 								<ul class="categor-list mef2">
 									<li class="{{ Route::is('docsPage') ? 'active' : ''}}"><a wire:navigate href="{{ route('docsPage')}}">{{__('frontend.law-and-regulation')}}</a></li>
+									<li><a wire:navigate href="{{ route('pressRelease')}}">{{__('frontend.press-release')}}</a></li>
 									<li><a wire:navigate href="{{ route('prakasPage')}}">{{__('frontend.prakas')}}</a></li>
 									<li><a wire:navigate href="{{ route('otherPage')}}">{{__('frontend.others')}}</a></li>
 								</ul>
 							</div>
-							<!--/ End Single Widget -->
-							<!-- Single Widget -->
-                            @if( $recentDocs->isNotEmpty())
-							<div class="single-widget recent-post">
-								<h3 class="title mef2">Recent post</h3>
-								<!-- Single Post -->
-                                @foreach ($recentDocs as $recentDoc)
-                                    <div class="doc_single-post mef1">
-                                        {{-- <div class="image">
-                                            <img src="{{ asset('frontend/img/blog-sidebar1.jpg') }}" alt="#">
-                                        </div> --}}
-                                        <div class="doc_content">
-                                            <h5><a wire:navigate href="{{route('docsDetail', $recentDoc->id)}}">{{$recentDoc->shortTitle()}}</a></h5>
-                                            <ul class="comment">
-                                                <li>{{\Carbon\Carbon::parse($recentDoc->published_at)->locale(app()->getLocale())->translatedFormat('j F Y, g:i A');}}</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                @endforeach
-								<!-- End Single Post -->
-							</div>
-                            @endif
-							<!--/ End Single Widget -->
-							<!-- Single Widget -->
 							<!--/ End Single Widget -->
 						</div>
 					</div>

@@ -6,10 +6,12 @@ use App\Livewire\Contact;
 use App\Livewire\DocDetail;
 use App\Livewire\OtherDetail;
 use App\Livewire\PrakasDetail;
+use App\Livewire\PressDetail;
 use App\Livewire\SearchBlog;
 use App\Livewire\SearchBox;
 use App\Livewire\SearchOther;
 use App\Livewire\SearchPrakas;
+use App\Livewire\SearchPress;
 use App\Livewire\ShowBlog;
 use App\Livewire\ShowDocument;
 use Illuminate\Support\Facades\Route;
@@ -18,6 +20,7 @@ use App\Livewire\ShowInstitutionalStructure;
 use App\Livewire\ShowManagerProfile;
 use App\Livewire\ShowOther;
 use App\Livewire\ShowPrakas;
+use App\Livewire\ShowPressRelease;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,6 +54,10 @@ Route::get('/news/{id}',BlogDetail::class)->name('newsDetail');
 Route::get('/docs',ShowDocument::class)->name('docsPage');
 Route::get('/docs/search',SearchBox::class)->name('searchDoc');
 Route::get('/docs/{id}',DocDetail::class)->name('docsDetail');
+
+Route::get('/press-release',ShowPressRelease::class)->name('pressRelease');
+Route::get('/press-release/search',SearchPress::class)->name('searchPress');
+Route::get('/press-release/{id}',PressDetail::class)->name('pressDetail');
 
 Route::get('/prakas',ShowPrakas::class)->name('prakasPage');
 Route::get('/prakas/search',SearchPrakas::class)->name('searchPrakas');

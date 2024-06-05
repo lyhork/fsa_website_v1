@@ -5,7 +5,7 @@
 				<div class="bread-inner">
 					<div class="row">
 						<div class="col-12">
-							<h2 class="mef2">{{$otherDetail->shortTitle()}}</h2>
+							<h2 class="mef2">{{__('frontend.others')}}</h2>
 							<ul class="bread-list mef1">
 								<li><a wire:navigate href="{{route('home')}}">{{__('frontend.home')}}</a></li>
 								<li><i class="icofont-simple-right"></i></li>

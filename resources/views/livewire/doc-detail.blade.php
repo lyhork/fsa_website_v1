@@ -5,11 +5,11 @@
 				<div class="bread-inner">
 					<div class="row">
 						<div class="col-12">
-							<h2 class="mef2">{{$docDetail->shortTitle()}}</h2>
+							<h2 class="mef2">{{__('frontend.law-and-regulation')}}</h2>
 							<ul class="bread-list mef1">
 								<li><a wire:navigate href="{{route('home')}}">{{__('frontend.home')}}</a></li>
 								<li><i class="icofont-simple-right"></i></li>
-								<li><a wire:navigate href="{{route('docsPage')}}">{{__('frontend.news')}}</a></li>
+								<li><a wire:navigate href="{{route('docsPage')}}">{{__('frontend.law-and-regulation')}}</a></li>
                                 <li><i class="icofont-simple-right"></i></li>
                                 <li class="active">{{$docDetail->breadTitle()}}</li>
 							</ul>

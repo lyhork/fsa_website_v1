@@ -21,7 +21,6 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Resources\Concerns\Translatable;
 use Illuminate\Support\Facades\Storage;
-
 class BlogResource extends Resource
 {
     use Translatable;

@@ -9,9 +9,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-lg-5">
-                                    <div class="text">
-                                        <h1 class="mef1"><span>{{$slideshow->author}}</span></h1>
-                                        <p class="mef1">{!!$slideshow->quote!!}</p>
+                                    <div class="text mef1">
+                                        <h1><span>{{$slideshow->author}}</span></h1>
+                                        <p>{!!$slideshow->quote!!}</p>
                                         {{-- <div class="button">
                                             <a href="#" class="btn">Get Appointment</a>
                                             <a href="#" class="btn primary">Learn More</a>
@@ -133,299 +133,60 @@
 		<!--/ End Fun-facts -->
 
 		<!-- Start Why choose -->
+        @if($mainSpeeches->isNotEmpty())
+        @foreach ($mainSpeeches as $mainSpeech)
 		<section class="why-choose section" >
 			<div class="container">
-				<div data-aos="fade-right"
+				{{-- <div data-aos="fade-right"
                 data-aos-offset="200" class="row">
 					<div class="col-lg-12">
 						<div class="section-title">
 							<h2>Who we are</h2>
-							{{-- <img src="{{asset('frontend/img/section-img.png') }}" alt="#"> --}}
 							<p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
 						</div>
 					</div>
-				</div>
-				<div data-aos="fade-right"
-                data-aos-offset="200" class="row">
+				</div> --}}
+				<div class="row">
 					<div class="col-lg-6 col-12">
 						<!-- Start Choose Left -->
-						<div class="choose-left">
-							<h3>Who We Are</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pharetra antege vel est lobortis, a commodo magna rhoncus. In quis nisi non emet quam pharetra commodo. </p>
-							<p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </p>
-							<div class="row">
-								<div class="col-lg-6">
-									<ul class="list">
-										<li><i class="fa fa-caret-right"></i>Maecenas vitae luctus nibh. </li>
-										<li><i class="fa fa-caret-right"></i>Duis massa massa.</li>
-										<li><i class="fa fa-caret-right"></i>Aliquam feugiat interdum.</li>
-									</ul>
-								</div>
-								<div class="col-lg-6">
-									<ul class="list">
-										<li><i class="fa fa-caret-right"></i>Maecenas vitae luctus nibh. </li>
-										<li><i class="fa fa-caret-right"></i>Duis massa massa.</li>
-										<li><i class="fa fa-caret-right"></i>Aliquam feugiat interdum.</li>
-									</ul>
-								</div>
-							</div>
+						<div class="choose-left mef1">
+							<h1>{{$mainSpeech->content}}</h1>
 						</div>
 						<!-- End Choose Left -->
 					</div>
 					<div class="col-lg-6 col-12">
-						<!-- Start Choose Rights -->
-						<div class="choose-right">
-							<div class="video-image">
-								<!-- Video Animation -->
-								<div class="promo-video">
-									<div class="waves-block">
-										<div class="waves wave-1"></div>
-										<div class="waves wave-2"></div>
-										<div class="waves wave-3"></div>
-									</div>
-								</div>
-								<!--/ End Video Animation -->
-								<a href="https://www.youtube.com/watch?v=BJj5vTc1raE" class="video video-popup mfp-iframe"><i class="fa fa-play"></i></a>
-							</div>
-						</div>
-						<!-- End Choose Rights -->
+                        <div class="leader-img">
+                            @if ($mainSpeech->speech_image != '')
+                                <img src="{{asset('storage/'.$mainSpeech->speech_image) }}" alt="#">
+                            @endif
+                        </div>
 					</div>
 				</div>
 			</div>
 		</section>
+        @endforeach
+        @endif
 		<!--/ End Why choose -->
 
-		<!-- Start Call to action -->
-		{{-- <section class="call-action overlay" data-stellar-background-ratio="0.5">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12 col-md-12 col-12">
-						<div class="content">
-							<h2>Do you need Emergency Medical Care? Call @ 1234 56789</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque porttitor dictum turpis nec gravida.</p>
-							<div class="button">
-								<a href="#" class="btn">Contact Now</a>
-								<a href="#" class="btn second">Learn More<i class="fa fa-long-arrow-right"></i></a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section> --}}
-		<!--/ End Call to action -->
-
-
-		<!-- Start portfolio -->
-		{{-- <section class="portfolio section" >
-			<div class="container">
-				<div data-aos="fade-right"
-                data-aos-offset="0" class="row">
-					<div class="col-lg-12">
-						<div class="section-title">
-							<h2>We Maintain Cleanliness Rules Inside Our Hospital</h2>
-							<p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="container-fluid">
-				<div class="row">
-					<div data-aos="fade-right" data-aos-offset="0" class="col-lg-12 col-12">
-						<div class="owl-carousel portfolio-slider">
-							<div class="single-pf">
-								<img src="{{asset('frontend/img/pf1.jpg') }}" alt="#">
-								<a href="portfolio-details.html" class="btn">View Details</a>
-							</div>
-							<div class="single-pf">
-								<img src="{{asset('frontend/img/pf2.jpg') }}" alt="#">
-								<a href="portfolio-details.html" class="btn">View Details</a>
-							</div>
-							<div class="single-pf">
-								<img src="{{asset('frontend/img/pf3.jpg') }}" alt="#">
-								<a href="portfolio-details.html" class="btn">View Details</a>
-							</div>
-							<div class="single-pf">
-								<img src="{{asset('frontend/img/pf4.jpg') }}" alt="#">
-								<a href="portfolio-details.html" class="btn">View Details</a>
-							</div>
-							<div class="single-pf">
-								<img src="{{asset('frontend/img/pf1.jpg') }}" alt="#">
-								<a href="portfolio-details.html" class="btn">View Details</a>
-							</div>
-							<div class="single-pf">
-								<img src="{{asset('frontend/img/pf2.jpg') }}" alt="#">
-								<a href="portfolio-details.html" class="btn">View Details</a>
-							</div>
-							<div class="single-pf">
-								<img src="{{asset('frontend/img/pf3.jpg') }}" alt="#">
-								<a href="portfolio-details.html" class="btn">View Details</a>
-							</div>
-							<div class="single-pf">
-								<img src="{{asset('frontend/img/pf4.jpg') }}" alt="#">
-								<a href="portfolio-details.html" class="btn">View Details</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section> --}}
-		<!--/ End portfolio -->
-
-		<!-- Start service -->
-		{{-- <section class="services section">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="section-title">
-							<h2>Management Structure</h2>
-							<p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-                    <div class="container">
-                        <div class="container1">
-                            <div class="level1-img">
-                                <img src="{{asset('frontend/img/mey_vann.jpg') }}" alt="#">
-                                <div class="level-1 rectangle">
-                                    <h1>H.E Mey Vann</h1>
-                                    <p>DG</p>
-                                    <h1>Position</h1>
-                                </div>
-
-                            </div>
-                            <ol class="level-2-wrapper">
-                                <li>
-                                    <div class="level2-img">
-                                        <img src="{{asset('frontend/img/kuy_savuth.jpg') }}" alt="#">
-                                        <div class="level-2 rectangle">
-                                            <h1>H.E Kuy Savuth</h1>
-                                            <p>DG</p>
-                                            <h1>Position</h1>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <h2 class="level-2 rectangle">Mr. Ngor Dalen</h2>
-                                </li>
-                                <li>
-                                    <h2 class="level-2 rectangle">Dr. Som Phay</h2>
-                                </li>
-                            </ol>
-                            <ol class="level-3-wrapper">
-                                <li>
-                                    <h2 class="level-3 rectangle">GAD</h2>
-                                    <ol class="level-4-wrapper">
-                                        <li>
-                                          <h4 class="level-4 rectangle">Finance</h4>
-                                        </li>
-                                        <li>
-                                          <h4 class="level-4 rectangle">Admin</h4>
-                                        </li>
-                                        <li>
-                                          <h4 class="level-4 rectangle">HR</h4>
-                                        </li>
-                                        <li>
-                                          <h4 class="level-4 rectangle">IT</h4>
-                                        </li>
-                                      </ol>
-                                </li>
-                                <li>
-                                    <h2 class="level-3 rectangle">LAD</h2>
-                                    <ol class="level-4-wrapper">
-                                        <li>
-                                          <h4 class="level-4 rectangle">Person A</h4>
-                                        </li>
-                                        <li>
-                                          <h4 class="level-4 rectangle">Person B</h4>
-                                        </li>
-                                        <li>
-                                          <h4 class="level-4 rectangle">Person C</h4>
-                                        </li>
-                                        <li>
-                                          <h4 class="level-4 rectangle">Person D</h4>
-                                        </li>
-                                      </ol>
-                                </li>
-                                <li>
-                                    <h2 class="level-3 rectangle">PD</h2>
-                                    <ol class="level-4-wrapper">
-                                        <li>
-                                          <h4 class="level-4 rectangle">Person A</h4>
-                                        </li>
-                                        <li>
-                                          <h4 class="level-4 rectangle">Person B</h4>
-                                        </li>
-                                        <li>
-                                          <h4 class="level-4 rectangle">Person C</h4>
-                                        </li>
-                                        <li>
-                                          <h4 class="level-4 rectangle">Person D</h4>
-                                        </li>
-                                      </ol>
-                                </li>
-                                <li>
-                                    <h2 class="level-3 rectangle">Pintech</h2>
-                                    <ol class="level-4-wrapper">
-                                        <li>
-                                          <h4 class="level-4 rectangle">Person A</h4>
-                                        </li>
-                                        <li>
-                                          <h4 class="level-4 rectangle">Person B</h4>
-                                        </li>
-                                        <li>
-                                          <h4 class="level-4 rectangle">Person C</h4>
-                                        </li>
-                                        <li>
-                                          <h4 class="level-4 rectangle">Person D</h4>
-                                        </li>
-                                      </ol>
-                                </li>
-                            </ol>
-                        </div>
-                    </div>
-				</div>
-			</div>
-		</section> --}}
-		<!--/ End service -->
-
-		<!-- Pricing Table -->
-		{{-- <section class="pricing-table section">
-			<div class="container">
-				<div data-aos="fade-right" data-aos-offset="0" class="row">
-					<div class="col-lg-12">
-						<div class="section-title">
-							<h2>Non-Bank Financial Services Authority Management Structure</h2>
-							<p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
-						</div>
-					</div>
-				</div>
-			</div>
-            <img data-aos="fade-in" data-aos-offset="0" data-aos-easing="ease-in-sine" src="{{asset('frontend/img/CHAT.jpg') }}" alt="#">
-		</section> --}}
-		<!--/ End Pricing Table -->
-
-
 		<!-- Start Blog Area -->
+        @if($latestBlogs->isNotEmpty())
 		<section class="blog section" id="blog">
 			<div class="container">
 				<div data-aos="fade-right"
                 data-aos-offset="200" class="row">
 					<div class="col-lg-12">
 						<div class="section-title">
-							<h2>Keep up with Our Most Recent FSA News.</h2>
-							{{-- <img src="{{asset('frontend/img/section-img.png') }}" alt="#"> --}}
-							<p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
+                            <h2 class="mef2">{{__('frontend.latest_news')}}</h2>
 						</div>
 					</div>
 				</div>
-				<div data-aos="fade-in"
-                data-aos-offset="200"
-                data-aos-easing="ease-in-sine" class="row">
+				<div class="row">
                     @foreach ($latestBlogs as $latestBlog)
                     <div class="col-lg-4 col-md-6 col-12">
 						<!-- Single Blog -->
-						<div class="single-news">
+						<div data-aos="fade-up"
+                        data-aos-offset="200"
+                        data-aos-easing="ease-in-sine" class="single-news">
                             <a wire:navigate href="{{route('newsDetail', $latestBlog->id)}}">
                                 <div class="news-head">
                                     <img src="{{asset('storage/'.$latestBlog->image) }}" alt="#">
@@ -456,17 +217,18 @@
 				</div>
 			</div>
 		</section>
+        @endif
 		<!-- End Blog Area -->
 
 		<!-- Start clients -->
-		<div data-aos="fade-right" data-aos-easing="ease-in-sine" data-aos-offset="200" class="clients">
+		<div class="clients">
 			<div class="container">
                 <div class="row">
 					<div class="col-lg-12">
 						<div class="section-title">
-							<h2 class="mef2">អង្គភាពក្រោមឱវាទ</h2>
+							<h2 class="mef2">{{__('frontend.subordinate')}}</h2>
 							{{-- <img src="{{asset('frontend/img/section-img.png') }}" alt="#"> --}}
-							<p class="mef1">អាជ្ញាធរក្នុងវិស័យហិរញ្ញវត្ថុមិនមែនធនាគារ</p>
+							{{-- <p class="mef1">អាជ្ញាធរក្នុងវិស័យហិរញ្ញវត្ថុមិនមែនធនាគារ</p> --}}
 						</div>
 					</div>
 				</div>
@@ -493,6 +255,9 @@
 							</div>
 							<div class="single-clients">
 								<a href="#" target="_blank"><img src="{{asset('frontend/img/TR.png') }}" alt="#"></a>
+							</div>
+                            <div class="single-clients">
+								<a href="#" target="_blank"><img src="{{asset('frontend/img/iau.png') }}" alt="#"></a>
 							</div>
 						</div>
 					</div>

@@ -19,13 +19,6 @@ class ShowOther extends Component
 
     public function render()
     {
-        sleep(1);
-        $recentOthers = Other::orderBy('created_at', 'DESC')
-            ->get()
-            ->where('published_at', '<=', Carbon::now())
-            ->where('status',1)
-            ->where('published_at','!=','NULL')
-            ->take(5);
         $others = Other::orderBy('created_at', 'DESC')
             ->where('published_at', '<=', Carbon::now())
             ->where('status',1)
@@ -33,7 +26,6 @@ class ShowOther extends Component
             ->Paginate(1);
         return view('livewire.show-other', [
             'others' => $others,
-            'recentOthers' => $recentOthers,
         ]);
     }
 }

@@ -3,11 +3,6 @@
         @forelse($prakas as $praka)
             <div class="col-12">
                 <div class="single-main">
-                    {{-- <!-- News Head -->
-                    <div class="news-head">
-                        <img src="img/blog1.jpg" alt="#">
-                    </div>
-                    <!-- News Title --> --}}
                     <h1 class="news-title mef2"><a wire:navigate href="{{route('prakasDetail', $praka->id)}}">{{$praka->shortTitle()}}</a></h1>
                     <!-- Meta -->
                     <div class="meta">
@@ -26,11 +21,6 @@
         @empty
             <div class="col-12">
                 <div class="single-main">
-                    {{-- <!-- News Head -->
-                    <div class="news-head">
-                        <img src="img/blog1.jpg" alt="#">
-                    </div>
-                    <!-- News Title --> --}}
                     <h1 class="news-title mef2">{{__('frontend.null')}}</h1>
                 </div>
             </div>

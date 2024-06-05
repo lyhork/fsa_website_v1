@@ -18,7 +18,7 @@
 		</div>
 		<!-- End Breadcrumbs -->
         <!-- Single News -->
-		<section class="blog section">
+		<section class="blog">
 			<div class="container">
 				<div class="row">
                     <livewire:show-blog-form lazy />
@@ -30,6 +30,22 @@
 									<input name="q" value="{{request()->get("q")}}" type="text" placeholder="{{__('frontend.search-here')}}">
                                     <button class="button" type="submit"><i class="fa fa-search"></i></button>
 								</form>
+							</div>
+                            <div class="single-widget category">
+								<h3 class="title mef2">{{__('frontend.about-us')}}</h3>
+								<ul class="categor-list mef2">
+									<li><a wire:navigate href="{{ route('about-fsa')}}">{{__('frontend.about-fsa')}}</a></li>
+									<li><a wire:navigate href="{{ route('institutional-structure')}}">{{__('frontend.institutional-structure')}}</a></li>
+									<li><a wire:navigate href="{{ route('manager-profile')}}">{{__('frontend.manager-profile')}}</a></li>
+								</ul>
+							</div>
+                            <div class="single-widget category">
+								<h3 class="title mef2">{{__('frontend.docs')}}</h3>
+								<ul class="categor-list mef2">
+									<li><a wire:navigate href="{{ route('docsPage')}}">{{__('frontend.law-and-regulation')}}</a></li>
+									<li><a wire:navigate href="{{ route('prakasPage')}}">{{__('frontend.prakas')}}</a></li>
+									<li><a wire:navigate href="{{ route('otherPage')}}">{{__('frontend.others')}}</a></li>
+								</ul>
 							</div>
 							<!--/ End Single Widget -->
 							<!-- Single Widget -->
@@ -43,33 +59,6 @@
 									<li><a href="#">Sun Glasses</a></li>
 								</ul>
 							</div> --}}
-							<!--/ End Single Widget -->
-							<!-- Single Widget -->
-                            @if( $recentBlogs -> isNotEmpty())
-							<div class="single-widget recent-post">
-								<h3 class="title mef2">Recent post</h3>
-								<!-- Single Post -->
-                                @foreach ($recentBlogs as $recentBlog)
-                                    <div class="single-post mef1">
-                                        @if ($recentBlog ->image != "")
-                                            <div class="image">
-                                                <img loading="lazy"  decoding="async" src="{{asset('storage/'.$recentBlog->image) }}" alt="#">
-                                            </div>
-                                        @endif
-
-                                        <div class="content">
-                                            <h5><a wire:navigate href="{{route('newsDetail', $recentBlog->id)}}">{{$recentBlog->shortTitle()}}</a></h5>
-                                            <ul class="comment">
-                                                <li>{{\Carbon\Carbon::parse($recentBlog->published_at)->locale(app()->getLocale())->translatedFormat('j F Y, g:i A');}}</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                @endforeach
-								<!-- End Single Post -->
-							</div>
-                            @endif
-							<!--/ End Single Widget -->
-							<!-- Single Widget -->
 							<!--/ End Single Widget -->
 							<!-- Single Widget -->
 							{{-- <div class="single-widget side-tags">
