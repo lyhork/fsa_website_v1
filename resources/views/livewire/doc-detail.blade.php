@@ -38,15 +38,15 @@
                                 @endif
 							</div> --}}
                             <div class="image-slider my-5">
-                                @if ($docDetail->doc_images != '')
-                                    @foreach ($docDetail->doc_images as $doc_image)
-                                        <img class="mb-5" src="{{asset('storage/'.$doc_image) }}" alt="#">
-                                    @endforeach
+                                @if ($docDetail->doc_image != '')
+                                    <img class="mb-5" src="{{asset('storage/'.$docDetail->doc_image) }}" alt="#">
                                 @endif
 							</div>
+                            @if($docDetail->doc_file != '')
                             <div class="table-bottom">
 								<a class="btn mef1" wire:click="download">{{__('frontend.doc_download')}} ({{$docDetail->getFileSize()}}MB)</a>
 							</div>
+                            @endif
 						</div>
 					</div>
 				</div>

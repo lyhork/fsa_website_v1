@@ -38,15 +38,15 @@
                                 @endif
 							</div> --}}
                             <div class="image-slider my-5">
-                                @if ($prakasDetail->prakas_images != '')
-                                    @foreach ($prakasDetail->prakas_images as $prakas_image)
-                                        <img class="mb-5" src="{{asset('storage/'.$prakas_image) }}" alt="#">
-                                    @endforeach
+                                @if ($prakasDetail->prakas_image != '')
+                                    <img class="mb-5" src="{{asset('storage/'.$prakasDetail->prakas_image) }}" alt="#">
                                 @endif
 							</div>
+                            @if($prakasDetail->prakas_file != '')
                             <div class="table-bottom">
 								<a class="btn mef1" wire:click="download">{{__('frontend.doc_download')}} ({{$prakasDetail->getFileSize()}}MB)</a>
 							</div>
+                            @endif
 						</div>
 					</div>
 				</div>

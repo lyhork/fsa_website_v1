@@ -66,10 +66,10 @@
                                 @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                                 <li><a wire:navigate hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
                                     @if($localeCode =='km')
-                                    <img src="{{asset('kh.png')}}" style="width: 25px">
+                                    <img src="{{asset('km.svg')}}" style="width: 25px">
                                     @endif
                                     @if($localeCode =='en')
-                                    <img src="{{asset('uk.png')}}" style="width: 25px">
+                                    <img src="{{asset('en.svg')}}" style="width: 25px">
                                     @endif
                                     <!-- {{ $properties['native'] }} -->
                                     </a>

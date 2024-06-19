@@ -14,13 +14,12 @@ class Other extends Model
 
     use HasFactory;
 
-    protected $fillable = ['title', 'author', 'other_images', 'other_file', 'status', 'published_at'];
+    protected $fillable = ['title', 'author', 'other_image', 'other_file', 'status', 'published_at'];
 
     public array $translatable = ['title'];
 
     protected $casts = [
         'title' => 'json',
-        'other_images' => 'array'
     ];
 
     public function shortTitle() {

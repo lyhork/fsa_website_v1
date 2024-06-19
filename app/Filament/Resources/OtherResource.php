@@ -52,7 +52,7 @@ class OtherResource extends Resource
             Group::make()
                 ->schema([
                     Section::make([
-                        FileUpload::make('other_images')
+                        FileUpload::make('other_image')
                             ->minSize(50) // 50 kb
                             ->maxSize(2048) // 2 MB
                             ->imageResizeMode('cover')
@@ -62,10 +62,8 @@ class OtherResource extends Resource
                             ->directory('others')
                             ->required()
                             ->image()
-                            ->multiple()
-                            ->reorderable()
-                            ->openable()
-                            ->storeFileNamesIn('original_filename'),
+                            ->imageEditor()
+                            ->openable(),
                         FileUpload::make('other_file')
                             ->minSize(50) // 50 kb
                             ->maxSize(307200) // 20MB
@@ -83,6 +81,7 @@ class OtherResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\ImageColumn::make('other_image'),
                 Tables\Columns\TextColumn::make('title')
                     ->limit(50)
                     ->searchable(),
@@ -115,12 +114,16 @@ class OtherResource extends Resource
                             Storage::disk('public')->delete($record->other_file);
                         }
 
-                        // Delete multiple images (if applicable)
-                        if ($record->other_images) {
-                            foreach ($record->other_images as $other_image) {
-                                Storage::disk('public')->delete($other_image);
-                            }
+                        // Delete single image
+                        if ($record->other_image) {
+                            Storage::disk('public')->delete($record->other_image);
                         }
+                        // Delete multiple images (if applicable)
+                        // if ($record->other_images) {
+                        //     foreach ($record->other_images as $other_image) {
+                        //         Storage::disk('public')->delete($other_image);
+                        //     }
+                        // }
                     }),
             ])
             ->bulkActions([

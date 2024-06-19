@@ -54,7 +54,7 @@ class DocumentResource extends Resource
                 Group::make()
                     ->schema([
                         Section::make([
-                            FileUpload::make('doc_images')
+                            FileUpload::make('doc_image')
                                 ->minSize(50) // 50 kb
                                 ->maxSize(2048) // 2 MB
                                 ->imageResizeMode('cover')
@@ -64,10 +64,8 @@ class DocumentResource extends Resource
                                 ->directory('docs')
                                 ->required()
                                 ->image()
-                                ->multiple()
-                                ->reorderable()
-                                ->openable()
-                                ->storeFileNamesIn('original_filename'),
+                                ->imageEditor()
+                                ->openable(),
                             FileUpload::make('doc_file')
                                 ->minSize(50) // 50 kb
                                 ->maxSize(307200) // 30MB
@@ -85,6 +83,7 @@ class DocumentResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\ImageColumn::make('doc_image'),
                 Tables\Columns\TextColumn::make('title')
                     ->limit(50)
                     ->searchable(),
@@ -117,12 +116,17 @@ class DocumentResource extends Resource
                             Storage::disk('public')->delete($record->doc_file);
                         }
 
-                        // Delete multiple images (if applicable)
-                        if ($record->doc_images) {
-                            foreach ($record->doc_images as $doc_image) {
-                                Storage::disk('public')->delete($doc_image);
-                            }
+                        // Delete single image
+                        if ($record->doc_image) {
+                            Storage::disk('public')->delete($record->doc_image);
                         }
+
+                        // Delete multiple images (if applicable)
+                        // if ($record->doc_images) {
+                        //     foreach ($record->doc_images as $doc_image) {
+                        //         Storage::disk('public')->delete($doc_image);
+                        //     }
+                        // }
                     }),
             ])
             ->bulkActions([

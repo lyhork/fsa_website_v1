@@ -23,7 +23,7 @@ class ShowOther extends Component
             ->where('published_at', '<=', Carbon::now())
             ->where('status',1)
             ->where('published_at','!=','NULL')
-            ->Paginate(1);
+            ->Paginate(20);
         return view('livewire.show-other', [
             'others' => $others,
         ]);

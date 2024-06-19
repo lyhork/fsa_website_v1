@@ -24,6 +24,9 @@ class PrakasStatsOverview extends BaseWidget
             Stat::make('This Month Prakas Posts', Prakas::whereMonth('published_at', Carbon::now()->month)->count())
                 ->chart([10, 20, 3, 10, 2, 10])
                 ->color('info'),
+            Stat::make('Disactive Prakas Posts', Prakas::where('status', '=', '0')->count())
+                ->chart([2, 8, 10, 5, 20, 5])
+                ->color('danger'),
         ];
     }
 }

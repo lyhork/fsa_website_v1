@@ -20,7 +20,7 @@
 			<div class="container">
 				<div class="row">
                     <livewire:show-press-release-form lazy />
-					<div data-aos="fade-left" data-aos-duration="1000" class="col-lg-4 col-12">
+					<div data-aos="zoom-in-left" data-aos-offset="0" class="col-lg-4 col-12">
 						<div class="main-sidebar">
 							<!-- Single Widget -->
 							<div class="single-widget search">

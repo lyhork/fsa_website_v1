@@ -24,6 +24,9 @@ class BlogStatsWidget extends BaseWidget
             Stat::make('This Month Posts', Blog::whereMonth('published_at', Carbon::now()->month)->count())
                 ->chart([10, 40, 23, 5, 28, 5])
                 ->color('info'),
+            Stat::make('Disactive Posts', Blog::where('status', '=', '0')->count())
+                ->chart([2, 8, 10, 5, 20, 5])
+                ->color('danger'),
         ];
     }
 }

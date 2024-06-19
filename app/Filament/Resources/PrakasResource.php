@@ -52,7 +52,7 @@ class PrakasResource extends Resource
             Group::make()
                 ->schema([
                     Section::make([
-                        FileUpload::make('prakas_images')
+                        FileUpload::make('prakas_image')
                             ->minSize(50) // 50 kb
                             ->maxSize(2048) // 2 MB
                             ->imageResizeMode('cover')
@@ -62,10 +62,8 @@ class PrakasResource extends Resource
                             ->directory('prakas')
                             ->required()
                             ->image()
-                            ->multiple()
-                            ->reorderable()
-                            ->openable()
-                            ->storeFileNamesIn('original_filename'),
+                            ->imageEditor()
+                            ->openable(),
                         FileUpload::make('prakas_file')
                             ->minSize(50) // 50 kb
                             ->maxSize(307200) // 20MB
@@ -83,11 +81,10 @@ class PrakasResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\ImageColumn::make('prakas_image'),
                 Tables\Columns\TextColumn::make('title')
                     ->limit(50)
                     ->searchable(),
-                Tables\Columns\TextColumn::make('author')
-                ->searchable(),
                 Tables\Columns\IconColumn::make('status')
                     ->boolean(),
                 Tables\Columns\TextColumn::make('published_at')
@@ -110,17 +107,21 @@ class PrakasResource extends Resource
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make()
                     ->after(function (Prakas $record) {
-                        // Delete single image
+                        // Delete single file
                         if ($record->prakas_file) {
                             Storage::disk('public')->delete($record->prakas_file);
                         }
 
-                        // Delete multiple images (if applicable)
-                        if ($record->prakas_images) {
-                            foreach ($record->prakas_images as $prakas_image) {
-                                Storage::disk('public')->delete($prakas_image);
-                            }
+                        // Delete single image
+                        if ($record->prakas_image) {
+                            Storage::disk('public')->delete($record->prakas_image);
                         }
+                        // Delete multiple images (if applicable)
+                        // if ($record->prakas_image) {
+                        //     foreach ($record->prakas_image as $prakas_image) {
+                        //         Storage::disk('public')->delete($prakas_image);
+                        //     }
+                        // }
                     }),
             ])
             ->bulkActions([

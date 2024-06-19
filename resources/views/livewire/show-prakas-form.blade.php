@@ -3,6 +3,12 @@
         @forelse($prakas as $praka)
             <div class="col-12">
                 <div class="single-main">
+                    <a class="download mef1" wire:navigate href="{{route('prakasDetail', $praka->id)}}">
+                    @if ($praka->prakas_image != '')
+                        <div class="news-head">
+                            <img src="{{asset('storage/'.$praka->prakas_image) }}" alt="#">
+                        </div>
+                    @endif
                     <h1 class="news-title mef2"><a wire:navigate href="{{route('prakasDetail', $praka->id)}}">{{$praka->shortTitle()}}</a></h1>
                     <!-- Meta -->
                     <div class="meta">
@@ -11,11 +17,12 @@
                         </div>
                         <div class="meta-right">
                             <div class="table-bottom">
-                                <a class="download mef1" wire:navigate href="{{route('prakasDetail', $praka->id)}}"><i class="fa fa-eye"></i> View</a>
-                                <a class="download mef1" wire:click="download({{$praka->id}})"><i class="fa fa-download"></i> {{__('frontend.doc_download')}}</a>
+                                <a class="download mef1" wire:navigate href="{{route('prakasDetail', $praka->id)}}"><i class="fa fa-eye"></i> {{__('frontend.view')}}</a>
+                                @if($praka->prakas_file != '')<a class="download mef1" wire:click="download({{$praka->id}})"><i class="fa fa-download"></i> {{__('frontend.doc_download')}}</a>@endif
                             </div>
                         </div>
                     </div>
+                    </a>
                 </div>
             </div>
         @empty

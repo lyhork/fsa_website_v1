@@ -18,6 +18,9 @@ class SlideshowStatsOverview extends BaseWidget
                 ->descriptionIcon('heroicon-m-cloud-arrow-up',IconPosition::Before)
                 ->chart([30, 10, 50, 10, 20, 40])
                 ->color('success'),
+            Stat::make('Disactive Slideshow Posts', Slideshow::where('status', '=', '0')->count())
+                ->chart([2, 8, 10, 5, 20, 5])
+                ->color('danger'),
         ];
     }
 }

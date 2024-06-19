@@ -26,9 +26,10 @@ class AppServiceProvider extends ServiceProvider
             $switch
                 ->locales(['en','km']) // also accepts a closure
                 ->flags([
-                    'km' => asset('kh.png'),
-                    'en' => asset('uk.png'),
-                ]);
+                    'km' => asset('km.svg'),
+                    'en' => asset('en.svg'),
+                ])
+                ->circular();
         });
 
     }

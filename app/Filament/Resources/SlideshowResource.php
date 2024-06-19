@@ -52,7 +52,7 @@ class SlideshowResource extends Resource
                         Section::make([
                             FileUpload::make('slideshow_image')
                                 ->minSize(50) // 50 kb
-                                ->maxSize(2048) // 2 MB
+                                ->maxSize(102400) // 10 MB
                                 ->imageResizeMode('cover')
                                 // ->imageResizeTargetWidth('1920')
                                 // ->imageResizeTargetHeight('1080')

@@ -8,7 +8,7 @@
                     <div class="single-slider" style="background-image:url('{{asset('storage/'.$slideshow->slideshow_image) }}')">
                         <div class="container">
                             <div class="row">
-                                <div class="col-lg-5">
+                                <div class="col-lg-12">
                                     <div class="text mef1">
                                         <h1><span>{{$slideshow->author}}</span></h1>
                                         <p>{!!$slideshow->quote!!}</p>
@@ -170,7 +170,7 @@
 
 		<!-- Start Blog Area -->
         @if($latestBlogs->isNotEmpty())
-		<section class="blog section" id="blog">
+		<section class="short-blog section" id="blog">
 			<div class="container">
 				<div data-aos="fade-right"
                 data-aos-offset="200" class="row">

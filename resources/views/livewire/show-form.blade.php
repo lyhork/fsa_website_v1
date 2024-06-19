@@ -3,6 +3,12 @@
         @forelse($docs as $doc)
             <div class="col-12">
                 <div class="single-main">
+                    <a class="download" wire:navigate href="{{route('docsDetail', $doc->id)}}">
+                    @if ($doc->doc_image != '')
+                        <div class="news-head">
+                            <img src="{{asset('storage/'.$doc->doc_image) }}" alt="#">
+                        </div>
+                    @endif
                     {{-- <!-- News Head -->
                     <div class="news-head">
                         <img src="img/blog1.jpg" alt="#">
@@ -16,11 +22,12 @@
                         </div>
                         <div class="meta-right">
                             <div class="table-bottom mef1">
-                                <a class="download" wire:navigate href="{{route('docsDetail', $doc->id)}}"><i class="fa fa-eye"></i> View</a>
-                                <a class="download" wire:click="download({{$doc->id}})"><i class="fa fa-download"></i> {{__('frontend.doc_download')}}</a>
+                                <a class="download" wire:navigate href="{{route('docsDetail', $doc->id)}}"><i class="fa fa-eye"></i> {{__('frontend.view')}}</a>
+                                @if($doc->doc_file != '')<a class="download" wire:click="download({{$doc->id}})"><i class="fa fa-download"></i> {{__('frontend.doc_download')}}</a>@endif
                             </div>
                         </div>
                     </div>
+                    </a>
                 </div>
             </div>
         @empty

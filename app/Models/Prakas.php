@@ -14,13 +14,12 @@ class Prakas extends Model
 
     use HasFactory;
 
-    protected $fillable = ['title', 'author', 'prakas_images', 'prakas_file', 'status', 'published_at'];
+    protected $fillable = ['title', 'author', 'prakas_image', 'prakas_file', 'status', 'published_at'];
 
     public array $translatable = ['title'];
 
     protected $casts = [
         'title' => 'json',
-        'prakas_images' => 'array'
     ];
 
     public function shortTitle() {

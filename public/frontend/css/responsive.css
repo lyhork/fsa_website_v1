@@ -1458,4 +1458,11 @@
             border-radius: 10px;
             width: 90%;
         }
+        .clients .single-clients img {
+            width: 100%;
+            cursor: pointer;
+            text-align: center;
+            float: none;
+            padding: 0 40px;
+        }
     }

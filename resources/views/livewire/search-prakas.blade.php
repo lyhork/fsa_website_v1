@@ -64,6 +64,12 @@
                             @forelse($results as $result)
                                 <div class="col-12">
                                     <div class="single-main">
+                                        <a class="download mef1" wire:navigate href="{{route('prakasDetail', $result->id)}}">
+                                        @if ($result->prakas_image != '')
+                                            <div class="news-head">
+                                                <img src="{{asset('storage/'.$result->prakas_image) }}" alt="#">
+                                            </div>
+                                        @endif
                                         {{-- <!-- News Head -->
                                         <div class="news-head">
                                             <img src="img/blog1.jpg" alt="#">
@@ -77,11 +83,12 @@
                                             </div>
                                             <div class="meta-right">
                                                 <div class="table-bottom">
-                                                    <a class="download mef1" wire:navigate href="{{route('prakasDetail', $result->id)}}"><i class="fa fa-eye"></i> View</a>
-                                                    <a class="download mef1" wire:click="download({{$result->id}})"><i class="fa fa-download"></i> {{__('frontend.doc_download')}}</a>
+                                                    <a class="download mef1" wire:navigate href="{{route('prakasDetail', $result->id)}}"><i class="fa fa-eye"></i> {{__('frontend.view')}}</a>
+                                                    @if($result->prakas_file != '')<a class="download mef1" wire:click="download({{$result->id}})"><i class="fa fa-download"></i> {{__('frontend.doc_download')}}</a>@endif
                                                 </div>
                                             </div>
                                         </div>
+                                        </a>
                                     </div>
                                 </div>
                             @empty

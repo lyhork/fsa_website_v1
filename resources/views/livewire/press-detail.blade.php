@@ -17,7 +17,7 @@
             </div>
         </div>
     </div>
-    <section class="news-single section">
+    {{-- <section class="news-single section">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -34,16 +34,6 @@
                             <p>{!!$pressDetail->content!!}</p>
                             <div class="image-gallery">
                                 <div class="row">
-                                    {{-- <div class="col-lg-6 col-md-6 col-12">
-                                        <div class="single-image">
-                                            <img src="{{ asset('frontend/img/ab.jpg') }}" alt="#">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-12">
-                                        <div class="single-image">
-                                            <img src="{{ asset('frontend/img/ab.jpg') }}" alt="#">
-                                        </div>
-                                    </div> --}}
                                     <div class="gallery">
                                         @if ($pressDetail->press_images != '')
                                         @foreach ($pressDetail->press_images as $press_image)
@@ -53,10 +43,41 @@
                                     </div>
                                 </div>
                             </div>
+                            @if($pressDetail->press_file != '')
                             <div class="table-bottom">
 								<a class="btn mef1" wire:click="download">{{__('frontend.doc_download')}} ({{$pressDetail->getFileSize()}}MB)</a>
 							</div>
+                            @endif
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> --}}
+    <section class="pf-details section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="inner-content">
+                        <div class="body-text">
+                            <h3 class="mef2">{{$pressDetail->title}}</h3>
+                            <div class="share">
+                                <span class="mef1">{{\Carbon\Carbon::parse($pressDetail->published_at)->locale(app()->getLocale())->translatedFormat('j F Y, g:i A');}}</span>
+                            </div>
+                            <p>{!!$pressDetail->content!!}</p>
+                        </div>
+                        <div class="image-slider my-1">
+                            @if ($pressDetail->press_images != '')
+                                @foreach ($pressDetail->press_images as $press_image)
+                                    <img class="mb-3" src="{{asset('storage/'.$press_image) }}" alt="image">
+                                @endforeach
+                            @endif
+                        </div>
+                        @if($pressDetail->press_file != '')
+                        <div class="table-bottom">
+                            <a class="btn mb-3 mef1" wire:click="download">{{__('frontend.doc_download')}} ({{$pressDetail->getFileSize()}}MB)</a>
+                        </div>
+                        @endif
                     </div>
                 </div>
             </div>

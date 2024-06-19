@@ -81,7 +81,7 @@ class PressReleaseResource extends Resource
                             ->maxSize(307200) // 20MB
                             ->acceptedFileTypes(['application/pdf'])
                             ->directory('press-release')
-                            ->required()
+                            // ->required()
                             ->openable()
                             ->storeFileNamesIn('original_filename'),
                     ])
@@ -124,9 +124,14 @@ class PressReleaseResource extends Resource
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make()
                     ->after(function (PressRelease $record) {
-                        // Delete single image
+                        // Delete single file
                         if ($record->press_file) {
                             Storage::disk('public')->delete($record->press_file);
+                        }
+
+                        // Delete single image
+                        if ($record->press_image) {
+                            Storage::disk('public')->delete($record->press_image);
                         }
 
                         // Delete multiple images (if applicable)

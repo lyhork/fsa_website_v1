@@ -24,6 +24,9 @@ class OtherStatsOverview extends BaseWidget
             Stat::make('This Month Other Posts', Other::whereMonth('published_at', Carbon::now()->month)->count())
                 ->chart([10, 20, 3, 10, 2, 10])
                 ->color('info'),
+            Stat::make('Disactive Other Posts', Other::where('status', '=', '0')->count())
+                ->chart([2, 8, 10, 5, 20, 5])
+                ->color('danger'),
         ];
     }
 }

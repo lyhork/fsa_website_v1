@@ -15,13 +15,12 @@ class Document extends Model
 
     use HasFactory;
 
-    protected $fillable = ['title', 'author', 'doc_images', 'doc_file', 'status', 'published_at'];
+    protected $fillable = ['title', 'author', 'doc_image', 'doc_file', 'status', 'published_at'];
 
     public array $translatable = ['title'];
 
     protected $casts = [
         'title' => 'json',
-        'doc_images' => 'array'
     ];
 
     public function shortTitle() {

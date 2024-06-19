@@ -24,6 +24,9 @@ class DocumentStatsOverview extends BaseWidget
             Stat::make('This Month Documents Posts', Document::whereMonth('published_at', Carbon::now()->month)->count())
                 ->chart([20, 40, 33, 10, 28, 10])
                 ->color('info'),
+            Stat::make('Disactive Documents Posts', Document::where('status', '=', '0')->count())
+                ->chart([2, 8, 10, 5, 20, 5])
+                ->color('danger'),
         ];
     }
 }
