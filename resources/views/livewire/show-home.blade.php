@@ -149,13 +149,13 @@
 				<div class="row">
 					<div class="col-lg-6 col-12">
 						<!-- Start Choose Left -->
-						<div class="choose-left mef1">
+						<div data-aos="fade-right" class="choose-left mef1">
 							<h1>{{$mainSpeech->content}}</h1>
 						</div>
 						<!-- End Choose Left -->
 					</div>
 					<div class="col-lg-6 col-12">
-                        <div class="leader-img">
+                        <div data-aos="fade-left" class="leader-img">
                             @if ($mainSpeech->speech_image != '')
                                 <img src="{{asset('storage/'.$mainSpeech->speech_image) }}" alt="#">
                             @endif
@@ -172,10 +172,9 @@
         @if($latestBlogs->isNotEmpty())
 		<section class="short-blog section" id="blog">
 			<div class="container">
-				<div data-aos="fade-right"
-                data-aos-offset="200" class="row">
+				<div class="row">
 					<div class="col-lg-12">
-						<div class="section-title">
+						<div data-aos="flip-down" class="section-title">
                             <h2 class="mef2">{{__('frontend.latest_news')}}</h2>
 						</div>
 					</div>
@@ -184,9 +183,7 @@
                     @foreach ($latestBlogs as $latestBlog)
                     <div class="col-lg-4 col-md-6 col-12">
 						<!-- Single Blog -->
-						<div data-aos="fade-up"
-                        data-aos-offset="200"
-                        data-aos-easing="ease-in-sine" class="single-news">
+						<div data-aos="fade-up" data-aos-delay="150" class="single-news">
                             <a wire:navigate href="{{route('newsDetail', $latestBlog->id)}}">
                                 <div class="news-head">
                                     <img src="{{asset('storage/'.$latestBlog->image) }}" alt="#">
@@ -208,7 +205,7 @@
 					<div class="col-lg-12">
 						<div class="section-title">
 							<div class="text">
-                                <div class="button">
+                                <div data-aos="fade-up" class="button">
                                     <a wire:navigate href="{{route('newsPage')}}" class="btn second">{{__('frontend.see-more')}}<i class="fa fa-long-arrow-right"></i></a>
                                 </div>
                             </div>
@@ -225,7 +222,7 @@
 			<div class="container">
                 <div class="row">
 					<div class="col-lg-12">
-						<div class="section-title">
+						<div data-aos="flip-down" class="section-title">
 							<h2 class="mef2">{{__('frontend.subordinate')}}</h2>
 							{{-- <img src="{{asset('frontend/img/section-img.png') }}" alt="#"> --}}
 							{{-- <p class="mef1">អាជ្ញាធរក្នុងវិស័យហិរញ្ញវត្ថុមិនមែនធនាគារ</p> --}}
@@ -235,28 +232,28 @@
 				<div class="row">
 					<div class="col-lg-12 col-md-12 col-12">
 						<div class="owl-carousel clients-slider">
-							<div class="single-clients">
+							<div data-aos="fade-up" class="single-clients">
 								<a href="#" target="_blank"><img src="{{asset('frontend/img/fsa.png') }}" alt="#"></a>
 							</div>
-							<div class="single-clients">
+							<div data-aos="fade-up" data-aos-delay="150" class="single-clients">
 								<a href="#" target="_blank"><img src="{{asset('frontend/img/ACAR.png') }}" alt="#"></a>
 							</div>
-							<div class="single-clients">
+							<div data-aos="fade-up" data-aos-delay="300" class="single-clients">
 								<a href="#" target="_blank"><img src="{{asset('frontend/img/IRC.png') }}" alt="#"></a>
 							</div>
-							<div class="single-clients">
+							<div data-aos="fade-up" data-aos-delay="450" class="single-clients">
 								<a href="#" target="_blank"><img src="{{asset('frontend/img/REBP.png') }}" alt="#"></a>
 							</div>
-							<div class="single-clients">
+							<div data-aos="fade-up" data-aos-delay="600" class="single-clients">
 								<a href="#" target="_blank"><img src="{{asset('frontend/img/SERC.png') }}" alt="#"></a>
 							</div>
-							<div class="single-clients">
+							<div data-aos="fade-up" data-aos-delay="750" class="single-clients">
 								<a href="#" target="_blank"><img src="{{asset('frontend/img/SSR.png') }}" alt="#"></a>
 							</div>
-							<div class="single-clients">
+							<div data-aos="fade-up" data-aos-delay="900" class="single-clients">
 								<a href="#" target="_blank"><img src="{{asset('frontend/img/TR.png') }}" alt="#"></a>
 							</div>
-                            <div class="single-clients">
+                            <div data-aos="fade-up" data-aos-delay="1050" class="single-clients">
 								<a href="#" target="_blank"><img src="{{asset('frontend/img/iau.png') }}" alt="#"></a>
 							</div>
 						</div>

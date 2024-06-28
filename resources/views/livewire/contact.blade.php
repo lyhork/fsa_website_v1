@@ -18,7 +18,7 @@
     <!-- Start Contact Us -->
 		<section class="contact-us section">
 			<div class="container">
-				<div class="inner">
+				<div data-aos="fade-up" class="inner">
 					<div class="row">
 						<div class="col-lg-6">
 							<div class="contact-us-left">
@@ -69,7 +69,7 @@
 					<div class="row">
 						<!-- single-info -->
 						<div class="col-lg-4 col-12 ">
-							<div class="single-info">
+							<div data-aos="fade-up" class="single-info">
 								<i class="icofont icofont-ui-call"></i>
 								<div class="content">
 									<h3>{{__('frontend.phone-foot')}}</h3>
@@ -80,7 +80,7 @@
 						<!--/End single-info -->
 						<!-- single-info -->
 						<div class="col-lg-4 col-12 ">
-							<div class="single-info">
+							<div data-aos="fade-up" data-aos-delay="150" class="single-info">
 								<i class="icofont-google-map"></i>
 								<div class="content">
 									<h3>{{__('frontend.address-short')}}</h3>
@@ -91,7 +91,7 @@
 						<!--/End single-info -->
 						<!-- single-info -->
 						<div class="col-lg-4 col-12 ">
-							<div class="single-info">
+							<div data-aos="fade-up" data-aos-delay="300" class="single-info">
 								<i class="icofont icofont-wall-clock"></i>
 								<div class="content">
 									<h3>{{__('frontend.DateTime')}}</h3>

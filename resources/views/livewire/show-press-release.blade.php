@@ -20,8 +20,8 @@
 			<div class="container">
 				<div class="row">
                     <livewire:show-press-release-form lazy />
-					<div data-aos="zoom-in-left" data-aos-offset="0" class="col-lg-4 col-12">
-						<div class="main-sidebar">
+					<div class="col-lg-4 col-12">
+						<div data-aos="fade-left" class="main-sidebar">
 							<!-- Single Widget -->
 							<div class="single-widget search">
 								<form method="get" action="{{route('searchPress')}}" class="form">

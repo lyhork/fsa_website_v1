@@ -160,7 +160,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-3 col-md-6 col-12">
-							<div class="single-footer">
+							<div data-aos="fade-up" class="single-footer">
                                 <img src="{{ asset ('images/Logo FSA.png')}}" class="logo-footer mx-auto mt-3" alt="#">
                                 <div class="mef2 mx-auto">
                                     <p class="logo-title mb-2">អាជ្ញាធរសេវាហិរញ្ញវត្ថុមិនមែនធនាគារ</p>
@@ -178,7 +178,7 @@
 							</div>
 						</div>
 						<div class="col-lg-3 col-md-6 col-12">
-							<div class="single-footer f-link">
+							<div data-aos="fade-up" data-aos-delay="150" class="single-footer f-link">
 								<h2 class="mef2">{{__('frontend.contact-us')}}</h2>
                                 <ul class="mef1">
                                     <li><a target="_blank" href="https://maps.app.goo.gl/9UQHRSUX26kkQUNc9"><i class="fa fa-map-marker" aria-hidden="true"></i>{{__('frontend.address-foot')}}</a></li>
@@ -188,7 +188,7 @@
 							</div>
 						</div>
                         <div class="col-lg-3 col-md-6 col-12">
-							<div class="single-footer f-link">
+							<div data-aos="fade-up" data-aos-delay="300" class="single-footer f-link">
 								<h2 class="mef2">{{__('frontend.quickLink')}}</h2>
 								<div class="row mef1">
 									<div class="col-lg-6 col-md-6 col-12">
@@ -223,7 +223,7 @@
 							</div>
 						</div> --}}
 						<div class="col-lg-3 col-md-6 col-12">
-							<div class="single-footer">
+							<div data-aos="fade-up" data-aos-delay="450" class="single-footer">
 								<h2 class="mef2">{{__('frontend.followUS')}}</h2>
 								{{-- <p>subscribe to our newsletter to get allour news in your inbox.. Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p> --}}
                                 <div class="row">
@@ -395,7 +395,8 @@
             });
             AOS.init({
                 offset: 200,
-                duration: 1000
+                duration: 1000,
+                disable: 'mobile',
             });
         })
         </script>

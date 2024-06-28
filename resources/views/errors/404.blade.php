@@ -41,6 +41,8 @@
         <link rel="stylesheet" href="{{ asset ('frontend/css/normalize.css')}}">
         <link rel="stylesheet" href="{{ asset ('frontend/style.css')}}">
         <link rel="stylesheet" href="{{ asset ('frontend/css/responsive.css')}}">
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
         @livewireStyles
     </head>
     <body>
@@ -66,16 +68,20 @@
                                 @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                                 <li><a wire:navigate hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
                                     @if($localeCode =='km')
-                                    <img src="{{asset('km.svg')}}" style="width: 25px">
+                                    <div class="is_locale">
+                                        <img src="{{asset('km.svg')}}" style="width: 25px;display: inline-block;">
+                                    </div>
                                     @endif
                                     @if($localeCode =='en')
-                                    <img src="{{asset('en.svg')}}" style="width: 25px">
+                                    <div class="is_locale">
+                                        <img src="{{asset('en.svg')}}" style="width: 25px;display: inline-block;">
+                                    </div>
                                     @endif
                                     <!-- {{ $properties['native'] }} -->
                                     </a>
                                 </li>
                                 @endforeach
-								<li><i class="fa fa-phone"></i>+855 23 990 700</li>
+								<li><i class="fa fa-phone"></i>{{__('frontend.phone-foot')}}</li>
 								<li><i class="fa fa-envelope"></i><a href="mailto:support@yourmail.com">info@fsa.gov.kh</a></li>
 							</ul>
 							<!-- End Top Contact -->
@@ -89,13 +95,13 @@
 				<div class="container">
 					<div class="inner">
 						<div class="row">
-							<div class="col-xl-5 col-lg-4 col-md-4 col-12">
+							<div class="col-xl-5 col-lg-5 col-md-5 col-12">
 								<!-- Start Logo -->
 								<div class="logo">
 									<a href="{{ route('home')}}" wire:navigate><img src="{{ asset ('images/Logo FSA.png')}}" class="logo-2" alt="#"></a>
-                                    <div class="logo-title mef2 mx-auto">
-                                        <p class="mb-2">អាជ្ញាធរសេវាហិរញ្ញវត្ថុមិនមែនធនាគារ</p>
-                                        <p>Non-Bank Financial Services Authority</p>
+                                    <div class="mef2 mx-auto">
+                                        <p class="logo-title mb-2">អាជ្ញាធរសេវាហិរញ្ញវត្ថុមិនមែនធនាគារ</p>
+                                        <p class="logo-en-title">Non-Bank Financial Services Authority</p>
                                     </div>
 								</div>
 								<!-- End Logo -->
@@ -104,30 +110,31 @@
                                 </div>
 								<!-- End Mobile Nav -->
 							</div>
-							<div class="col-xl-7 col-lg-8 col-md-8 col-12">
+							<div class="col-xl-7 col-lg-7 col-md-7 col-12">
 								<!-- Main Menu -->
 								<div class="main-menu">
 									<nav class="navigation">
 										<ul class="nav menu ml-auto">
 											<li class="{{ Route::is('home') ? 'active' : ''}} mef2"><a href="{{ route('home')}}" wire:navigate>{{__('frontend.home')}}</a>
 											</li>
-											<li class="mef2"><a href="#">{{__('frontend.about-us')}}<i class="icofont-rounded-down"></i></a>
+											<li class="{{ Route::is('about-fsa')|| Route::is('institutional-structure') || Route::is('manager-profile') ? 'active' : ''}} mef2"><a wire:navigate href="">{{__('frontend.about-us')}}<i class="icofont-rounded-down"></i></a>
                                                 <ul class="dropdown">
-													<li class="mef2"><a href="#">{{__('frontend.about-fsa')}}</a></li>
-													<li class="mef2"><a href="#">{{__('frontend.institutional-structure')}}</a></li>
-													<li class="mef2"><a href="#">{{__('frontend.manager-profile')}}</a></li>
+													<li class="{{ Route::is('about-fsa') ? 'active' : ''}} mef2"><a href="{{ route('about-fsa')}}" wire:navigate>{{__('frontend.about-fsa')}}</a></li>
+													<li class="{{ Route::is('institutional-structure') ? 'active' : ''}} mef2"><a href="{{ route('institutional-structure')}}" wire:navigate>{{__('frontend.institutional-structure')}}</a></li>
+													<li class="{{ Route::is('manager-profile') ? 'active' : ''}} mef2"><a href="{{ route('manager-profile')}}" wire:navigate>{{__('frontend.manager-profile')}}</a></li>
 												</ul>
                                             </li>
-											<li class="mef2"><a href="#">{{__('frontend.docs')}} <i class="icofont-rounded-down"></i></a>
+											<li class="{{ Route::is('docsPage') || Route::is('searchDoc') || Route::is('docsDetail') || Route::is('pressRelease') || Route::is('searchPress') || Route::is('searchPrakas') || Route::is('prakasDetail') || Route::is('prakasPage') || Route::is('otherPage') || Route::is('searchOther') || Route::is('otherDetail') ? 'active' : ''}} mef2"><a wire:navigate href="">{{__('frontend.docs')}} <i class="icofont-rounded-down"></i></a>
                                                 <ul class="dropdown">
-													<li class="mef2"><a href="#">{{__('frontend.law-and-regulation')}}</a></li>
-                                                    <li class="mef2"><a href="#">{{__('frontend.prakas')}}</a></li>
-													<li class="mef2"><a href="#">{{__('frontend.others')}}</a></li>
+													<li class="{{ Route::is('docsPage') || Route::is('searchDoc') || Route::is('docsDetail') ? 'active' : ''}} mef2"><a wire:navigate href="{{ route('docsPage')}}">{{__('frontend.law-and-regulation')}}</a></li>
+													<li class="{{ Route::is('pressRelease') || Route::is('searchPress') ? 'active' : ''}} mef2"><a wire:navigate href="{{ route('pressRelease')}}">{{__('frontend.press-release')}}</a></li>
+                                                    <li class="{{ Route::is('prakasPage') || Route::is('searchPrakas') || Route::is('prakasDetail') ? 'active' : ''}} mef2"><a wire:navigate href="{{ route('prakasPage')}}">{{__('frontend.prakas')}}</a></li>
+													<li class="{{ Route::is('otherPage') || Route::is('otherPage') || Route::is('searchOther') || Route::is('otherDetail') ? 'active' : ''}} mef2"><a wire:navigate href="{{ route('otherPage')}}">{{__('frontend.others')}}</a></li>
 												</ul>
                                             </li>
 											<li class="{{ Route::is('newsPage') ? 'active' : ''}} mef2"><a wire:navigate href="{{ route('newsPage')}}">{{__('frontend.news')}}</a>
 											</li>
-											<li class="mef2"><a href="#">{{__('frontend.contact-us')}}</a></li>
+											<li class="{{ Route::is('contact') ? 'active' : ''}} mef2"><a wire:navigate href="{{ route('contact')}}">{{__('frontend.contact-us')}}</a></li>
 										</ul>
 									</nav>
 								</div>
@@ -167,65 +174,82 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-3 col-md-6 col-12">
-							<div class="single-footer">
-								<h2>About Us</h2>
-								<p>Lorem ipsum dolor sit am consectetur adipisicing elit do eiusmod tempor incididunt ut labore dolore magna.</p>
+							<div data-aos="fade-up" class="single-footer">
+                                <img src="{{ asset ('images/Logo FSA.png')}}" class="logo-footer mx-auto mt-3" alt="#">
+                                <div class="mef2 mx-auto">
+                                    <p class="logo-title mb-2">អាជ្ញាធរសេវាហិរញ្ញវត្ថុមិនមែនធនាគារ</p>
+                                    <p class="logo-footer-en-title">Non-Bank Financial Services Authority</p>
+                                </div>
+								{{-- <h2>About Us</h2>
+								<p>Lorem ipsum dolor sit am consectetur adipisicing elit do eiusmod tempor incididunt ut labore dolore magna.</p> --}}
 								<!-- Social -->
-								<ul class="social">
-									<li><a href="#"><i class="icofont-facebook"></i></a></li>
-									<li><a href="#"><i class="icofont-google-plus"></i></a></li>
-									<li><a href="#"><i class="icofont-twitter"></i></a></li>
-									<li><a href="#"><i class="icofont-vimeo"></i></a></li>
-									<li><a href="#"><i class="icofont-pinterest"></i></a></li>
-								</ul>
+								{{-- <ul class="social">
+									<li><a target="_blank" href="https://www.facebook.com/FSA.Cambodia"><i class="icofont-facebook"></i></a></li>
+									<li><a target="_blank" href="https://t.me/fsacambodia"><i class="icofont-telegram"></i></a></li>
+									<li><a target="_blank" href="#"><i class="icofont-link"></i></a></li>
+								</ul> --}}
 								<!-- End Social -->
 							</div>
 						</div>
 						<div class="col-lg-3 col-md-6 col-12">
-							<div class="single-footer f-link">
-								<h2>Quick Links</h2>
-								<div class="row">
+							<div data-aos="fade-up" data-aos-delay="150" class="single-footer f-link">
+								<h2 class="mef2">{{__('frontend.contact-us')}}</h2>
+                                <ul class="mef1">
+                                    <li><a target="_blank" href="https://maps.app.goo.gl/9UQHRSUX26kkQUNc9"><i class="fa fa-map-marker" aria-hidden="true"></i>{{__('frontend.address-foot')}}</a></li>
+                                    <li><a target="_blank" href="tel:+85523990700"><i class="fa fa-phone" aria-hidden="true"></i>{{__('frontend.phone-foot')}}</a></li>
+                                    <li><a target="_blank" href="mailto:support@yourmail.com"><i class="fa fa-envelope"></i>info@fsa.gov.kh</a></li>
+                                </ul>
+							</div>
+						</div>
+                        <div class="col-lg-3 col-md-6 col-12">
+							<div data-aos="fade-up" data-aos-delay="300" class="single-footer f-link">
+								<h2 class="mef2">{{__('frontend.quickLink')}}</h2>
+								<div class="row mef1">
 									<div class="col-lg-6 col-md-6 col-12">
 										<ul>
-											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Home</a></li>
-											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>About Us</a></li>
-											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Services</a></li>
-											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Our Cases</a></li>
-											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Other Links</a></li>
+											<li><a href="{{ route('home')}}" wire:navigate><i class="fa fa-caret-right" aria-hidden="true"></i>{{__('frontend.home')}}</a></li>
+											<li><a href="{{ route('about-fsa')}}" wire:navigate><i class="fa fa-caret-right" aria-hidden="true"></i>{{__('frontend.about-fsa')}}</a></li>
+											<li><a href="{{ route('institutional-structure')}}" wire:navigate><i class="fa fa-caret-right" aria-hidden="true"></i>{{__('frontend.institutional-structure')}}</a></li>
+											<li><a href="{{ route('manager-profile')}}" wire:navigate><i class="fa fa-caret-right" aria-hidden="true"></i>{{__('frontend.manager-profile')}}</a></li>
+											<li><a wire:navigate href="{{ route('docsPage')}}"><i class="fa fa-caret-right" aria-hidden="true"></i>{{__('frontend.law-and-regulation')}}</a></li>
 										</ul>
 									</div>
 									<div class="col-lg-6 col-md-6 col-12">
 										<ul>
-											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Consuling</a></li>
-											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Finance</a></li>
-											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Testimonials</a></li>
-											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>FAQ</a></li>
-											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Contact Us</a></li>
+											<li><a wire:navigate href="{{ route('prakasPage')}}"><i class="fa fa-caret-right" aria-hidden="true"></i>{{__('frontend.prakas')}}</a></li>
+											<li><a wire:navigate href="{{ route('otherPage')}}"><i class="fa fa-caret-right" aria-hidden="true"></i>{{__('frontend.others')}}</a></li>
+											<li><a wire:navigate href="{{ route('newsPage')}}"><i class="fa fa-caret-right" aria-hidden="true"></i>{{__('frontend.news')}}</a></li>
+											<li><a wire:navigate href="{{ route('contact')}}"><i class="fa fa-caret-right" aria-hidden="true"></i>{{__('frontend.contact-us')}}</a></li>
 										</ul>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="col-lg-3 col-md-6 col-12">
+						{{-- <div class="col-lg-3 col-md-6 col-12">
 							<div class="single-footer">
 								<h2>Open Hours</h2>
 								<p>Lorem ipsum dolor sit ame consectetur adipisicing elit do eiusmod tempor incididunt.</p>
 								<ul class="time-sidual">
-									<li class="day">Monday - Fridayp <span>8.00-20.00</span></li>
+									<li class="day">Monday - Friday <span>8.00-20.00</span></li>
 									<li class="day">Saturday <span>9.00-18.30</span></li>
 									<li class="day">Monday - Thusday <span>9.00-15.00</span></li>
 								</ul>
 							</div>
-						</div>
+						</div> --}}
 						<div class="col-lg-3 col-md-6 col-12">
-							<div class="single-footer">
-								<h2>Newsletter</h2>
-								<p>subscribe to our newsletter to get allour news in your inbox.. Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p>
-								<form action="mail/mail.php" method="get" target="_blank" class="newsletter-inner">
-									<input name="email" placeholder="Email Address" class="common-input" onfocus="this.placeholder = ''"
-										onblur="this.placeholder = 'Your email address'" required="" type="email">
-									<button class="button"><i class="icofont icofont-paper-plane"></i></button>
-								</form>
+							<div data-aos="fade-up" data-aos-delay="450" class="single-footer">
+								<h2 class="mef2">{{__('frontend.followUS')}}</h2>
+								{{-- <p>subscribe to our newsletter to get allour news in your inbox.. Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p> --}}
+                                <div class="row">
+                                    <div class="facebook">
+                                        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FFSA.Cambodia&tabs=timeline&width=290&height=130px&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="290" height="130px" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                                    </div>
+                                </div>
+                                <ul class="social mef1">
+									<li><a target="_blank" href="https://www.facebook.com/FSA.Cambodia"><i class="icofont-facebook"></i></a></li>
+									<li><a target="_blank" href="https://t.me/fsacambodia"><i class="icofont-telegram"></i></a></li>
+									<li><a target="_blank" href="#"><i class="icofont-link"></i></a></li>
+								</ul>
 							</div>
 						</div>
 					</div>
@@ -238,7 +262,8 @@
 					<div class="row">
 						<div class="col-lg-12 col-md-12 col-12">
 							<div class="copyright-content">
-								<p>&copy;2024 {{__('frontend.footer')}}</p>
+								<p>&copy; {{__('frontend.footer')}}
+                                </p>
 							</div>
 						</div>
 					</div>
@@ -288,9 +313,11 @@
 		<script src="{{ asset ('frontend/js/bootstrap.min.js')}}"></script>
 		<!-- Main JS -->
 		<script src="{{ asset ('frontend/js/main.js')}}"></script>
-        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-        <script>
-            AOS.init();
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script data-navigate-once>
+            document.addEventListener('livewire:navigated', () => {
+                src="{{ asset ('frontend/js/bootstrap.min.js')}}"
+            })
         </script>
         <script data-navigate-once>
             document.addEventListener('livewire:navigated', () => {
@@ -298,7 +325,7 @@
                 prependTo:".mobile-nav",
                 duration: 300,
                 closeOnClick:true,
-        });
+                });
             })
         </script>
         <script data-navigate-once>
@@ -307,13 +334,83 @@
             loop:true,
             autoplay:true,
             smartSpeed: 500,
-            autoplayTimeout:3500,
+            autoplayTimeout:5500,
             singleItem: true,
             autoplayHoverPause:true,
             items:1,
             nav:true,
             navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
             dots:false,
+            });
+        })
+        </script>
+        <script data-navigate-once>
+            document.addEventListener('livewire:navigated', () => {
+            /*===================
+			Scroll Up JS
+            =====================*/
+            $.scrollUp({
+                scrollText: '<span><i class="fa fa-angle-up"></i></span>',
+                easingType: 'easeInOutExpo',
+                scrollSpeed: 900,
+                animation: 'fade'
+            });
+            /*=======================
+                Animate Scroll JS
+            =========================*/
+            $('.scroll').on("click", function (e) {
+                var anchor = $(this);
+                    $('html, body').stop().animate({
+                        scrollTop: $(anchor.attr('href')).offset().top - 100
+                    }, 1000);
+                e.preventDefault();
+            });
+
+            $('.clients-slider').owlCarousel({
+                items:5,
+                autoplay:true,
+                autoplayTimeout:3500,
+                margin:15,
+                smartSpeed: 400,
+                autoplayHoverPause:true,
+                loop:true,
+                nav:false,
+                dots:false,
+                responsive:{
+                    300: {
+                        items:2,
+                    },
+                    480: {
+                        items:3,
+                    },
+                    768: {
+                        items:5,
+                    },
+                    1170: {
+                        items:5,
+                    },
+                }
+		    });
+
+            /*====================================
+                Single Portfolio Slider JS
+            ======================================*/
+            $('.pf-details-slider').owlCarousel({
+                items:5,
+                autoplay:false,
+                autoplayTimeout:5000,
+                smartSpeed: 400,
+                autoplayHoverPause:true,
+                loop:true,
+                merge:true,
+                nav:true,
+                dots:false,
+                navText: ['<i class="icofont-rounded-left"></i>', '<i class="icofont-rounded-right"></i>'],
+            });
+            AOS.init({
+                offset: 200,
+                duration: 1000,
+                disable: 'mobile',
             });
         })
         </script>
