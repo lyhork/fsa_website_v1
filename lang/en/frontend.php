@@ -47,7 +47,7 @@ return [
     'subordinate' => 'Subordinate Units of FSA',
     'latest_news' => 'Latest News',
     'press-release' => 'Press Release',
-    'organization-chart' => 'FSA Organization Chart',
+    'organization-chart' => 'FSA\'s Organization Chart',
     'bod' => 'FSA Board of Directors',
 
 ];
