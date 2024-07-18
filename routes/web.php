@@ -2,7 +2,6 @@
 
 use App\Livewire\AboutFsa;
 use App\Livewire\BlogDetail;
-use App\Livewire\Contact;
 use App\Livewire\DocDetail;
 use App\Livewire\OtherDetail;
 use App\Livewire\PrakasDetail;
@@ -13,6 +12,7 @@ use App\Livewire\SearchOther;
 use App\Livewire\SearchPrakas;
 use App\Livewire\SearchPress;
 use App\Livewire\ShowBlog;
+use App\Livewire\ShowContact;
 use App\Livewire\ShowDocument;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\ShowHome;
@@ -43,7 +43,7 @@ Route::get('/',ShowHome::class)->name('home');
 
 Route::get('/institutional-structure',ShowInstitutionalStructure::class)->name('institutional-structure');
 Route::get('/manager-profile',ShowManagerProfile::class)->name('manager-profile');
-Route::get('/contact',Contact::class)->name('contact');
+Route::get('/contact',ShowContact::class)->name('contact');
 Route::get('/about',AboutFsa::class)->name('about-fsa');
 
 
