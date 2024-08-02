@@ -69,7 +69,7 @@
 							<div class="contact-us-form mef1">
 								<h2>{{__('frontend.contact-us')}}</h2>
 								{{-- <p>If you have any questions please fell free to contact with us.</p> --}}
-                                <div class="row mef1">
+                                <div class="row">
                                     <div class="col-lg-12">
                                         <div class="form-group">
                                             <h3>{{__('frontend.address')}}</h3>
@@ -101,7 +101,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="contact-info">
+				<div class="contact-info mef1">
 					<div class="row">
 						<!-- single-info -->
 						<div class="col-lg-4 col-12 ">

@@ -351,33 +351,6 @@
                     }, 1000);
                 e.preventDefault();
             });
-
-            $('.clients-slider').owlCarousel({
-                items:5,
-                autoplay:true,
-                autoplayTimeout:3500,
-                margin:15,
-                smartSpeed: 400,
-                autoplayHoverPause:true,
-                loop:true,
-                nav:false,
-                dots:false,
-                responsive:{
-                    300: {
-                        items:2,
-                    },
-                    480: {
-                        items:3,
-                    },
-                    768: {
-                        items:5,
-                    },
-                    1170: {
-                        items:5,
-                    },
-                }
-		    });
-
             /*====================================
                 Single Portfolio Slider JS
             ======================================*/
@@ -393,12 +366,44 @@
                 dots:false,
                 navText: ['<i class="icofont-rounded-left"></i>', '<i class="icofont-rounded-right"></i>'],
             });
-            AOS.init({
-                offset: 200,
-                duration: 1000,
-                disable: 'mobile',
-            });
         })
+        </script>
+        <script data-navigate-once>
+            document.addEventListener('livewire:navigated', () => {
+                $('.clients-slider').owlCarousel({
+                    items:5,
+                    autoplay:true,
+                    autoplayTimeout:3500,
+                    margin:15,
+                    smartSpeed: 400,
+                    autoplayHoverPause:true,
+                    loop:true,
+                    nav:false,
+                    dots:false,
+                    responsive:{
+                        300: {
+                            items:2,
+                        },
+                        480: {
+                            items:3,
+                        },
+                        768: {
+                            items:5,
+                        },
+                        1170: {
+                            items:5,
+                        },
+                    }
+		        });
+            })
+        </script>
+        <script data-navigate-once>
+            document.addEventListener('livewire:navigated', () => {
+                AOS.init({
+                    duration: 1000,
+                    disable: 'mobile',
+                });
+            })
         </script>
         @livewireScripts
     </body>
