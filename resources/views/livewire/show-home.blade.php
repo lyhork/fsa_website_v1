@@ -236,25 +236,25 @@
 								<a href="#" target="_blank"><img src="{{asset('frontend/img/fsa.png') }}" alt="#"></a>
 							</div>
 							<div data-aos="fade-up" data-aos-delay="150" class="single-clients">
-								<a href="#" target="_blank"><img src="{{asset('frontend/img/ACAR.png') }}" alt="#"></a>
+								<a href="https://www.acar.gov.kh" target="_blank"><img src="{{asset('frontend/img/ACAR.png') }}" alt="#"></a>
 							</div>
 							<div data-aos="fade-up" data-aos-delay="300" class="single-clients">
-								<a href="#" target="_blank"><img src="{{asset('frontend/img/IRC.png') }}" alt="#"></a>
+								<a href="https://irc.gov.kh" target="_blank"><img src="{{asset('frontend/img/IRC.png') }}" alt="#"></a>
 							</div>
 							<div data-aos="fade-up" data-aos-delay="450" class="single-clients">
-								<a href="#" target="_blank"><img src="{{asset('frontend/img/REBP.png') }}" alt="#"></a>
+								<a href="https://rpr.gov.kh" target="_blank"><img src="{{asset('frontend/img/REBP.png') }}" alt="#"></a>
 							</div>
 							<div data-aos="fade-up" data-aos-delay="600" class="single-clients">
-								<a href="#" target="_blank"><img src="{{asset('frontend/img/SERC.png') }}" alt="#"></a>
+								<a href="https://www.serc.gov.kh" target="_blank"><img src="{{asset('frontend/img/SERC.png') }}" alt="#"></a>
 							</div>
 							<div data-aos="fade-up" data-aos-delay="750" class="single-clients">
-								<a href="#" target="_blank"><img src="{{asset('frontend/img/SSR.png') }}" alt="#"></a>
+								<a href="https://www.facebook.com/SSRCambodia.gov" target="_blank"><img src="{{asset('frontend/img/SSR.png') }}" alt="#"></a>
 							</div>
 							<div data-aos="fade-up" data-aos-delay="900" class="single-clients">
-								<a href="#" target="_blank"><img src="{{asset('frontend/img/TR.png') }}" alt="#"></a>
+								<a href="https://www.trustregulator.gov.kh" target="_blank"><img src="{{asset('frontend/img/TR.png') }}" alt="#"></a>
 							</div>
                             <div data-aos="fade-up" data-aos-delay="1050" class="single-clients">
-								<a href="#" target="_blank"><img src="{{asset('frontend/img/iau.png') }}" alt="#"></a>
+								<a href="https://iauoffsa.gov.kh" target="_blank"><img src="{{asset('frontend/img/iau.png') }}" alt="#"></a>
 							</div>
 						</div>
 					</div>

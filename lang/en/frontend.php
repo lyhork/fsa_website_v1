@@ -49,5 +49,7 @@ return [
     'press-release' => 'Press Release',
     'organization-chart' => 'FSA\'s Organization Chart',
     'bod' => 'FSA Board of Directors',
+    'fonts' => 'Fonts',
+
 
 ];

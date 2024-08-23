@@ -206,6 +206,7 @@
 											<li><a wire:navigate href="{{ route('otherPage')}}"><i class="fa fa-caret-right" aria-hidden="true"></i>{{__('frontend.others')}}</a></li>
 											<li><a wire:navigate href="{{ route('newsPage')}}"><i class="fa fa-caret-right" aria-hidden="true"></i>{{__('frontend.news')}}</a></li>
 											<li><a wire:navigate href="{{ route('contact')}}"><i class="fa fa-caret-right" aria-hidden="true"></i>{{__('frontend.contact-us')}}</a></li>
+											<li><a wire:navigate href="{{ route('fontsPage')}}"><i class="fa fa-caret-right" aria-hidden="true"></i>{{__('frontend.fonts')}}</a></li>
 										</ul>
 									</div>
 								</div>
@@ -316,18 +317,18 @@
         </script>
         <script data-navigate-once>
             document.addEventListener('livewire:navigated', () => {
-            $(".hero-slider").owlCarousel({
-            loop:true,
-            autoplay:true,
-            smartSpeed: 500,
-            autoplayTimeout:5500,
-            singleItem: true,
-            autoplayHoverPause:true,
-            items:1,
-            nav:true,
-            navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
-            dots:false,
-            });
+                $(".hero-slider").owlCarousel({
+                    loop:true,
+                    autoplay:true,
+                    smartSpeed: 500,
+                    autoplayTimeout:5500,
+                    singleItem: true,
+                    autoplayHoverPause:false,
+                    items:1,
+                    nav:true,
+                    navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+                    dots:false,
+                });
         })
         </script>
         <script data-navigate-once>
@@ -405,6 +406,14 @@
                 });
             })
         </script>
+        {{-- <script data-navigate-once>
+            window.livewire.on('navigated', () => {
+                setTimeout(() => {
+                    // Redirect to the desired page after 0.5 seconds
+                    window.location.reload();
+                }, 500);
+            });
+        </script> --}}
         @livewireScripts
     </body>
 </html>

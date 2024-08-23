@@ -20,8 +20,8 @@
         <section class="news-single section">
 			<div class="container">
 				<div class="row">
-                    @forelse($abouts as $about)
                     <div class="col-lg-9 col-12">
+                        @forelse($abouts as $about)
                         <div class="row">
                                 <div class="col-12">
                                     <div class="single-main">
@@ -57,18 +57,18 @@
                                     </div>
                                 </div>
                         </div>
-                    </div>
-                    @empty
-                    <div class="col-lg-9 col-12">
-                        <div class="row">
-                                <div class="col-12">
-                                    <div class="single-main">
-                                        <h1 class="news-title mef2">{{__('frontend.null')}}</h1>
+                        @empty
+                        <div class="col-lg-9 col-12">
+                            <div class="row">
+                                    <div class="col-12">
+                                        <div class="single-main">
+                                            <h1 class="news-title mef2">{{__('frontend.null')}}</h1>
+                                        </div>
                                     </div>
-                                </div>
+                            </div>
                         </div>
+                        @endforelse
                     </div>
-                    @endforelse
 					<div data-aos="fade-left" data-aos-duration="1000" data-aos-offset="200" class="col-lg-3 col-12">
 						<div class="main-sidebar">
 							<!-- Single Widget -->

@@ -21,28 +21,28 @@
 		<section class="news-single section">
 			<div class="container">
 				<div class="row">
-                    @forelse($managers as $manager)
-                        <div class="col-lg-9 col-12">
-                            <div class="row">
-                                    <div class="col-12">
-                                        <div class="leader-profile mx-auto">
-                                            <h1 class="structure-title mef2">{{__('frontend.bod')}}</h1>
-                                            <img data-aos="fade-in" data-aos-offset="0" data-aos-easing="ease-in-sine" src="{{asset('storage/'.$manager->manager_image) }}" alt="#">
-                                        </div>
+                    <div class="col-lg-9 col-12">
+                        @forelse($managers as $manager)
+                        <div class="row">
+                                <div class="col-12">
+                                    <div class="leader-profile mx-auto">
+                                        <h1 class="structure-title mef2">{{__('frontend.bod')}}</h1>
+                                        <img data-aos="fade-in" data-aos-offset="0" data-aos-easing="ease-in-sine" src="{{asset('storage/'.$manager->manager_image) }}" alt="#">
                                     </div>
-                            </div>
+                                </div>
                         </div>
-                    @empty
-                        <div class="col-lg-9 col-12">
-                            <div class="row">
-                                    <div class="col-12">
-                                        <div class="single-main">
-                                            <h1 class="news-title mef2">{{__('frontend.null')}}</h1>
+                        @empty
+                            <div class="col-lg-9 col-12">
+                                <div class="row">
+                                        <div class="col-12">
+                                            <div class="single-main">
+                                                <h1 class="news-title mef2">{{__('frontend.null')}}</h1>
+                                            </div>
                                         </div>
-                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    @endforelse
+                        @endforelse
+                    </div>
                     {{-- <div class="col-lg-8 col-12">
                         <div class="main-leader">
                             <div class="single-widget recent-post">

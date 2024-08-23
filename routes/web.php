@@ -14,6 +14,7 @@ use App\Livewire\SearchPress;
 use App\Livewire\ShowBlog;
 use App\Livewire\ShowContact;
 use App\Livewire\ShowDocument;
+use App\Livewire\ShowFont;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\ShowHome;
 use App\Livewire\ShowInstitutionalStructure;
@@ -33,11 +34,17 @@ use App\Livewire\ShowPressRelease;
 |
 */
 
-Route::get('/test', function () {
-    return dd(phpinfo());
-});
+// Route::get('/test', function () {
+//     return dd(phpinfo());
+// });
 // Route::get('/',function() {
 //     return app()->getLocale();
+// });
+// Route::group(['prefix' => LaravelLocalization::setLocale()], function()
+// {
+// 	/** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
+// 	Route::get('/',ShowHome::class)->name('home');
+
 // });
 Route::get('/',ShowHome::class)->name('home');
 
@@ -66,3 +73,6 @@ Route::get('/prakas/{id}',PrakasDetail::class)->name('prakasDetail');
 Route::get('/others',ShowOther::class)->name('otherPage');
 Route::get('/others/search',SearchOther::class)->name('searchOther');
 Route::get('/others/{id}',OtherDetail::class)->name('otherDetail');
+
+Route::get('/fsa-fonts',ShowFont::class)->name('fontsPage');
+
