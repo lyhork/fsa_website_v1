@@ -305,6 +305,11 @@
     .contact-us #myMap {
         height: 400px;
     }
+    .contact-us #myStaff {
+        width: 60%;
+        height: auto;
+        background-size:cover;
+    }
     .contact-us .contact-us-form h2 {
         font-size: 20px;
     }
@@ -942,6 +947,11 @@
     }
     .contact-us #myMap {
         height: 300px;
+    }
+    .contact-us #myStaff {
+        width: 60%;
+        height: auto;
+        background-size:cover;
     }
     .contact-us .contact-us-form h2 {
         font-size: 20px;

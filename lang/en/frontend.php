@@ -50,6 +50,10 @@ return [
     'organization-chart' => 'FSA\'s Organization Chart',
     'bod' => 'FSA Board of Directors',
     'fonts' => 'Fonts',
+    'officer_info' => 'Officer Information',
+    'officer_name' => 'Name: ',
+    'officer_position' => 'Position: ',
+    'officer_department' => 'Department: ',
 
 
 ];

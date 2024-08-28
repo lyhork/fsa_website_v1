@@ -22,6 +22,7 @@ use App\Livewire\ShowManagerProfile;
 use App\Livewire\ShowOther;
 use App\Livewire\ShowPrakas;
 use App\Livewire\ShowPressRelease;
+use App\Livewire\ShowStaff;
 
 /*
 |--------------------------------------------------------------------------
@@ -75,4 +76,7 @@ Route::get('/others/search',SearchOther::class)->name('searchOther');
 Route::get('/others/{id}',OtherDetail::class)->name('otherDetail');
 
 Route::get('/fsa-fonts',ShowFont::class)->name('fontsPage');
+
+Route::get('/staff/{id}',ShowStaff::class)->name('staffPage');
+
 

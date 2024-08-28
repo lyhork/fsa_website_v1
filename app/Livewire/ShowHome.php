@@ -12,6 +12,7 @@ class ShowHome extends Component
 {
     public function render()
     {
+        sleep(1);
         $latestBlogs = Blog::orderBy('created_at', 'DESC')
             ->get()
             ->where('published_at', '<=', Carbon::now())
