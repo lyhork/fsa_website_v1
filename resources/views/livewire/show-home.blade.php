@@ -2,7 +2,6 @@
     <!-- Slider Area -->
         <section class="slider">
             <div class="hero-slider">
-                <!-- Start Single Slider -->
                 @if ($slideshows->isNotEmpty())
                 @foreach ($slideshows as $slideshow)
                     <div class="single-slider" style="background-image:url('{{asset('storage/'.$slideshow->slideshow_image) }}')">
@@ -12,16 +11,11 @@
                                     <div class="text mef1">
                                         <h1><span>{{$slideshow->author}}</span></h1>
                                         <p>{!!$slideshow->quote!!}</p>
-                                        {{-- <div class="button">
-                                            <a href="#" class="btn">Get Appointment</a>
-                                            <a href="#" class="btn primary">Learn More</a>
-                                        </div> --}}
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- End Single Slider -->
                 @endforeach
                 @endif
             </div>
