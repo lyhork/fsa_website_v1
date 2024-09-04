@@ -31,7 +31,7 @@
                 </div>
             </div>
         @endforelse
-        </div>
+    </div>
     <div class="mt-5">
         {{ $blogs->withQueryString()->links() }}
     </div>

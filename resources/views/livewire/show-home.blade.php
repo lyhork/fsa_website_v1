@@ -199,7 +199,7 @@
 					<div class="col-lg-12">
 						<div class="section-title">
 							<div class="text">
-                                <div data-aos="fade-up" class="button">
+                                <div data-aos="fade-up" class="button mef1">
                                     <a wire:navigate href="{{route('newsPage')}}" class="btn second">{{__('frontend.see-more')}}<i class="fa fa-long-arrow-right"></i></a>
                                 </div>
                             </div>

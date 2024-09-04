@@ -435,6 +435,7 @@ Preloader Area CSS
    border: none;
    border-radius: 0;
    border-radius:4px;
+   cursor: pointer;
 }
 .btn:hover{
    color:#fff;
