@@ -24,7 +24,8 @@ class ShowBlogForm extends Component
             ->where('published_at', '<=', Carbon::now())
             ->where('status',1)
             ->where('published_at','!=','NULL')
-            ->Paginate(30);
+            ->get();
+        $blogs = Blog::paginate(30);
         return view('livewire.show-blog-form', [
             'blogs' => $blogs
         ]);

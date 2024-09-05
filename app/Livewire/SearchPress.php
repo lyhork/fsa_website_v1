@@ -40,7 +40,8 @@ class SearchPress extends Component
             ->where('published_at', '<=', Carbon::now())
             ->where('status',1)
             ->where('title','LIKE',"%$q%")
-            ->Paginate(20);
+            ->get();
+        $results = PressRelease::paginate(20);
         return view('livewire.search-press',[
             'results' => $results,
         ]);

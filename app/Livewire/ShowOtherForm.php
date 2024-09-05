@@ -38,7 +38,8 @@ class ShowOtherForm extends Component
             ->where('published_at', '<=', Carbon::now())
             ->where('status',1)
             ->where('published_at','!=','NULL')
-            ->Paginate(20);
+            ->get();
+        $others = Other::paginate(20);
         return view('livewire.show-other-form', [
             'others' => $others
         ]);

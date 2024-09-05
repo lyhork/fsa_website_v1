@@ -23,7 +23,8 @@ class ShowPressRelease extends Component
             ->where('published_at', '<=', Carbon::now())
             ->where('status',1)
             ->where('published_at','!=','NULL')
-            ->Paginate(20);
+            ->get();
+        $press = PressRelease::paginate(20);
         return view('livewire.show-press-release', [
             'press' => $press,
         ]);

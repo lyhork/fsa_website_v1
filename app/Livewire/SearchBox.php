@@ -40,7 +40,8 @@ class SearchBox extends Component
             ->where('published_at', '<=', Carbon::now())
             ->where('status',1)
             ->where('title','LIKE',"%$q%")
-            ->Paginate(20);
+            ->get();
+        $results = Document::paginate(20);
         return view('livewire.search-doc',[
             'results' => $results,
         ]);

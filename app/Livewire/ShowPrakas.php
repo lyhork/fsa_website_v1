@@ -25,7 +25,8 @@ class ShowPrakas extends Component
             ->where('published_at', '<=', Carbon::now())
             ->where('status',1)
             ->where('published_at','!=','NULL')
-            ->Paginate(20);
+            ->get();
+        $prakas = Prakas::paginate(20);
         return view('livewire.show-prakas', [
             'prakas' => $prakas,
         ]);

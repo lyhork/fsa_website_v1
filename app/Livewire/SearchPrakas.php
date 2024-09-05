@@ -40,7 +40,8 @@ class SearchPrakas extends Component
             ->where('published_at', '<=', Carbon::now())
             ->where('status',1)
             ->where('title','LIKE',"%$q%")
-            ->Paginate(20);
+            ->get();
+        $results = Prakas::paginate(20);
         return view('livewire.search-prakas',[
             'results' => $results,
         ]);

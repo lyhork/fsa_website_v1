@@ -39,7 +39,8 @@ class ShowForm extends Component
             ->where('published_at', '<=', Carbon::now())
             ->where('status',1)
             ->where('published_at','!=','NULL')
-            ->Paginate(20);
+            ->get();
+        $docs = Document::paginate(20);
         return view('livewire.show-form', [
             'docs' => $docs
         ]);

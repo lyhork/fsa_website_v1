@@ -21,7 +21,8 @@ class SearchBlog extends Component
             ->where('published_at', '<=', Carbon::now())
             ->where('status',1)
             ->where('title','LIKE',"%$q%")
-            ->Paginate(30);
+            ->get();
+        $results = Blog::paginate(30);
         return view('livewire.search-blog' ,[
             'results' => $results,
         ]);
