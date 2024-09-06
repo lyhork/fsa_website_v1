@@ -64,7 +64,7 @@
 						</div> --}}
 						<div class="col-lg-12 col-md-12 col-sm-12 col-12 ms-1">
 							<!-- Top Contact -->
-							<ul class="top-contact">
+							<ul class="top-contact mef1">
                                 @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                                 <li><a wire:navigate hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
                                     @if($localeCode =='km')

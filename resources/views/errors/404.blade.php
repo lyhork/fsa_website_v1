@@ -64,7 +64,7 @@
 						</div> --}}
 						<div class="col-lg-12 col-md-12 col-sm-12 col-12 ms-1">
 							<!-- Top Contact -->
-							<ul class="top-contact">
+							<ul class="top-contact mef1">
                                 @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                                 <li><a wire:navigate hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
                                     @if($localeCode =='km')
@@ -158,9 +158,9 @@
 				<div class="row">
 					<div class="col-lg-6 offset-lg-3 col-12">
 						<!-- Error Inner -->
-						<div class="error-inner">
-							<h1>404<span>Oop's  sorry we can't find that page!</span></h1>
-                            <p>Please click <a wire:navigate href="{{ route('home') }}"><span>Here</span></a> to be back to homepage or <br>go back to <a wire:navigate href="{{ url()->previous() }}"><span>Previous Page</span></a>. Thanks!</p></div>
+						<div class="error-inner mef1">
+							<h1>{{__('frontend.404')}}<span>{{__('frontend.opp!')}}</span></h1>
+                            <p>{{__('frontend.click_')}}<a wire:navigate href="{{ route('home') }}"><span>{{__('frontend.here')}}</span></a>{{__('frontend.to_homepage')}}<br>{{__('frontend.go_back')}}<a wire:navigate href="{{ url()->previous() }}"><span>{{__('frontend.previous_page')}}</span></a>{{__('frontend.thanks')}}</p></div>
 						<!--/ End Error Inner -->
 					</div>
 				</div>

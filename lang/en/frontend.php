@@ -48,12 +48,20 @@ return [
     'latest_news' => 'Latest News',
     'press-release' => 'Press Release',
     'organization-chart' => 'FSA\'s Organization Chart',
-    'bod' => 'FSA Board of Directors',
+    'bod' => 'FSA Council',
     'fonts' => 'Fonts',
     'officer_info' => 'Officer Information',
     'officer_name' => 'Name: ',
     'officer_position' => 'Position: ',
     'officer_department' => 'Department: ',
+    '404' => '404',
+    'opp!' => 'Oop\'s sorry we can\'t find that page!',
+    'click_' => 'Please click ',
+    'here' => 'Here',
+    'to_homepage' => ' to be back to homepage or ',
+    'go_back' => 'go back to ',
+    'previous_page' => 'Previous Page',
+    'thanks' => '. Thanks!',
 
 
 ];

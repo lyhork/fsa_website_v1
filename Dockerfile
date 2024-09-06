@@ -2,9 +2,9 @@ FROM lorisleiva/laravel-docker:8.1
 RUN apk add grpc
 EXPOSE 8000
 
-WORKDIR /var/www1
+WORKDIR /var/www
 
-COPY .  /var/www1
+COPY .  /var/www
 RUN rm -f composer.lock
 RUN composer install
 RUN php artisan cache:clear
