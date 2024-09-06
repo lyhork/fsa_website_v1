@@ -46,7 +46,7 @@ class MainSpeechResource extends Resource
                 ->schema([
                     Section::make([
                         FileUpload::make('speech_image')
-                            ->minSize(50) // 50 kb
+                            ->minSize(10) // 10 kb
                             ->maxSize(2048) // 2 MB
                             ->imageResizeMode('cover')
                             // ->imageResizeTargetWidth('1920')

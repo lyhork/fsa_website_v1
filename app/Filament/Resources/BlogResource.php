@@ -54,6 +54,9 @@ class BlogResource extends Resource
                             TextInput::make('author')->placeholder("Author"),
                             RichEditor::make('content')
                                 ->columnSpanFull(),
+                            Forms\Components\TextInput::make('url')
+                                ->placeholder("Url link")
+                                ->columnSpanFull(),
                             Forms\Components\DateTimePicker::make('published_at'),
                             Forms\Components\Toggle::make('status'),
                         ])->columns(2)
@@ -62,7 +65,7 @@ class BlogResource extends Resource
                     ->schema([
                         Section::make([
                             FileUpload::make('image')
-                                ->minSize(50) // 50 kb
+                                ->minSize(10) // 10 kb
                                 ->maxSize(2048) // 2 MB
                                 ->imageResizeMode('cover')
                                 // ->imageCropAspectRatio('16:9')
@@ -70,10 +73,9 @@ class BlogResource extends Resource
                                 // ->imageResizeTargetHeight('1080')
                                 ->acceptedFileTypes(['image/*'])
                                 ->directory('posts/')
-                                ->required()
                                 ->image(),
                             FileUpload::make('images')
-                                ->minSize(50) // 50 kb
+                                ->minSize(10) // 10 kb
                                 ->maxSize(2048) // 2 MB
                                 ->imageResizeMode('cover')
                                 // ->imageCropAspectRatio('16:9')
@@ -81,7 +83,6 @@ class BlogResource extends Resource
                                 // ->imageResizeTargetHeight('1080')
                                 ->acceptedFileTypes(['image/*'])
                                 ->directory('posts/')
-                                ->required()
                                 ->image()
                                 ->multiple()
                                 ->reorderable()
@@ -105,7 +106,9 @@ class BlogResource extends Resource
                     ->limit(50)
                     ->searchable(),
                 Tables\Columns\TextColumn::make('author')
-                ->searchable(),
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('url')
+                    ->searchable(),
                 Tables\Columns\IconColumn::make('status')
                     ->boolean(),
                 Tables\Columns\TextColumn::make('published_at')

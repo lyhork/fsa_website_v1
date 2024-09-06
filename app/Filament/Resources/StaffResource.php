@@ -53,7 +53,7 @@ class StaffResource extends Resource
             ->schema([
                 Section::make([
                     FileUpload::make('image')
-                        ->minSize(50) // 50 kb
+                        ->minSize(10) // 10 kb
                         ->maxSize(5120) // 5 MB
                         ->imageResizeMode('cover')
                         // ->imageResizeTargetWidth('1080')

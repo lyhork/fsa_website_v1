@@ -59,6 +59,19 @@
                                     @endforeach
                                 @endif
 							</div>
+                            <div class="image-slider my-5">
+                                @if ($blogDetail->url != '')
+                                    <iframe width="560" height="315"
+                                        src="{{$blogDetail->url}}"
+                                        title="YouTube video player"
+                                        frameborder="0"
+                                        loading="lazy"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerpolicy="strict-origin-when-cross-origin"
+                                        allowfullscreen>
+                                    </iframe>
+                                @endif
+							</div>
 						</div>
 					</div>
 				</div>

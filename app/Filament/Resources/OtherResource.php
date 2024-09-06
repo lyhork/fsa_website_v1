@@ -53,7 +53,7 @@ class OtherResource extends Resource
                 ->schema([
                     Section::make([
                         FileUpload::make('other_image')
-                            ->minSize(50) // 50 kb
+                            ->minSize(10) // 10 kb
                             ->maxSize(2048) // 2 MB
                             ->imageResizeMode('cover')
                             // ->imageResizeTargetWidth('1080')
@@ -65,8 +65,8 @@ class OtherResource extends Resource
                             ->imageEditor()
                             ->openable(),
                         FileUpload::make('other_file')
-                            ->minSize(50) // 50 kb
-                            ->maxSize(307200) // 20MB
+                            ->minSize(10) // 10 kb
+                            ->maxSize(307200) // 30MB
                             ->acceptedFileTypes(['application/pdf'])
                             ->directory('others')
                             ->required()

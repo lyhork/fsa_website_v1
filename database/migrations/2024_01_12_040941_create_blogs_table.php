@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('author')->nullable();
             $table->string('image')->nullable();
             $table->string('images', 2048)->nullable();
+            $table->string('url', 500)->nullable();
             $table->json('content')->nullable();
             $table->boolean('status')->default(1);
             $table->dateTime('published_at')->nullable();

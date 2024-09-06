@@ -132,7 +132,7 @@
 													<li class="{{ Route::is('otherPage') || Route::is('otherPage') || Route::is('searchOther') || Route::is('otherDetail') ? 'active' : ''}} mef2"><a wire:navigate href="{{ route('otherPage')}}">{{__('frontend.others')}}</a></li>
 												</ul>
                                             </li>
-											<li class="{{ Route::is('newsPage') ? 'active' : ''}} mef2"><a wire:navigate href="{{ route('newsPage')}}">{{__('frontend.news')}}</a>
+											<li class="{{ Route::is('newsPage') || Route::is('searchBlog') || Route::is('newsDetail') ? 'active' : ''}} mef2"><a wire:navigate href="{{ route('newsPage')}}">{{__('frontend.news')}}</a>
 											</li>
 											<li class="{{ Route::is('contact') ? 'active' : ''}} mef2"><a wire:navigate href="{{ route('contact')}}">{{__('frontend.contact-us')}}</a></li>
 										</ul>

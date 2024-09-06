@@ -14,7 +14,7 @@ class Blog extends Model
     use HasTranslations;
 
     use HasFactory;
-    protected $fillable = ['title', 'author', 'content', 'image', 'images', 'status', 'published_at'];
+    protected $fillable = ['title', 'author', 'content', 'image', 'images', 'url', 'status', 'published_at'];
 
     public array $translatable = ['title', 'content'];
 

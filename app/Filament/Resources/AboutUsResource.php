@@ -33,7 +33,7 @@ class AboutUsResource extends Resource
         return $form
             ->schema([
                 FileUpload::make('aboutus_file')
-                                ->minSize(50) // 50 kb
+                                ->minSize(10) // 10 kb
                                 ->maxSize(307200) // 30MB
                                 ->acceptedFileTypes(['application/pdf'])
                                 ->directory('about-us')

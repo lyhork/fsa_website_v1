@@ -55,7 +55,7 @@ class DocumentResource extends Resource
                     ->schema([
                         Section::make([
                             FileUpload::make('doc_image')
-                                ->minSize(50) // 50 kb
+                                ->minSize(10) // 10 kb
                                 ->maxSize(2048) // 2 MB
                                 ->imageResizeMode('cover')
                                 // ->imageResizeTargetWidth('1080')
@@ -67,7 +67,7 @@ class DocumentResource extends Resource
                                 ->imageEditor()
                                 ->openable(),
                             FileUpload::make('doc_file')
-                                ->minSize(50) // 50 kb
+                                ->minSize(10) // 10 kb
                                 ->maxSize(307200) // 30MB
                                 ->acceptedFileTypes(['application/pdf'])
                                 ->directory('docs')
