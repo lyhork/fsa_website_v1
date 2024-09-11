@@ -13,16 +13,16 @@ class ShowHome extends Component
     public function render()
     {
         sleep(1);
-        $latestBlogs = Blog::orderBy('created_at', 'DESC')
+        $latestBlogs = Blog::orderBy('published_at', 'DESC')
             ->get()
             ->where('published_at', '<=', Carbon::now())
             ->where('status',1)
             ->where('published_at','!=','NULL')
             ->take(6);
-        $mainSpeeches = MainSpeech::orderBy('created_at', 'DESC')
+        $mainSpeeches = MainSpeech::orderBy('id', 'DESC')
             ->where('status',1)
             ->get();
-        $slideshows = Slideshow::orderBy('created_at', 'DESC')
+        $slideshows = Slideshow::orderBy('id', 'DESC')
             ->where('status',1)
             ->get();
         return view('livewire.show-home', [

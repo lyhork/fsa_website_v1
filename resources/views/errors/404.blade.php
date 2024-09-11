@@ -249,6 +249,7 @@
                                 <ul class="social mef1">
 									<li><a target="_blank" href="https://www.facebook.com/FSA.Cambodia"><i class="icofont-facebook"></i></a></li>
 									<li><a target="_blank" href="https://t.me/fsacambodia"><i class="icofont-telegram"></i></a></li>
+									<li><a target="_blank" href="#"><i class="icofont-youtube"></i></a></li>
 									<li><a target="_blank" href="#"><i class="icofont-link"></i></a></li>
 								</ul>
 							</div>
@@ -309,7 +310,7 @@
 		<!-- Magnific Popup JS -->
 		<script src="{{ asset ('frontend/js/jquery.magnific-popup.min.js')}}"></script>
 		<!-- Counter Up CDN JS -->
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
 		<!-- Bootstrap JS -->
 		<script src="{{ asset ('frontend/js/bootstrap.min.js')}}"></script>
 		<!-- Main JS -->

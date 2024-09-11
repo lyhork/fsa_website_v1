@@ -19,12 +19,12 @@ class ShowOther extends Component
 
     public function render()
     {
-        $others = Other::orderBy('created_at', 'DESC')
+        $others = Other::all();
+        $others = Other::orderBy('published_at', 'DESC')
             ->where('published_at', '<=', Carbon::now())
             ->where('status',1)
             ->where('published_at','!=','NULL')
-            ->get();
-        $others = Other::paginate(20);
+            ->paginate(20);
         return view('livewire.show-other', [
             'others' => $others,
         ]);

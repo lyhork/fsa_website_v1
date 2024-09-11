@@ -34,12 +34,12 @@ class ShowPrakasForm extends Component
     public function render()
     {
         sleep(1);
-        $prakas = Prakas::orderBy('created_at', 'DESC')
+        $prakas = Prakas::all();
+        $prakas = Prakas::orderBy('published_at', 'DESC')
             ->where('published_at', '<=', Carbon::now())
             ->where('status',1)
             ->where('published_at','!=','NULL')
-            ->get();
-        $prakas = Prakas::paginate(20);
+            ->paginate(20);
         return view('livewire.show-prakas-form', [
             'prakas' => $prakas
         ]);
