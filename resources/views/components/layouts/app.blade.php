@@ -66,7 +66,7 @@
 							<!-- Top Contact -->
 							<ul class="top-contact mef1">
                                 @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                                <li><a wire:navigate hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                <li><a wire:navigate href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}" hreflang="{{ $localeCode }}">
                                     @if($localeCode =='km')
                                     <div class="is_locale">
                                         <img src="{{asset('km.svg')}}" style="width: 25px;display: inline-block;">
