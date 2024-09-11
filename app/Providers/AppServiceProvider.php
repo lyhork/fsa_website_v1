@@ -24,6 +24,9 @@ class AppServiceProvider extends ServiceProvider
         if (app()->environment('production')) {
             URL::forceScheme('https');
         }
+        if (app()->environment('production')) {
+            $this->app['request']->server->set('HTTPS', true);
+        }
         Paginator::useBootstrapFive();
         LanguageSwitch::configureUsing(function (LanguageSwitch $switch) {
             $switch
