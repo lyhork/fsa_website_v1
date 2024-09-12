@@ -20,12 +20,12 @@ class ShowBlogForm extends Component
     public function render()
     {
         sleep(1);
-        $blogs = Blog::all();
-        $blogs = Blog::orderBy('published_at', 'DESC')
+        $blogs = Blog::get()
+            ->orderBy('published_at', 'DESC')
             ->where('published_at', '<=', Carbon::now())
             ->where('status',1)
-            ->where('published_at','!=','NULL')
-            ->paginate(30);
+            ->where('published_at','!=','NULL');
+        $blogs = Blog::paginate(30);
         return view('livewire.show-blog-form', [
             'blogs' => $blogs
         ]);

@@ -33,12 +33,12 @@ class ShowPressReleaseForm extends Component
     public function render()
     {
         sleep(1);
-        $press = PressRelease::all();
-        $press = PressRelease::orderBy('published_at', 'DESC')
+        $press = PressRelease::get()
+            ->orderBy('published_at', 'DESC')
             ->where('published_at', '<=', Carbon::now())
             ->where('status',1)
-            ->where('published_at','!=','NULL')
-            ->paginate(20);
+            ->where('published_at','!=','NULL');
+        $press = PressRelease::paginate(20);
         return view('livewire.show-press-release-form', [
             'press' => $press,
         ]);

@@ -35,12 +35,12 @@ class SearchBox extends Component
     public function render(Request $request)
     {
         $q = $request->get('q');
-        $results = Document::all();
-        $results = Document::orderBy('published_at', 'DESC')
+        $results = Document::get()
+            ->orderBy('published_at', 'DESC')
             ->where('published_at', '<=', Carbon::now())
             ->where('status',1)
-            ->where('title','LIKE',"%$q%")
-            ->paginate(20);
+            ->where('title','LIKE',"%$q%");
+        $results = Document::paginate(20);
         return view('livewire.search-doc',[
             'results' => $results,
         ]);

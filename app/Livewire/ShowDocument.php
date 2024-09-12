@@ -19,12 +19,12 @@ class ShowDocument extends Component
 
     public function render()
     {
-        $docs = Document::all();
-        $docs = Document::orderBy('published_at', 'DESC')
+        $docs = Document::get()
+            ->orderBy('published_at', 'DESC')
             ->where('published_at', '<=', Carbon::now())
             ->where('status',1)
-            ->where('published_at','!=','NULL')
-            ->paginate(20);
+            ->where('published_at','!=','NULL');
+        $docs = Document::paginate(20);
         return view('livewire.show-document', [
             'docs' => $docs,
         ]);

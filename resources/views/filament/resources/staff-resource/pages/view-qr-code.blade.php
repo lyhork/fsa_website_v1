@@ -1,7 +1,7 @@
 <x-filament::page>
     {{-- {{dd($record->id)}} --}}
         <div class="col-md-2">
-            <a href="" id="container" >{!!QrCode::size(200)->generate(env('APP_URL') .'/staff/'. $record->id)!!}</a><br/>
+            <a href="" id="container" >{!!QrCode::size(200)->generate('https://fsa.gov.kh'.'/staff/'. $record->id)!!}</a><br/>
             <button id="download" class="mt-2 btn btn-info text-light" onclick="downloadSVG()">Download SVG</button>
         </div>
     <script>

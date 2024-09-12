@@ -34,12 +34,12 @@ class ShowForm extends Component
     public function render()
     {
         sleep(1);
-        $docs = Document::all();
-        $docs = Document::orderBy('published_at', 'DESC')
+        $docs = Document::get()
+            ->orderBy('published_at', 'DESC')
             ->where('published_at', '<=', Carbon::now())
             ->where('status',1)
-            ->where('published_at','!=','NULL')
-            ->paginate(20);
+            ->where('published_at','!=','NULL');
+        $docs = Document::paginate(20);
         return view('livewire.show-form', [
             'docs' => $docs
         ]);
