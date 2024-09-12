@@ -18,17 +18,12 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->insert([
             [
                 'name'=>'lyhorklim',
-                'email'=>'lyhorklim@gmail.com',
-                'password' => bcrypt('123456')
-            ],
-            [
-                'name'=>'limlyhork',
-                'email'=>'limlyhork@gmail.com',
+                'email'=>'lyhorklim@fsa.gov.kh',
                 'password' => bcrypt('123456')
             ],
             [
                 'name'=>'FSA',
-                'email'=>'fsa@admin.com',
+                'email'=>'admin@fsa.gov.kh',
                 'password' => bcrypt('123456')
             ],
         ]);
