@@ -21,12 +21,13 @@ class ShowPrakas extends Component
 
     public function render()
     {
-        $prakas = Prakas::get()
-            ->orderBy('published_at', 'DESC')
+        $prakas = Prakas::orderBy('published_at', 'DESC')
+            ->get()
             ->where('published_at', '<=', Carbon::now())
             ->where('status',1)
             ->where('published_at','!=','NULL');
-        $prakas = Prakas::paginate(20);
+        $prakas = Prakas::orderBy('published_at', 'DESC')
+            ->paginate(20);
         return view('livewire.show-prakas', [
             'prakas' => $prakas,
         ]);

@@ -16,12 +16,13 @@ class SearchBlog extends Component
     public function render(Request $request)
     {
         $q = $request->get('q');
-        $results = Blog::get()
-            ->orderBy('published_at', 'DESC')
+        $results = Blog::orderBy('published_at', 'DESC')
+            ->get()
             ->where('published_at', '<=', Carbon::now())
             ->where('status',1)
             ->where('title','LIKE',"%$q%");
-        $results = Blog::paginate(30);
+        $results = Blog::orderBy('published_at', 'DESC')
+            ->paginate(30);
         return view('livewire.search-blog' ,[
             'results' => $results,
         ]);

@@ -35,12 +35,13 @@ class SearchOther extends Component
     public function render(Request $request)
     {
         $q = $request->get('q');
-        $results = Other::get()
-            ->orderBy('published_at', 'DESC')
+        $results = Other::orderBy('published_at', 'DESC')
+            ->get()
             ->where('published_at', '<=', Carbon::now())
             ->where('status',1)
             ->where('title','LIKE',"%$q%");
-        $results = Other::paginate(20);
+        $results = Other::orderBy('published_at', 'DESC')
+            ->paginate(20);
         return view('livewire.search-other',[
             'results' => $results,
         ]);

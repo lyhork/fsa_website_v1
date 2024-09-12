@@ -35,12 +35,13 @@ class SearchPrakas extends Component
     public function render(Request $request)
     {
         $q = $request->get('q');
-        $results = Prakas::get()
-            ->orderBy('published_at', 'DESC')
+        $results = Prakas::orderBy('published_at', 'DESC')
+            ->get()
             ->where('published_at', '<=', Carbon::now())
             ->where('status',1)
             ->where('title','LIKE',"%$q%");
-        $results = Prakas::paginate(20);
+        $results = Prakas::orderBy('published_at', 'DESC')
+            ->paginate(20);
         return view('livewire.search-prakas',[
             'results' => $results,
         ]);
