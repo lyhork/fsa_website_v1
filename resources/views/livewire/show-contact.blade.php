@@ -95,6 +95,7 @@
                                 <ul class="social">
 									<li><a target="_blank" href="https://www.facebook.com/FSA.Cambodia"><i class="icofont-facebook"></i></a></li>
 									<li><a target="_blank" href="https://t.me/fsacambodia"><i class="icofont-telegram"></i></a></li>
+									<li><a target="_blank" href="https://www.youtube.com/channel/UCh7rcoSKIX5l1S8Rs7wV5hQ"><i class="icofont-youtube"></i></a></li>
 									<li><a target="_blank" href="#"><i class="icofont-link"></i></a></li>
 								</ul>
 							</div>
@@ -109,7 +110,7 @@
 								<i class="icofont icofont-ui-call"></i>
 								<div class="content">
 									<h3>{{__('frontend.phone-foot')}}</h3>
-									<p>info@fsa.gov.kh</p>
+									<p>gs.fsa.cam@gmail.com</p>
 								</div>
 							</div>
 						</div>

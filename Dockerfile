@@ -17,4 +17,4 @@ RUN echo "upload_max_filesize=20M" >> /usr/local/etc/php/php.ini
 RUN echo "post_max_size=20M" >> /usr/local/etc/php/php.ini
 RUN echo "memory_limit=256M" >> /usr/local/etc/php/php.ini
 
-CMD php artisan --host=0.0.0.0 serve
+CMD php artisan serve

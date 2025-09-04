@@ -4,11 +4,11 @@
         <!-- Meta Tags -->
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="keywords" content="Site keywords here">
-		<meta name="description" content="">
-		<meta name='copyright' content=''>
+		<meta name="keywords" content="FSA Portal, FSA Website, FSA, fsa,  Website of FSA, Non-Bank Financial Service Authority, FSA - Non-Bank Financial Service Authority">
+		<meta name="description" content="អាជ្ញាធរសេវាហិរញ្ញវត្ថុមិនមែនធនាគារត្រូវបានបង្កើតដោយច្បាប់ស្ដីពីការរៀបចំនិងការប្រព្រឹត្តទៅនៃអាជ្ញាធរសេវាហិរញ្ញវត្ថុមិនមែនធនាគារ។ ជាអង្គភាពឯករាជ្យភាព ក្នុងការបំពេញមុខជាររបស់ខ្លួន ដោយធ្វើសមាហរណកម្មយន្តការនៃការគ្រប់គ្រងនិងត្រួតពិនិត្យលើវិស័យហិរញ្ញវត្ថុមិនមែនធនាគារ មានជាអាទិ៍ វិស័យធានារ៉ាប់រងនិងសោធនឯកជន វិស័យមូលបត្រ វិស័យសន្ដិសុខសង្គម វិស័យបរធនបាលកិច្ច វិស័យគណនេយ្យនិងសវនកម្ម និងវិស័យអចលនវត្ថុ វិស័យបញ្ចាំ និងប្រាតិភោគដោយអនុប្បទាន ក្នុងគោលបំណងពង្រឹងនិងធានាប្រសិទ្ធភាពនៃការគ្រប់គ្រងការត្រួតពិនិត្យនិងអភិវឌ្ឍន៍វិស័យហិរញ្ញវត្ថុមិនមែនធនាគារ រួមទាំងការលើកកម្ពស់ការអភិវឌ្ឍនិងប្រើប្រាស់បច្ចេកវិទ្យាហិរញ្ញវត្ថុលើវិស័យហិរញ្ញវត្ថុមិនមែនធនាគារនៅក្នុងព្រះរាណាចក្រកម្ពុជា ។">
+		<meta name='copyright' content='&copy; Non-Bank Financial Services Authority. All rights reserved'>
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+		<meta name="google-site-verification" content="soeQ9G6jIPcgtFzXxzLVUbSyn_LKw03ePiiq7hRLvHw" />
 		<!-- Title -->
         <title>{{__('frontend.title')}}</title>
 
@@ -82,7 +82,7 @@
                                 </li>
                                 @endforeach
 								<li><i class="fa fa-phone"></i>{{__('frontend.phone-foot')}}</li>
-								<li><i class="fa fa-envelope"></i><a href="mailto:support@yourmail.com">info@fsa.gov.kh</a></li>
+								<li><i class="fa fa-envelope"></i><a href="mailto:support@yourmail.com">gs.fsa.cam@gmail.com</a></li>
 							</ul>
 							<!-- End Top Contact -->
 						</div>
@@ -197,7 +197,7 @@
                                 <ul class="mef1">
                                     <li><a target="_blank" href="https://maps.app.goo.gl/9UQHRSUX26kkQUNc9"><i class="fa fa-map-marker" aria-hidden="true"></i>{{__('frontend.address-foot')}}</a></li>
                                     <li><a target="_blank" href="tel:+85523990700"><i class="fa fa-phone" aria-hidden="true"></i>{{__('frontend.phone-foot')}}</a></li>
-                                    <li><a target="_blank" href="mailto:support@yourmail.com"><i class="fa fa-envelope"></i>info@fsa.gov.kh</a></li>
+                                    <li><a target="_blank" href="mailto:support@yourmail.com"><i class="fa fa-envelope"></i>gs.fsa.cam@gmail.com</a></li>
                                 </ul>
 							</div>
 						</div>
