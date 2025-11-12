@@ -32,11 +32,6 @@
                                     <span class="mef1">{{\Carbon\Carbon::parse($prakasDetail->published_at)->locale(app()->getLocale())->translatedFormat('j F Y, g:i A');}}</span>
 								</div>
 							</div>
-							{{-- <div class="image-slider">
-                                @if ($docDetail->doc_image != '')
-                                    <img src="{{asset('storage/'.$docDetail->doc_image) }}" alt="#">
-                                @endif
-							</div> --}}
                             <div class="image-slider my-5">
                                 @if ($prakasDetail->prakas_image != '')
                                     <img class="mb-5" src="{{asset('storage/'.$prakasDetail->prakas_image) }}" alt="#">

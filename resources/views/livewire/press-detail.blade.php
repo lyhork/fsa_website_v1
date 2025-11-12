@@ -17,43 +17,6 @@
             </div>
         </div>
     </div>
-    {{-- <section class="news-single section">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="single-main">
-                        <h1 class="news-title mef2">{{$pressDetail->title}}</h1>
-                        <!-- Meta -->
-                        <div class="meta">
-                            <div class="meta-left mef1">
-                                <span class="date">{{\Carbon\Carbon::parse($pressDetail->published_at)->locale(app()->getLocale())->translatedFormat('j F Y, g:i A');}}</span>
-                            </div>
-                        </div>
-                        <!-- News Text -->
-                        <div class="news-text mef1">
-                            <p>{!!$pressDetail->content!!}</p>
-                            <div class="image-gallery">
-                                <div class="row">
-                                    <div class="gallery">
-                                        @if ($pressDetail->press_images != '')
-                                        @foreach ($pressDetail->press_images as $press_image)
-                                            <img src="{{asset('storage/'.$press_image) }}" alt="image" class="gallery__img">
-                                        @endforeach
-                                        @endif
-                                    </div>
-                                </div>
-                            </div>
-                            @if($pressDetail->press_file != '')
-                            <div class="table-bottom">
-								<a class="btn mef1" wire:click="download">{{__('frontend.doc_download')}} ({{$pressDetail->getFileSize()}}MB)</a>
-							</div>
-                            @endif
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> --}}
     <section class="pf-details section">
         <div class="container">
             <div class="row">

@@ -29,7 +29,7 @@
 		<!-- Slicknav -->
 		<link rel="stylesheet" href="{{ asset ('frontend/css/slicknav.min.css')}}">
 		<!-- Owl Carousel CSS -->
-        <link rel="stylesheet" href="{{ asset ('frontend/css/owl-carousel.css')}}">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 		<!-- Datepicker CSS -->
 		<link rel="stylesheet" href="{{ asset ('frontend/css/datepicker.css')}}">
 		<!-- Animate CSS -->
@@ -82,7 +82,7 @@
                                 </li>
                                 @endforeach
 								<li><i class="fa fa-phone"></i>{{__('frontend.phone-foot')}}</li>
-								<li><i class="fa fa-envelope"></i><a href="mailto:support@yourmail.com">gs.fsa.cam@gmail.com</a></li>
+								<li><i class="fa fa-envelope"></i><a href="mailto:support@yourmail.com">info@fsa.gov.kh</a></li>
 							</ul>
 							<!-- End Top Contact -->
 						</div>
@@ -140,11 +140,6 @@
 								</div>
 								<!--/ End Main Menu -->
 							</div>
-							{{-- <div class="col-lg-2 col-12">
-								<div class="get-quote">
-									<a href="appointment.html" class="btn">Book Appointment</a>
-								</div>
-							</div> --}}
 						</div>
 					</div>
 				</div>
@@ -166,15 +161,6 @@
                                     <p class="logo-title mb-2">អាជ្ញាធរសេវាហិរញ្ញវត្ថុមិនមែនធនាគារ</p>
                                     <p class="logo-footer-en-title">Non-Bank Financial Services Authority</p>
                                 </div>
-								{{-- <h2>About Us</h2>
-								<p>Lorem ipsum dolor sit am consectetur adipisicing elit do eiusmod tempor incididunt ut labore dolore magna.</p> --}}
-								<!-- Social -->
-								{{-- <ul class="social">
-									<li><a target="_blank" href="https://www.facebook.com/FSA.Cambodia"><i class="icofont-facebook"></i></a></li>
-									<li><a target="_blank" href="https://t.me/fsacambodia"><i class="icofont-telegram"></i></a></li>
-									<li><a target="_blank" href="#"><i class="icofont-link"></i></a></li>
-								</ul> --}}
-								<!-- End Social -->
 							</div>
 						</div>
 						<div class="col-lg-3 col-md-6 col-12">
@@ -183,7 +169,7 @@
                                 <ul class="mef1">
                                     <li><a target="_blank" href="https://maps.app.goo.gl/9UQHRSUX26kkQUNc9"><i class="fa fa-map-marker" aria-hidden="true"></i>{{__('frontend.address-foot')}}</a></li>
                                     <li><a target="_blank" href="tel:+85523990700"><i class="fa fa-phone" aria-hidden="true"></i>{{__('frontend.phone-foot')}}</a></li>
-                                    <li><a target="_blank" href="mailto:support@yourmail.com"><i class="fa fa-envelope"></i>gs.fsa.cam@gmail.com</a></li>
+                                    <li><a target="_blank" href="mailto:support@yourmail.com"><i class="fa fa-envelope"></i>info@fsa.gov.kh</a></li>
                                 </ul>
 							</div>
 						</div>
@@ -212,21 +198,9 @@
 								</div>
 							</div>
 						</div>
-						{{-- <div class="col-lg-3 col-md-6 col-12">
-							<div class="single-footer">
-								<h2>Open Hours</h2>
-								<p>Lorem ipsum dolor sit ame consectetur adipisicing elit do eiusmod tempor incididunt.</p>
-								<ul class="time-sidual">
-									<li class="day">Monday - Friday <span>8.00-20.00</span></li>
-									<li class="day">Saturday <span>9.00-18.30</span></li>
-									<li class="day">Monday - Thusday <span>9.00-15.00</span></li>
-								</ul>
-							</div>
-						</div> --}}
 						<div class="col-lg-3 col-md-6 col-12">
 							<div data-aos="fade-up" data-aos-delay="450" class="single-footer">
 								<h2 class="mef2">{{__('frontend.followUS')}}</h2>
-								{{-- <p>subscribe to our newsletter to get allour news in your inbox.. Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p> --}}
                                 <div class="row">
                                     <div class="facebook">
                                         <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FFSA.Cambodia&tabs=timeline&width=290&height=130px&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="290" height="130px" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
@@ -286,7 +260,7 @@
 		<!-- Tilt Jquery JS -->
 		<script src="{{ asset ('frontend/js/tilt.jquery.min.js')}}"></script>
 		<!-- Owl Carousel JS -->
-        <script src="{{ asset ('frontend/js/owl-carousel.js')}}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 		<!-- counterup JS -->
 		<script src="{{ asset ('frontend/js/jquery.counterup.min.js')}}"></script>
 		<!-- Steller JS -->

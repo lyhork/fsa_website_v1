@@ -43,67 +43,6 @@
                             </div>
                         @endforelse
                     </div>
-                    {{-- <div class="col-lg-8 col-12">
-                        <div class="main-leader">
-                            <div class="single-widget recent-post">
-                                <div class="leader">
-                                    <h3 class="title">អគ្គលេខាធិការ</h3>
-                                    <div class="row">
-                                        <div class="col-lg-6 col-md-6 col-sm-12">
-                                            <div class="single-post">
-                                                <div class="image">
-                                                    <img src="{{asset('frontend/img/mey_vann.jpg') }}" alt="#">
-                                                </div>
-                                                <div class="content mef1">
-                                                    <h5>ឯកឧត្តម បណ្ឌិត ម៉ី វ៉ាន់</h5>
-                                                    <h6>អគ្គលេខាធិការ</h6>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="leader">
-                                    <h3 class="title">អគ្គលេខាធិការរង</h3>
-                                    <div class="row">
-                                        <div class="col-lg-6 col-md-6 col-sm-12">
-                                            <div class="single-post">
-                                                <div class="image">
-                                                    <img src="{{asset('frontend/img/kuy_savuth.jpg') }}" alt="#">
-                                                </div>
-                                                <div class="content mef1">
-                                                    <h5>H.E Kuy Savuth</h5>
-                                                    <h6>អគ្គលេខាធិការរង</h6>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-12">
-                                            <div class="single-post">
-                                                <div class="image">
-                                                    <img src="{{asset('frontend/img/ngor_dalen.jpg') }}" alt="#">
-                                                </div>
-                                                <div class="content mef1">
-                                                    <h5>Mr. Ngor Dalen</h5>
-                                                    <h6>អគ្គលេខាធិការរង</h6>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-12">
-                                            <div class="single-post">
-                                                <div class="image">
-                                                    <img src="{{asset('frontend/img/som_phey.jpg') }}" alt="#">
-                                                </div>
-                                                <div class="content mef1">
-                                                    <h5>Dr. Som Phay</h5>
-                                                    <h6>អគ្គលេខាធិការរង</h6>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> --}}
 					<div data-aos="fade-left" data-aos-duration="1000" class="col-lg-3 col-12">
 						<div class="main-sidebar">
 							<!-- Single Widget -->
