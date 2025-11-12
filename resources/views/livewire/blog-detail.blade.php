@@ -31,26 +31,11 @@
                                     <img src="{{asset('storage/'.$blogDetail->image) }}" alt="#">
                                 @endif
 							</div>
-							{{-- <div class="date">
-								<ul>
-									<li><span>Category :</span> Heart Surgery</li>
-									<li><span>Date :</span> {{\Carbon\Carbon::parse($blogDetail->published_at)->locale(app()->getLocale())->translatedFormat('j F Y, g:i A');}}</li>
-									<li><span>Client :</span> Suke Agency</li>
-									<li><span>Ags :</span> Typo</li>
-								</ul>
-							</div> --}}
 							<div class="body-text mef1">
 								<h3>{{$blogDetail->title}}</h3>
                                 <p>{{\Carbon\Carbon::parse($blogDetail->published_at)->locale(app()->getLocale())->translatedFormat('j F Y, g:i A');}}</p>
 								<p>{!!$blogDetail->content!!}</p>
-								{{-- <div class="share">
-									<h4>Share Now -</h4>
-									<ul>
-										<li><a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
-										<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-										<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-									</ul> --}}
-								</div>
+							</div>
 							</div>
                             <div class="image-slider my-5">
                                 @if ($blogDetail->image != '')

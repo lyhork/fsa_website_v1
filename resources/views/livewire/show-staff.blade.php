@@ -36,7 +36,6 @@
                                     <div class="col-lg-7 col-12">
                                         <div class="contact-us-form mef1">
                                             <h2>{{__('frontend.officer_info')}}</h2>
-                                            {{-- <p>If you have any questions please fell free to contact with us.</p> --}}
                                             <div class="row">
                                                 <div class="col-lg-12">
                                                     <div class="form-group">

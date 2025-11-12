@@ -32,11 +32,6 @@
                                     <span class="mef1">{{\Carbon\Carbon::parse($otherDetail->published_at)->locale(app()->getLocale())->translatedFormat('j F Y, g:i A');}}</span>
 								</div>
 							</div>
-							{{-- <div class="image-slider">
-                                @if ($docDetail->doc_image != '')
-                                    <img src="{{asset('storage/'.$docDetail->doc_image) }}" alt="#">
-                                @endif
-							</div> --}}
                             <div class="image-slider my-5">
                                 @if ($otherDetail->other_image != '')
                                     <img class="mb-5" src="{{asset('storage/'.$otherDetail->other_image) }}" alt="#">

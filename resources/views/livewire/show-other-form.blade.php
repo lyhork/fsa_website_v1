@@ -9,11 +9,6 @@
                             <img src="{{asset('storage/'.$other->other_image) }}" alt="#">
                         </div>
                     @endif
-                    {{-- <!-- News Head -->
-                    <div class="news-head">
-                        <img src="img/blog1.jpg" alt="#">
-                    </div>
-                    <!-- News Title --> --}}
                     <h1 class="news-title mef2"><a wire:navigate href="{{route('otherDetail', $other->id)}}">{{$other->shortTitle()}}</a></h1>
                     <!-- Meta -->
                     <div class="meta">
