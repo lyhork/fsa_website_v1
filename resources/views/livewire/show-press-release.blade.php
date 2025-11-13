@@ -26,7 +26,6 @@
 							<div class="single-widget search">
 								<form method="get" action="{{route('searchPress')}}" class="form">
 									<input name="q" value="{{request()->get("q")}}" type="text" placeholder="{{__('frontend.search-here')}}">
-									{{-- <a wire:navigate class="button" href="#"><i class="fa fa-search"></i></a> --}}
                                     <button class="button" type="submit"><i class="fa fa-search"></i></button>
 								</form>
 							</div>

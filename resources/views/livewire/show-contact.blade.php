@@ -68,7 +68,6 @@
 						<div class="col-lg-6">
 							<div class="contact-us-form mef1">
 								<h2>{{__('frontend.contact-us')}}</h2>
-								{{-- <p>If you have any questions please fell free to contact with us.</p> --}}
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="form-group">
@@ -95,6 +94,7 @@
                                 <ul class="social">
 									<li><a target="_blank" href="https://www.facebook.com/FSA.Cambodia"><i class="icofont-facebook"></i></a></li>
 									<li><a target="_blank" href="https://t.me/fsacambodia"><i class="icofont-telegram"></i></a></li>
+									<li><a target="_blank" href="https://www.youtube.com/channel/UCh7rcoSKIX5l1S8Rs7wV5hQ"><i class="icofont-youtube"></i></a></li>
 									<li><a target="_blank" href="#"><i class="icofont-link"></i></a></li>
 								</ul>
 							</div>
