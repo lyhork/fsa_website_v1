@@ -282,13 +282,11 @@
             })
         </script>
         <script data-navigate-once>
-            document.addEventListener('livewire:navigated', () => {
-                $('.menu').slicknav({
+            $('.menu').slicknav({
                 prependTo:".mobile-nav",
                 duration: 300,
                 closeOnClick:true,
-                });
-            })
+            });
         </script>
         <script data-navigate-once>
             document.addEventListener('livewire:navigated', () => {
